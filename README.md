@@ -2,7 +2,7 @@
  CC15 Final Requirements: Queue System App  
  ~ ~ ~  
 4/19: Added LoginUI folder; contains the UI for the login on startup  
-        On acc. creation  
+								On acc. creation  
         - will have to change the lineedit for cNy(stud) and dept(fact) to ComboBoxes  
         - use checkbox to identify whether X student is a scholar or not  
         On main window transition  

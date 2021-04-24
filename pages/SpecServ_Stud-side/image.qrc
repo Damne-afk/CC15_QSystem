@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>assistant.png</file>
+    <file>checking activities.png</file>
+    <file>documentation.png</file>
+    <file>paperwork.png</file>
+  </qresource>
+</RCC>

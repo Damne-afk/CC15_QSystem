@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>830</width>
+    <height>616</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(70, 72, 102);</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QFrame" name="page_student_Fss">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_page_student_Fss">
+      <property name="spacing">
+       <number>18</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QFrame" name="page_student_ss_Fleft">
+        <property name="styleSheet">
+         <string notr="true">QFrame{
+border: 1px solid #69cdff;
+border-radius: 10px;
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_page_student_ss_Fleft" stretch="1,12">
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <property name="leftMargin">
+          <number>4</number>
+         </property>
+         <property name="topMargin">
+          <number>4</number>
+         </property>
+         <property name="rightMargin">
+          <number>4</number>
+         </property>
+         <property name="bottomMargin">
+          <number>4</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="student_ss_LavlTasks">
+           <property name="styleSheet">
+            <string notr="true">QLabel{
+color: white;
+font-size: 11pt;
+border: 0;
+margin-left: 4px;
+}</string>
+           </property>
+           <property name="text">
+            <string>Available Tasks</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QScrollArea" name="student_scrollArea_ssLeft">
+           <property name="styleSheet">
+            <string notr="true">QScrollArea{
+border: 0;
+}</string>
+           </property>
+           <property name="widgetResizable">
+            <bool>true</bool>
+           </property>
+           <widget class="QWidget" name="student_scrollAreaWidgetContents_ssLeft_contents">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>386</width>
+              <height>535</height>
+             </rect>
+            </property>
+            <widget class="QPushButton" name="btn_task">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>70</y>
+               <width>111</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(179, 179, 179);</string>
+             </property>
+             <property name="text">
+              <string>Documentation</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>:/icons/documentation.png</normaloff>:/icons/documentation.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="btn_task_2">
+             <property name="geometry">
+              <rect>
+               <x>217</x>
+               <y>70</y>
+               <width>161</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(179, 179, 179);</string>
+             </property>
+             <property name="text">
+              <string>Paperwork</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>:/icons/paperwork.png</normaloff>:/icons/paperwork.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="btn_task_3">
+             <property name="geometry">
+              <rect>
+               <x>114</x>
+               <y>70</y>
+               <width>101</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(179, 179, 179);</string>
+             </property>
+             <property name="text">
+              <string>Assistant</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>:/icons/assistant.png</normaloff>:/icons/assistant.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="btn_task_4">
+             <property name="geometry">
+              <rect>
+               <x>85</x>
+               <y>130</y>
+               <width>171</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(179, 179, 179);</string>
+             </property>
+             <property name="text">
+              <string>Checking Activity</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>:/icons/checking activities.png</normaloff>:/icons/checking activities.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+            </widget>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="page_student_ss_Fright">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_page_student_ss_Fright" stretch="1,2">
+         <property name="spacing">
+          <number>18</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QFrame" name="student_ss_taskInfo">
+           <property name="styleSheet">
+            <string notr="true">QFrame{
+border: 1px solid #69cdff;
+border-radius: 10px;
+}
+
+QLabel{
+color: white;
+border: 0;
+}</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_student_ss_taskInfo" stretch="0">
+            <property name="leftMargin">
+             <number>10</number>
+            </property>
+            <property name="topMargin">
+             <number>10</number>
+            </property>
+            <property name="rightMargin">
+             <number>10</number>
+            </property>
+            <property name="bottomMargin">
+             <number>8</number>
+            </property>
+            <item>
+             <widget class="QStackedWidget" name="stackedWidget">
+              <property name="currentIndex">
+               <number>0</number>
+              </property>
+              <widget class="QWidget" name="page1">
+               <widget class="QTextEdit" name="tDescription">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>10</y>
+                  <width>351</width>
+                  <height>121</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Century Gothic</family>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="html">
+                 <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Century Gothic'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; color:#d9d9d9;&quot;&gt;Making of Report, Saving important Documents, Importing and Exporting of files &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="tHours">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>140</y>
+                  <width>111</width>
+                  <height>16</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Century Gothic</family>
+                  <pointsize>11</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Credit: 5 Hours</string>
+                </property>
+               </widget>
+              </widget>
+              <widget class="QWidget" name="page2">
+               <widget class="QLabel" name="tHours_2">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>140</y>
+                  <width>111</width>
+                  <height>16</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Century Gothic</family>
+                  <pointsize>11</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Credit: 9 Hours</string>
+                </property>
+               </widget>
+               <widget class="QTextEdit" name="tDescription_2">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>10</y>
+                  <width>351</width>
+                  <height>121</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Century Gothic</family>
+                  <pointsize>11</pointsize>
+                 </font>
+                </property>
+                <property name="html">
+                 <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Century Gothic'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; color:#f8f8f8;&quot;&gt;Assist the Teacher's in doing their non-teaching related chores like arranging their desk and other things and assist the Teachers, Students and Parent during enrollment&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+              </widget>
+              <widget class="QWidget" name="page3">
+               <widget class="QLabel" name="tHours_3">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>140</y>
+                  <width>121</width>
+                  <height>16</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Century Gothic</family>
+                  <pointsize>11</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Credit: 10 Hours</string>
+                </property>
+               </widget>
+               <widget class="QTextEdit" name="tDescription_3">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>10</y>
+                  <width>351</width>
+                  <height>121</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Century Gothic</family>
+                  <pointsize>11</pointsize>
+                 </font>
+                </property>
+                <property name="html">
+                 <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Century Gothic'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; color:#f8f8f8;&quot;&gt;Arranging of Papers in a certain order and filing them or Preparing the exam papers&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+              </widget>
+              <widget class="QWidget" name="page4">
+               <widget class="QLabel" name="tHours_4">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>140</y>
+                  <width>121</width>
+                  <height>16</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Century Gothic</family>
+                  <pointsize>11</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Credit: 11 Hours</string>
+                </property>
+               </widget>
+               <widget class="QTextEdit" name="tDescription_4">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>10</y>
+                  <width>351</width>
+                  <height>121</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Century Gothic</family>
+                  <pointsize>11</pointsize>
+                 </font>
+                </property>
+                <property name="html">
+                 <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Century Gothic'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; color:#f8f8f8;&quot;&gt;Checking of papers like exam papers, test papers and review papers&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="student_ss_currentTasks">
+           <property name="styleSheet">
+            <string notr="true">QFrame{
+border: 1px solid #69cdff;
+border-radius: 10px;
+}</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_student_ss_currentTasks" stretch="1,12">
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <property name="leftMargin">
+             <number>4</number>
+            </property>
+            <property name="topMargin">
+             <number>4</number>
+            </property>
+            <property name="rightMargin">
+             <number>4</number>
+            </property>
+            <property name="bottomMargin">
+             <number>4</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="student_ss_LcurrentTasks">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+color: white;
+font-size: 11pt;
+border: 0;
+margin-left: 4px;
+}</string>
+              </property>
+              <property name="text">
+               <string>Current Tasks</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QScrollArea" name="student_scrollArea_sscurrentTasks">
+              <property name="styleSheet">
+               <string notr="true">QScrollArea{
+border: 0;
+}</string>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="student_scrollArea_sscurrentTasks_contents">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>384</width>
+                 <height>340</height>
+                </rect>
+               </property>
+               <widget class="QPushButton" name="btn_ok">
+                <property name="geometry">
+                 <rect>
+                  <x>300</x>
+                  <y>310</y>
+                  <width>71</width>
+                  <height>21</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Century Gothic</family>
+                  <pointsize>11</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton{
+background-color: rgb(200, 0, 0);
+color: rgb(255, 255, 255);
+border-radius:10px;
+}
+
+QPushButton:hover
+{
+color:#333;
+border-radius:10px;
+background:#49ebff;
+}</string>
+                </property>
+                <property name="text">
+                 <string>OK</string>
+                </property>
+               </widget>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../../LoginUI/image.qrc"/>
+ </resources>
+ <connections/>
+</ui>

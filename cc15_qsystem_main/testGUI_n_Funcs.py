@@ -21,20 +21,20 @@ class Ui_Form(object):
         self.pushButton.setGeometry(QtCore.QRect(140, 70, 71, 21))
         self.pushButton.setObjectName("pushButton")
 
+
         self.popMenu = QtWidgets.QMenu()
-        self.pushButton.setObjectName('popMenu')
+        self.popMenu.setObjectName('popMenu')
         
         self.studAction = QtWidgets.QAction("Student")
         self.facAction = QtWidgets.QAction("Faculty")
 
-        self.studAction.triggered.connect(lambda: print("Student Trigger"))
-        self.facAction.triggered.connect(lambda: print("Faculty Trigger"))
-
         self.popMenu.addAction(self.studAction)
         self.popMenu.addAction(self.facAction)
 
-        
+        self.studAction.triggered.connect(lambda: print("Student Trigger"))
+        self.facAction.triggered.connect(lambda: print("Faculty Trigger"))
 
+ 
         self.pushButton.setMenu(self.popMenu)
 
 

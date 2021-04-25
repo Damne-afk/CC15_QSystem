@@ -23,7 +23,7 @@ from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFont
 from PyQt5.QtWidgets import *
 
 from ui_main_Admin import Ui_MainWindow
-from functions_UI_Admin import *
+from functions_UI_Admin import Admin_UIFunctions
 #from functions_App_Admin import *
 
 ## IMPORTS 'ui_main_Admin' in the for_Appmodules MODULE
@@ -67,17 +67,20 @@ class MainWindow(QMainWindow):
         ########################################################################
 
         ## ==> TOGGLE MENU SIZE
-        self.ui.btn_toggle_menu.clicked.connect(lambda: UIFunctions.toggleMenu(self, 220, True))
+        self.ui.btn_toggle_menu.clicked.connect(lambda: UIFunctions.toggleMenu(self, 240, True))
         ## ==> END ##
 
         ## ==> ADD CUSTOM MENUS
         self.ui.stackedWidget.setMinimumWidth(20)
-        UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
+        UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/20x20/icons/20x20/cil-home.png)", True)
         #UIFunctions.addNewMenu(self, "Add User", "btn_new_user", "url(:/16x16/icons/16x16/cil-user-follow.png)", True)
-        UIFunctions.addNewMenu(self, "APPOINTMENTS", "btn_appointments", "url(:/16x16/icons/16x16/cil-calendar-check.png)", True)
-        UIFunctions.addNewMenu(self, "SPECIAL SERVICES", "btn_special_services", "url(:/16x16/icons/16x16/cil-coffee.png)", True)
-        UIFunctions.addNewMenu(self, "CUSTOM WIDGETS", "btn_widgets", "url(:/16x16/icons/16x16/cil-equalizer.png)", False)
+        UIFunctions.addNewMenu(self, "APPOINTMENTS", "btn_appointments", "url(:/20x20/icons/20x20/cil-view-module.png)", True)
+        UIFunctions.addNewMenu(self, "TASKS", "btn_special_services", "url(:/20x20/icons/20x20/cil-task.png)", True)
+        UIFunctions.addNewMenu(self, "ROOM RESERVATION", "btn_roomNkey", "url(:/20x20/icons/20x20/cil-arrow-circle-right.png)", True)
+        UIFunctions.addNewMenu(self, "CUSTOM WIDGETS", "btn_widgets", "url(:/20x20/icons/20x20/cil-equalizer.png)", False)
         ## ==> END ##
+
+
 
         # START MENU => SELECTION
         UIFunctions.selectStandardMenu(self, "btn_home")
@@ -118,9 +121,6 @@ class MainWindow(QMainWindow):
         ## END - WINDOW ATTRIBUTES
         ############################## ---/--/--- ##############################
 
-
-
-
         ########################################################################
         #                                                                      #
         ## START -------------- WIDGETS FUNCTIONS/PARAMETERS ---------------- ##
@@ -128,26 +128,18 @@ class MainWindow(QMainWindow):
         ## ==> USER CODES BELLOW                                              ##
         ########################################################################
 
-
-
         ## ==> QTableWidget RARAMETERS
         ########################################################################
         self.ui.tableWidget.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
         ## ==> END ##
-
-
 
         ########################################################################
         #                                                                      #
         ## END --------------- WIDGETS FUNCTIONS/PARAMETERS ----------------- ##
         #                                                                      #
         ############################## ---/--/--- ##############################
-
-
-        ## SHOW ==> MAIN WINDOW
-        ########################################################################
         self.show()
-        ## ==> END ##
+
 
     ########################################################################
     ## MENUS ==> DYNAMIC MENUS FUNCTIONS
@@ -176,6 +168,14 @@ class MainWindow(QMainWindow):
             UIFunctions.resetStyle(self, "btn_special_services")
             UIFunctions.labelPage(self, "Special Services")
             btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
+
+        # PAGE ROOM RESERVATION
+        if btnWidget.objectName() == "btn_roomNkey":
+            self.ui.stackedWidget.setCurrentWidget(self.ui.page_roomNkey)
+            UIFunctions.resetStyle(self, "btn_roomNkey")
+            UIFunctions.labelPage(self, "Room Reservation")
+            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
+
 
         """
         ADDITIONAL PAGES HERE

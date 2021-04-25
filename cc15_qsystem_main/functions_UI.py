@@ -20,28 +20,28 @@ from for_UIstyles import Style
 actualmod = ''
 
 """
- This is w a c k, chaining it like this looks ugly but other
-  options I found (like looping) won't work 
+    This is w a c k, chaining it like this looks ugly but other
+    options I found (like looping) won't work 
 """
 
 ## ==> TRY-CATCH CHAIN TO TEST EVERY returnApproriateMod() FOR EVERY ENTITY 
 ## (basically returns main_[whatever main program is being run])
 try:
-    from functions_UI_Admin import returnApproriateMod
+    from functions_UI_Admin import returnAppropriateMod
 except NameError:
     try:
-        from functions_UI_Faculty import returnApproriateMod
+        from functions_UI_Faculty import returnAppropriateMod
     except NameError:
         try:
-            from functions_UI_Student import returnApproriateMod
+            from functions_UI_Student import returnAppropriateMod
         except NameError:
             pass
         else:
-            actualmod = returnApproriateMod()
+            actualmod = returnAppropriateMod()
     else:
-        actualmod = returnApproriateMod()
+        actualmod = returnAppropriateMod()
 else:
-    actualmod = returnApproriateMod()
+    actualmod = returnAppropriateMod()
 
 
 actualmod = importlib.import_module(actualmod)
@@ -87,7 +87,7 @@ class UIFunctions(MainWindow):
         else:
             GLOBAL_STATE = 0
             self.showNormal()
-            self.resize(self.width()+1, self.height()+1)
+            self.resize(self.width(), self.height())
             self.ui.horizontalLayout.setContentsMargins(10, 10, 10, 10)
             self.ui.btn_maximize_restore.setToolTip("Maximize")
             self.ui.btn_maximize_restore.setIcon(QtGui.QIcon(u":/16x16/icons/16x16/cil-window-maximize.png"))

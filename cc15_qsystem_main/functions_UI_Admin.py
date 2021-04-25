@@ -1,10 +1,10 @@
 
-def returnApproriateMod():
+def returnAppropriateMod():
     return "main_Admin"
 
 ## DONT PUT THIS IN THE TOP; INTENDED TO AVOID CIRCULAR IMPORT
 
-from functions_UI import *
+from functions_UI import UIFunctions
 
 class Admin_UIFunctions(UIFunctions):
 

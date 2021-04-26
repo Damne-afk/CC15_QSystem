@@ -1,0 +1,10 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>room1.png</file>
+    <file>room2.png</file>
+    <file>room3.png</file>
+    <file>room4.png</file>
+    <file>room5.png</file>
+    <file>room6.png</file>
+  </qresource>
+</RCC>

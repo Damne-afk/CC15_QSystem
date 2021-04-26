@@ -23,7 +23,7 @@ from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFont
 from PyQt5.QtWidgets import *
 
 from ui_main_Admin import Ui_MainWindow
-from functions_UI_Admin import Admin_UIFunctions
+from functions_UI_Admin import *
 #from functions_App_Admin import *
 
 ## IMPORTS 'ui_main_Admin' in the for_Appmodules MODULE
@@ -74,9 +74,9 @@ class MainWindow(QMainWindow):
         self.ui.stackedWidget.setMinimumWidth(20)
         UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/20x20/icons/20x20/cil-home.png)", True)
         #UIFunctions.addNewMenu(self, "Add User", "btn_new_user", "url(:/16x16/icons/16x16/cil-user-follow.png)", True)
-        UIFunctions.addNewMenu(self, "APPOINTMENTS", "btn_appointments", "url(:/20x20/icons/20x20/cil-view-module.png)", True)
+        UIFunctions.addNewMenu(self, "APPOINTMENTS", "btn_appointments", "url(:/20x20/icons/20x20/cil-people.png)", True)
         UIFunctions.addNewMenu(self, "TASKS", "btn_special_services", "url(:/20x20/icons/20x20/cil-task.png)", True)
-        UIFunctions.addNewMenu(self, "ROOM RESERVATION", "btn_roomNkey", "url(:/20x20/icons/20x20/cil-arrow-circle-right.png)", True)
+        UIFunctions.addNewMenu(self, "ROOM RESERVATION", "btn_roomNkey", "url(:/20x20/icons/20x20/cil-tag.png)", True)
         UIFunctions.addNewMenu(self, "CUSTOM WIDGETS", "btn_widgets", "url(:/20x20/icons/20x20/cil-equalizer.png)", False)
         ## ==> END ##
 

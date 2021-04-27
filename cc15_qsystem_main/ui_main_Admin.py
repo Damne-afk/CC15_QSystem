@@ -1241,8 +1241,8 @@ class Ui_MainWindow(object):
                                  "}\n"
                                  "QPushButton:pressed {    background-color: rgb(35, 40, 49); }")
         self.clear.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/20x20/icons/20x20/cil-trash.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        icon = QIcon()
+        icon.addPixmap(QPixmap(":/20x20/icons/20x20/cil-trash.png"), QIcon.Normal, QIcon.On)
         self.clear.setIcon(icon)
         self.clear.setIconSize(QSize(16, 16))
         self.clear.setObjectName("clear")
@@ -1991,7 +1991,7 @@ class Ui_MainWindow(object):
         self.stackedWidget_special_services.addWidget(self.page_faculty_ss)
         self.verticalLayout_page_special_services.addWidget(self.stackedWidget_special_services)
         self.stackedWidget.addWidget(self.page_special_services)
-        ## SPECIAL-SERVICES_PAGE | END
+## SPECIAL-SERVICES_PAGE | END
 
 
 ## ROOM-RESERVATION_PAGE | START
@@ -2768,8 +2768,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_FroomNkey_ctrl_logs.setObjectName("verticalLayout_FroomNkey_ctrl_logs")
         self.roomNkey_logsButton = QPushButton(self.FroomNkey_ctrl_logs)
         self.roomNkey_logsButton.setText("")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(":/20x20/icons/20x20/cil-notes.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        icon1 = QIcon()
+        icon1.addPixmap(QPixmap(":/20x20/icons/20x20/cil-notes.png"), QIcon.Normal, QIcon.On)
         self.roomNkey_logsButton.setIcon(icon1)
         self.roomNkey_logsButton.setIconSize(QSize(18, 18))
         self.roomNkey_logsButton.setFlat(False)
@@ -2777,9 +2777,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_FroomNkey_ctrl_logs.addWidget(self.roomNkey_logsButton)
         self.roomNkey_accORdecButton = QPushButton(self.FroomNkey_ctrl_logs)
         self.roomNkey_accORdecButton.setText("")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(":/20x20/icons/20x20/cil-chevron-circle-left-alt.png"), QtGui.QIcon.Normal,
-                        QtGui.QIcon.On)
+        icon2 = QIcon()
+        icon2.addPixmap(QPixmap(":/20x20/icons/20x20/cil-chevron-circle-left-alt.png"), QIcon.Normal,
+                        QIcon.On)
         self.roomNkey_accORdecButton.setIcon(icon2)
         self.roomNkey_accORdecButton.setIconSize(QSize(20, 20))
         self.roomNkey_accORdecButton.setObjectName("roomNkey_accORdecButton")

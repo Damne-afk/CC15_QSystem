@@ -21,7 +21,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
 from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
 from PyQt5.QtWidgets import *
-
+from animated_toggle import AnimatedToggle
 from ui_main_Admin import Ui_MainWindow
 from functions_UI_Admin import *
 #from functions_App_Admin import *
@@ -83,7 +83,12 @@ class MainWindow(QMainWindow):
         ## USER ICON ==> SHOW HIDE
         UIFunctions.userIcon(self, "WM", "", True)
 
-
+        self.avlToggle = AnimatedToggle()
+        self.avlToggle.setFixedSize(self.avlToggle.sizeHint())
+        self.ui.fac_avl_addsched.addWidget(self.avlToggle)
+        self.avlToggle.setChecked()
+        self.avlToggle.stateChanged.connect(self.avltoggleState)
+        
         ## ==> MOVE WINDOW / MAXIMIZE / RESTORE
         ########################################################################
         def moveWindow(event):
@@ -118,7 +123,6 @@ class MainWindow(QMainWindow):
         ## ==> QTableWidget RARAMETERS
         ########################################################################
         self.ui.tableWidget.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
-        ## ==> END ##
 
         ########################################################################
         #                                                                      #
@@ -174,9 +178,8 @@ class MainWindow(QMainWindow):
             UIFunctions.resetStyle(self, "btn_widgets")
             UIFunctions.labelPage(self, "Custom Widgets")
             btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
-
     ## ==> END ##
-
+ 
     ########################################################################
     ## START ==> APP EVENTS
     ########################################################################
@@ -186,7 +189,6 @@ class MainWindow(QMainWindow):
     def eventFilter(self, watched, event):
         if watched == self.le and event.type() == QtCore.QEvent.MouseButtonDblClick:
             print("pos: ", event.pos())
-    ## ==> END ##
 
     ## EVENT ==> MOUSE CLICK
     ########################################################################
@@ -198,7 +200,6 @@ class MainWindow(QMainWindow):
             print('Mouse click: RIGHT CLICK')
         if event.buttons() == Qt.MidButton:
             print('Mouse click: MIDDLE BUTTON')
-    ## ==> END ##
 
     ## EVENT ==> KEY PRESSED
     ########################################################################
@@ -212,10 +213,20 @@ class MainWindow(QMainWindow):
         self.resizeFunction()
         return super(MainWindow, self).resizeEvent(event)
 
+
     def resizeFunction(self):
         print('Height: ' + str(self.height()) + ' | Width: ' + str(self.width()))
-    ## ==> END ##
 
+    def avltoggleState(self):
+        if self.avlToggle.isChecked():
+            self.ui.comboBox_day_avl.setEnabled(False)
+            self.ui.comboBox_time_avl.setEnabled(False)
+            self.ui.comboBox_colorTheme.setEnabled(False)
+            
+        else:
+            self.ui.comboBox_day_avl.setEnabled(True)
+            self.ui.comboBox_time_avl.setEnabled(True)
+            self.ui.comboBox_colorTheme.setEnabled(True)
     ########################################################################
     ## END ==> APP EVENTS
     ############################## ---/--/--- ##############################

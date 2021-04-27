@@ -28,7 +28,7 @@ class MainWindow(QMainWindow):
         QMainWindow.__init__(self)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-
+        self.popMenuInits()
         ## PRINT ==> SYSTEM
         print('System: ' + platform.system())
         print('Version: ' + platform.release())
@@ -142,6 +142,111 @@ class MainWindow(QMainWindow):
         self.show()
         ## ==> END ##
 
+    ## TEMPORARY SOLUTION TO ADMIN NAVIGATION
+    def popMenuInits(self):
+        self.ui.page_appointments_changeUserF = QFrame(self.ui.page_appointments)
+        self.ui.page_appointments_changeUserF.setObjectName(u"page_appointments_changeUserF")
+        self.ui.horizontalLayout_page_appointments_changeUserF = QHBoxLayout(self.ui.page_appointments_changeUserF)
+        self.ui.horizontalLayout_page_appointments_changeUserF.setContentsMargins(0, 0, 0, 0)
+        self.ui.horizontalLayout_page_appointments_changeUserF.setSpacing(0)
+        self.ui.horizontalLayout_page_appointments_changeUserF.setObjectName(
+            u"self.horizontalLayout_page_appointments_changeUserF")
+
+        self.ui.page_appointments_changeUserButton = QPushButton()
+
+        self.ui.page_appointments_changeUserButton.setObjectName(u'page_appointments_changeUserButton')
+        self.ui.page_appointments_changeUserButton.setFixedSize(20, 12)
+        self.ui.horizontalLayout_page_appointments_changeUserF.addWidget(self.ui.page_appointments_changeUserButton)
+
+        self.ui.verticalLayout_page_appointments.addWidget(self.ui.page_appointments_changeUserF, 0,
+                                              QtCore.Qt.AlignRight | QtCore.Qt.AlignBottom)
+        self.ui.verticalLayout_page_appointments.setStretch(20, 1)
+
+        self.ui.popMenu_appointments = QtWidgets.QMenu()
+        self.ui.popMenu_appointments.setObjectName('popMenu_appointments')
+        self.ui.studAction_appointments = QtWidgets.QAction("Student")
+        self.ui.facAction_appointments = QtWidgets.QAction("Faculty")
+        self.ui.popMenu_appointments.addAction(self.ui.studAction_appointments)
+        self.ui.popMenu_appointments.addAction(self.ui.facAction_appointments)
+        self.ui.studAction_appointments.triggered.connect(
+            lambda: self.ui.stackedWidget_appointments.setCurrentWidget(self.ui.page_student_appnt))
+        self.ui.facAction_appointments.triggered.connect(
+            lambda: self.ui.stackedWidget_appointments.setCurrentWidget(self.ui.page_faculty_appnt))
+
+        self.ui.page_appointments_changeUserButton.setMenu(self.ui.popMenu_appointments)
+
+
+
+        self.ui.page_special_services_changeUserF = QFrame(self.ui.page_special_services)
+        self.ui.page_special_services_changeUserF.setObjectName(u"page_special_services_changeUserF")
+        self.ui.horizontalLayout_page_special_services_changeUserF = QHBoxLayout(self.ui.page_special_services_changeUserF)
+        self.ui.horizontalLayout_page_special_services_changeUserF.setContentsMargins(0, 0, 0, 0)
+        self.ui.horizontalLayout_page_special_services_changeUserF.setSpacing(0)
+        self.ui.horizontalLayout_page_special_services_changeUserF.setObjectName(
+            u"horizontalLayout_page_special_services_changeUserF")
+
+        self.ui.page_special_services_changeUserButton = QPushButton()
+        self.ui.page_special_services_changeUserButton.setFixedSize(20, 12)
+        self.ui.page_special_services_changeUserButton.setObjectName(u'page_special_services_changeUserButton')
+
+        self.ui.horizontalLayout_page_special_services_changeUserF.addWidget(self.ui.page_special_services_changeUserButton)
+
+        self.ui.verticalLayout_page_special_services.addWidget(self.ui.page_special_services_changeUserF, 0,
+                                                  QtCore.Qt.AlignRight | QtCore.Qt.AlignBottom)
+        self.ui.verticalLayout_page_special_services.setStretch(20, 1)
+
+        self.ui.popMenu_special_services = QtWidgets.QMenu()
+        self.ui.popMenu_special_services.setObjectName('popMenu_special_services')
+        self.ui.studAction_special_services = QtWidgets.QAction("Student")
+        self.ui.facAction_special_services = QtWidgets.QAction("Faculty")
+        self.ui.popMenu_special_services.addAction(self.ui.studAction_special_services)
+        self.ui.popMenu_special_services.addAction(self.ui.facAction_special_services)
+        
+        self.ui.studAction_special_services.triggered.connect(lambda: self.ui.stackedWidget_special_services.setCurrentWidget(self.ui.page_student_ss))
+        self.ui.facAction_special_services.triggered.connect(lambda: self.ui.stackedWidget_special_services.setCurrentWidget(self.ui.page_faculty_ss))
+
+        self.ui.page_special_services_changeUserButton.setMenu(self.ui.popMenu_special_services)
+
+
+
+        self.ui.page_roomNkey_changeUserF = QFrame(self.ui.page_roomNkey)
+        self.ui.page_roomNkey_changeUserF.setObjectName(u"page_roomNkey_changeUserF")
+        self.ui.horizontalLayout_page_roomNkey_changeUserF = QHBoxLayout(self.ui.page_roomNkey_changeUserF)
+        self.ui.horizontalLayout_page_roomNkey_changeUserF.setContentsMargins(0, 0, 0, 0)
+        self.ui.horizontalLayout_page_roomNkey_changeUserF.setSpacing(0)
+        self.ui.horizontalLayout_page_roomNkey_changeUserF.setObjectName(u"horizontalLayout_page_roomNkey_changeUserF")
+
+        self.ui.page_roomNkey_changeUserButton = QPushButton()
+        self.ui.page_roomNkey_changeUserButton.setFixedSize(20, 12)
+        self.ui.page_roomNkey_changeUserButton.setObjectName(u'page_roomNkey_changeUserButton')
+
+        self.ui.horizontalLayout_page_roomNkey_changeUserF.addWidget(self.ui.page_roomNkey_changeUserButton)
+
+        self.ui.verticalLayout_page_roomNkey.addWidget(self.ui.page_roomNkey_changeUserF, 0,
+                                                    QtCore.Qt.AlignRight | QtCore.Qt.AlignBottom)
+        self.ui.verticalLayout_page_roomNkey.setStretch(20, 1)
+
+        self.ui.popMenu_roomNkey = QtWidgets.QMenu()
+        self.ui.popMenu_roomNkey.setObjectName('popMenu_roomNkey')
+        self.ui.studAction_roomNkey = QtWidgets.QAction("Student")
+        self.ui.facAction_roomNkey = QtWidgets.QAction("Faculty")
+        self.ui.admAction_roomNkey = QtWidgets.QAction("Admin")
+        self.ui.popMenu_roomNkey.addAction(self.ui.studAction_roomNkey)
+        self.ui.popMenu_roomNkey.addAction(self.ui.facAction_roomNkey)
+        self.ui.popMenu_roomNkey.addAction(self.ui.admAction_roomNkey)
+        self.ui.studAction_roomNkey.triggered.connect(
+            lambda: self.ui.page_stackedWidget_roomNkey.setCurrentWidget(self.ui.page_student_roomNkey))
+        self.ui.facAction_roomNkey.triggered.connect(
+            lambda: self.ui.page_stackedWidget_roomNkey.setCurrentWidget(self.ui.page_faculty_roomNkey))
+        self.ui.admAction_roomNkey.triggered.connect(
+            lambda: self.ui.page_stackedWidget_roomNkey.setCurrentWidget(self.ui.page_admin_roomNkey))
+
+        self.ui.page_roomNkey_changeUserButton.setMenu(self.ui.popMenu_roomNkey)
+
+        self.ui.page_appointments_changeUserButton.setText(QCoreApplication.translate("MainWindow", "Change User UI"))
+        self.ui.page_special_services_changeUserButton.setText(QCoreApplication.translate("MainWindow", "Change User UI"))
+        self.ui.page_roomNkey_changeUserButton.setText(QCoreApplication.translate("MainWindow", "Change User UI"))
+    
     ########################################################################
     ## MENUS ==> DYNAMIC MENUS FUNCTIONS
     ########################################################################

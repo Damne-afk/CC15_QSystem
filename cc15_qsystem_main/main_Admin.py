@@ -16,20 +16,13 @@
 
 import sys
 import platform
-from ui_main_Admin import Ui_MainWindow
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
 from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
 from PyQt5.QtWidgets import *
-from ui_main_Admin import Ui_MainWindow
-from functions_UI_Admin import *
+
+from for_Appmodules import *
 #from functions_App_Admin import *
-
-## IMPORTS 'ui_main_Admin' in the for_Appmodules MODULE
-#uiMain_dImport('ui_main_Admin')
-
-## GIVE 'functions_UI' MODULE THE NAME OF THIS PARTICULAR FILE (i.e 'main_Admin')
-#dynamicImport(str(os.path.basename(__file__)).split('.')[0])
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -47,41 +40,52 @@ class MainWindow(QMainWindow):
 
         ## REMOVE ==> STANDARD TITLE BAR
         Admin_UIFunctions.removeTitleBar(True)
+        ## ==> END ##
 
         ## SET ==> WINDOW TITLE
         self.setWindowTitle('Main Window - Python Base')
-        Admin_UIFunctions.labelTitle(self, 'Admin Main Window - Python Base')
+        Admin_UIFunctions.labelTitle(self, 'Faculty Main Window - Python Base')
         Admin_UIFunctions.labelDescription(self, 'Set text')
+        ## ==> END ##
 
         ## WINDOW SIZE ==> DEFAULT SIZE
         startSize = QSize(1440, 810)
         self.resize(startSize)
         self.setMinimumSize(1080, 608)
+        #Admin_UIFunctions.enableMaximumSize(self, 500, 720)
+        ## ==> END ##
 
         ## ==> CREATE MENUS
         ########################################################################
 
         ## ==> TOGGLE MENU SIZE
-        self.ui.btn_toggle_menu.clicked.connect(lambda: Admin_UIFunctions.toggleMenu(self, 240, True))
+        self.ui.btn_toggle_menu.clicked.connect(lambda: Admin_UIFunctions.toggleMenu(self, 220, True))
+        ## ==> END ##
 
         ## ==> ADD CUSTOM MENUS
         self.ui.stackedWidget.setMinimumWidth(20)
-        Admin_UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/20x20/icons/20x20/cil-home.png)", True)
+        Admin_UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
         #Admin_UIFunctions.addNewMenu(self, "Add User", "btn_new_user", "url(:/16x16/icons/16x16/cil-user-follow.png)", True)
-        Admin_UIFunctions.addNewMenu(self, "APPOINTMENTS", "btn_appointments", "url(:/20x20/icons/20x20/cil-people.png)", True)
-        Admin_UIFunctions.addNewMenu(self, "TASKS", "btn_special_services", "url(:/20x20/icons/20x20/cil-task.png)", True)
-        Admin_UIFunctions.addNewMenu(self, "ROOM RESERVATION", "btn_roomNkey", "url(:/20x20/icons/20x20/cil-tag.png)", True)
-        Admin_UIFunctions.addNewMenu(self, "CUSTOM WIDGETS", "btn_widgets", "url(:/20x20/icons/20x20/cil-equalizer.png)", False)
+        Admin_UIFunctions.addNewMenu(self, "APPOINTMENTS", "btn_appointments", "url(:/16x16/icons/16x16/cil-calendar-check.png)", True)
+        Admin_UIFunctions.addNewMenu(self, "SPECIAL SERVICES", "btn_special_services", "url(:/16x16/icons/16x16/cil-clipboard.png)", True)
+        Admin_UIFunctions.addNewMenu(self, "ROOM RESERVATION", "btn_roomNkey",
+                                     "url(:/16x16/icons/16x16/cil-door.png)", True)
+        Admin_UIFunctions.addNewMenu(self, "CUSTOM WIDGETS", "btn_widgets", "url(:/16x16/icons/16x16/cil-equalizer.png)", False)
+        ## ==> END ##
 
         # START MENU => SELECTION
         Admin_UIFunctions.selectStandardMenu(self, "btn_home")
+        ## ==> END ##
 
         ## ==> START PAGE
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
+        ## ==> END ##
 
         ## USER ICON ==> SHOW HIDE
         Admin_UIFunctions.userIcon(self, "WM", "", True)
-        
+        ## ==> END ##
+
+
         ## ==> MOVE WINDOW / MAXIMIZE / RESTORE
         ########################################################################
         def moveWindow(event):
@@ -97,14 +101,19 @@ class MainWindow(QMainWindow):
 
         # WIDGET TO MOVE
         self.ui.frame_label_top_btns.mouseMoveEvent = moveWindow
+        ## ==> END ##
 
         ## ==> LOAD DEFINITIONS
         ########################################################################
         Admin_UIFunctions.uiDefinitions(self)
+        ## ==> END ##
 
         ########################################################################
         ## END - WINDOW ATTRIBUTES
         ############################## ---/--/--- ##############################
+
+
+
 
         ########################################################################
         #                                                                      #
@@ -113,17 +122,26 @@ class MainWindow(QMainWindow):
         ## ==> USER CODES BELLOW                                              ##
         ########################################################################
 
+
+
         ## ==> QTableWidget RARAMETERS
         ########################################################################
         self.ui.tableWidget.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
+        ## ==> END ##
+
+
 
         ########################################################################
         #                                                                      #
         ## END --------------- WIDGETS FUNCTIONS/PARAMETERS ----------------- ##
         #                                                                      #
         ############################## ---/--/--- ##############################
-        self.show()
 
+
+        ## SHOW ==> MAIN WINDOW
+        ########################################################################
+        self.show()
+        ## ==> END ##
 
     ########################################################################
     ## MENUS ==> DYNAMIC MENUS FUNCTIONS
@@ -153,14 +171,11 @@ class MainWindow(QMainWindow):
             Admin_UIFunctions.labelPage(self, "Special Services")
             btnWidget.setStyleSheet(Admin_UIFunctions.selectMenu(btnWidget.styleSheet()))
 
-        # PAGE ROOM RESERVATION
         if btnWidget.objectName() == "btn_roomNkey":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_roomNkey)
             Admin_UIFunctions.resetStyle(self, "btn_roomNkey")
-            Admin_UIFunctions.labelPage(self, "Room Reservation")
+            Admin_UIFunctions.labelPage(self, "Special Services")
             btnWidget.setStyleSheet(Admin_UIFunctions.selectMenu(btnWidget.styleSheet()))
-
-
         """
         ADDITIONAL PAGES HERE
         """
@@ -171,8 +186,9 @@ class MainWindow(QMainWindow):
             Admin_UIFunctions.resetStyle(self, "btn_widgets")
             Admin_UIFunctions.labelPage(self, "Custom Widgets")
             btnWidget.setStyleSheet(Admin_UIFunctions.selectMenu(btnWidget.styleSheet()))
+
     ## ==> END ##
- 
+
     ########################################################################
     ## START ==> APP EVENTS
     ########################################################################
@@ -182,6 +198,7 @@ class MainWindow(QMainWindow):
     def eventFilter(self, watched, event):
         if watched == self.le and event.type() == QtCore.QEvent.MouseButtonDblClick:
             print("pos: ", event.pos())
+    ## ==> END ##
 
     ## EVENT ==> MOUSE CLICK
     ########################################################################
@@ -193,6 +210,7 @@ class MainWindow(QMainWindow):
             print('Mouse click: RIGHT CLICK')
         if event.buttons() == Qt.MidButton:
             print('Mouse click: MIDDLE BUTTON')
+    ## ==> END ##
 
     ## EVENT ==> KEY PRESSED
     ########################################################################
@@ -206,15 +224,13 @@ class MainWindow(QMainWindow):
         self.resizeFunction()
         return super(MainWindow, self).resizeEvent(event)
 
-
     def resizeFunction(self):
         print('Height: ' + str(self.height()) + ' | Width: ' + str(self.width()))
+    ## ==> END ##
 
     ########################################################################
     ## END ==> APP EVENTS
     ############################## ---/--/--- ##############################
-    def returnObj(self):
-        return self
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

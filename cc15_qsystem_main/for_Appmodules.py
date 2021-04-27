@@ -13,16 +13,11 @@
 ## https://doc.qt.io/qtforpython/licenses.html
 ##
 ################################################################################
-import importlib
 
-# IMPORT QSS CUSTOM
+from ui_main_Admin import Ui_MainWindow
+
 from for_UIstyles import Style
 
 from functions_UI_Admin import *
-from functions_UI_Faculty import *
-from functions_UI_Student import *
 
-from functions_App_Admin import *
-from functions_App_Faculty import *
-from functions_App_Student import *
 

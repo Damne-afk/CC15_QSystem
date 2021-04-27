@@ -7,11 +7,19 @@ def returnAppropriateMod():
 
 from functions_UI import *
 
-"""
 class Admin_UIFunctions(UIFunctions):
 
-    ## Extends the addNewMenu method by giving a popup to choose between the 2 users (student or faculty)
-    ## Only for non-admin specific functions (i.e Appointments)
-    def addNewMenu(self, name, objName, icon, isTopMenu):
-        super().addNewMenu(self, name, objName, icon, isTopMenu)
-"""
+## STUDENT_USER FUNCS | START
+#def
+## STUDENT_USER FUNCS | END
+
+## FACULTY_USER FUNCS | START
+    def addSched(self):
+        pass
+
+#self.ui.verticalLayout_fac_avl_scrollArea_contents.addWidget()
+## FACULTY_USER FUNCS | END
+
+## ADMIN_USER FUNCS | START
+#def
+## ADMIN_USER FUNCS | END

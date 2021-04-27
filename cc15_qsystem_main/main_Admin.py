@@ -48,27 +48,22 @@ class MainWindow(QMainWindow):
 
         ## REMOVE ==> STANDARD TITLE BAR
         UIFunctions.removeTitleBar(True)
-        ## ==> END ##
 
         ## SET ==> WINDOW TITLE
         self.setWindowTitle('Main Window - Python Base')
         UIFunctions.labelTitle(self, 'Admin Main Window - Python Base')
         UIFunctions.labelDescription(self, 'Set text')
-        ## ==> END ##
 
         ## WINDOW SIZE ==> DEFAULT SIZE
         startSize = QSize(1440, 810)
         self.resize(startSize)
         self.setMinimumSize(1080, 608)
-        #UIFunctions.enableMaximumSize(self, 500, 720)
-        ## ==> END ##
 
         ## ==> CREATE MENUS
         ########################################################################
 
         ## ==> TOGGLE MENU SIZE
         self.ui.btn_toggle_menu.clicked.connect(lambda: UIFunctions.toggleMenu(self, 240, True))
-        ## ==> END ##
 
         ## ==> ADD CUSTOM MENUS
         self.ui.stackedWidget.setMinimumWidth(20)
@@ -78,21 +73,15 @@ class MainWindow(QMainWindow):
         UIFunctions.addNewMenu(self, "TASKS", "btn_special_services", "url(:/20x20/icons/20x20/cil-task.png)", True)
         UIFunctions.addNewMenu(self, "ROOM RESERVATION", "btn_roomNkey", "url(:/20x20/icons/20x20/cil-tag.png)", True)
         UIFunctions.addNewMenu(self, "CUSTOM WIDGETS", "btn_widgets", "url(:/20x20/icons/20x20/cil-equalizer.png)", False)
-        ## ==> END ##
-
-
 
         # START MENU => SELECTION
         UIFunctions.selectStandardMenu(self, "btn_home")
-        ## ==> END ##
 
         ## ==> START PAGE
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
-        ## ==> END ##
 
         ## USER ICON ==> SHOW HIDE
         UIFunctions.userIcon(self, "WM", "", True)
-        ## ==> END ##
 
 
         ## ==> MOVE WINDOW / MAXIMIZE / RESTORE
@@ -110,12 +99,10 @@ class MainWindow(QMainWindow):
 
         # WIDGET TO MOVE
         self.ui.frame_label_top_btns.mouseMoveEvent = moveWindow
-        ## ==> END ##
 
         ## ==> LOAD DEFINITIONS
         ########################################################################
         UIFunctions.uiDefinitions(self)
-        ## ==> END ##
 
         ########################################################################
         ## END - WINDOW ATTRIBUTES

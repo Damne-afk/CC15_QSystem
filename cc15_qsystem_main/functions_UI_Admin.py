@@ -13,6 +13,7 @@
 ## https://doc.qt.io/qtforpython/licenses.html
 ##
 ###############################################################################
+
 from main_Admin import *
 
 ## ==> GLOBALS
@@ -22,7 +23,7 @@ GLOBAL_TITLE_BAR = True
 ## ==> COUNT INITIAL MENU
 count = 1
 
-class Admin_UIFunctions(MainWindow):
+class UIFunctions(MainWindow):
 
     ## ==> GLOBALS
     GLOBAL_STATE = 0

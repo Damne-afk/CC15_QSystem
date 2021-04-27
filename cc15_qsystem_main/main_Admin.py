@@ -21,8 +21,7 @@ from PyQt5.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime
 from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
 from PyQt5.QtWidgets import *
 
-from for_Appmodules import *
-#from functions_App_Admin import *
+from adminAppModules import *
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -39,42 +38,42 @@ class MainWindow(QMainWindow):
         ########################################################################
 
         ## REMOVE ==> STANDARD TITLE BAR
-        Admin_UIFunctions.removeTitleBar(True)
+        UIFunctions.removeTitleBar(True)
         ## ==> END ##
 
         ## SET ==> WINDOW TITLE
         self.setWindowTitle('Main Window - Python Base')
-        Admin_UIFunctions.labelTitle(self, 'Faculty Main Window - Python Base')
-        Admin_UIFunctions.labelDescription(self, 'Set text')
+        UIFunctions.labelTitle(self, 'Admin Main Window - Python Base')
+        UIFunctions.labelDescription(self, 'Set text')
         ## ==> END ##
 
         ## WINDOW SIZE ==> DEFAULT SIZE
         startSize = QSize(1440, 810)
         self.resize(startSize)
         self.setMinimumSize(1080, 608)
-        #Admin_UIFunctions.enableMaximumSize(self, 500, 720)
+        #UIFunctions.enableMaximumSize(self, 500, 720)
         ## ==> END ##
 
         ## ==> CREATE MENUS
         ########################################################################
 
         ## ==> TOGGLE MENU SIZE
-        self.ui.btn_toggle_menu.clicked.connect(lambda: Admin_UIFunctions.toggleMenu(self, 220, True))
+        self.ui.btn_toggle_menu.clicked.connect(lambda: UIFunctions.toggleMenu(self, 220, True))
         ## ==> END ##
 
         ## ==> ADD CUSTOM MENUS
         self.ui.stackedWidget.setMinimumWidth(20)
-        Admin_UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
-        #Admin_UIFunctions.addNewMenu(self, "Add User", "btn_new_user", "url(:/16x16/icons/16x16/cil-user-follow.png)", True)
-        Admin_UIFunctions.addNewMenu(self, "APPOINTMENTS", "btn_appointments", "url(:/16x16/icons/16x16/cil-calendar-check.png)", True)
-        Admin_UIFunctions.addNewMenu(self, "SPECIAL SERVICES", "btn_special_services", "url(:/16x16/icons/16x16/cil-clipboard.png)", True)
-        Admin_UIFunctions.addNewMenu(self, "ROOM RESERVATION", "btn_roomNkey",
+        UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
+        #UIFunctions.addNewMenu(self, "Add User", "btn_new_user", "url(:/16x16/icons/16x16/cil-user-follow.png)", True)
+        UIFunctions.addNewMenu(self, "APPOINTMENTS", "btn_appointments", "url(:/16x16/icons/16x16/cil-calendar-check.png)", True)
+        UIFunctions.addNewMenu(self, "SPECIAL SERVICES", "btn_special_services", "url(:/16x16/icons/16x16/cil-clipboard.png)", True)
+        UIFunctions.addNewMenu(self, "ROOM RESERVATION", "btn_roomNkey",
                                      "url(:/16x16/icons/16x16/cil-door.png)", True)
-        Admin_UIFunctions.addNewMenu(self, "CUSTOM WIDGETS", "btn_widgets", "url(:/16x16/icons/16x16/cil-equalizer.png)", False)
+        UIFunctions.addNewMenu(self, "CUSTOM WIDGETS", "btn_widgets", "url(:/16x16/icons/16x16/cil-equalizer.png)", False)
         ## ==> END ##
 
         # START MENU => SELECTION
-        Admin_UIFunctions.selectStandardMenu(self, "btn_home")
+        UIFunctions.selectStandardMenu(self, "btn_home")
         ## ==> END ##
 
         ## ==> START PAGE
@@ -82,7 +81,7 @@ class MainWindow(QMainWindow):
         ## ==> END ##
 
         ## USER ICON ==> SHOW HIDE
-        Admin_UIFunctions.userIcon(self, "WM", "", True)
+        UIFunctions.userIcon(self, "WM", "", True)
         ## ==> END ##
 
 
@@ -90,8 +89,8 @@ class MainWindow(QMainWindow):
         ########################################################################
         def moveWindow(event):
             # IF MAXIMIZED CHANGE TO NORMAL
-            if Admin_UIFunctions.returnStatus() == 1:
-                Admin_UIFunctions.maximize_restore(self)
+            if UIFunctions.returnStatus() == 1:
+                UIFunctions.maximize_restore(self)
 
             # MOVE WINDOW
             if event.buttons() == Qt.LeftButton:
@@ -105,7 +104,7 @@ class MainWindow(QMainWindow):
 
         ## ==> LOAD DEFINITIONS
         ########################################################################
-        Admin_UIFunctions.uiDefinitions(self)
+        UIFunctions.uiDefinitions(self)
         ## ==> END ##
 
         ########################################################################
@@ -153,29 +152,29 @@ class MainWindow(QMainWindow):
         # PAGE HOME
         if btnWidget.objectName() == "btn_home":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
-            Admin_UIFunctions.resetStyle(self, "btn_home")
-            Admin_UIFunctions.labelPage(self, "Home")
-            btnWidget.setStyleSheet(Admin_UIFunctions.selectMenu(btnWidget.styleSheet()))
+            UIFunctions.resetStyle(self, "btn_home")
+            UIFunctions.labelPage(self, "Home")
+            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
 
         # PAGE APPOINTMENTS
         if btnWidget.objectName() == "btn_appointments":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_appointments)
-            Admin_UIFunctions.resetStyle(self, "btn_appointments")
-            Admin_UIFunctions.labelPage(self, "Appointments")
-            btnWidget.setStyleSheet(Admin_UIFunctions.selectMenu(btnWidget.styleSheet()))
+            UIFunctions.resetStyle(self, "btn_appointments")
+            UIFunctions.labelPage(self, "Appointments")
+            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
 
         # PAGE SPECIAL SERVICES
         if btnWidget.objectName() == "btn_special_services":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_special_services)
-            Admin_UIFunctions.resetStyle(self, "btn_special_services")
-            Admin_UIFunctions.labelPage(self, "Special Services")
-            btnWidget.setStyleSheet(Admin_UIFunctions.selectMenu(btnWidget.styleSheet()))
+            UIFunctions.resetStyle(self, "btn_special_services")
+            UIFunctions.labelPage(self, "Special Services")
+            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
 
         if btnWidget.objectName() == "btn_roomNkey":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_roomNkey)
-            Admin_UIFunctions.resetStyle(self, "btn_roomNkey")
-            Admin_UIFunctions.labelPage(self, "Special Services")
-            btnWidget.setStyleSheet(Admin_UIFunctions.selectMenu(btnWidget.styleSheet()))
+            UIFunctions.resetStyle(self, "btn_roomNkey")
+            UIFunctions.labelPage(self, "Special Services")
+            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
         """
         ADDITIONAL PAGES HERE
         """
@@ -183,9 +182,9 @@ class MainWindow(QMainWindow):
         # PAGE WIDGETS
         if btnWidget.objectName() == "btn_widgets":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_widgets)
-            Admin_UIFunctions.resetStyle(self, "btn_widgets")
-            Admin_UIFunctions.labelPage(self, "Custom Widgets")
-            btnWidget.setStyleSheet(Admin_UIFunctions.selectMenu(btnWidget.styleSheet()))
+            UIFunctions.resetStyle(self, "btn_widgets")
+            UIFunctions.labelPage(self, "Custom Widgets")
+            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
 
     ## ==> END ##
 

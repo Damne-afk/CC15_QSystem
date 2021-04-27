@@ -14,10 +14,10 @@
 ##
 ################################################################################
 
-from ui_main_Admin import Ui_MainWindow
+from ui_main_Faculty import Ui_MainWindow
 
 from for_UIstyles import Style
 
-from functions_UI_Admin import *
+from functions_UI_Faculty import *
 
 

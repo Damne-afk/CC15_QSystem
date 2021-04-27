@@ -15,15 +15,15 @@
 ##
 ################################################################################
 
-#from PyQt5 import QtWidgets,QtCore,QtGui
+from PyQt5 import QtWidgets, QtCore, QtGui
 from PyQt5.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
-    QRect, QSize, QUrl, Qt)
+                          QRect, QSize, QUrl, Qt)
 from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
-    QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
-    QRadialGradient)
+                         QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
+                         QRadialGradient)
 from PyQt5.QtWidgets import *
-
 import files_rc
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -74,9 +74,9 @@ class Ui_MainWindow(object):
         palette.setBrush(QPalette.Active, QPalette.ToolTipText, brush6)
         brush11 = QBrush(QColor(210, 210, 210, 128))
         brush11.setStyle(Qt.NoBrush)
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        # if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette.setBrush(QPalette.Active, QPalette.PlaceholderText, brush11)
-#endif
+        # endif
         palette.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
         palette.setBrush(QPalette.Inactive, QPalette.Button, brush1)
         palette.setBrush(QPalette.Inactive, QPalette.Light, brush2)
@@ -97,9 +97,9 @@ class Ui_MainWindow(object):
         palette.setBrush(QPalette.Inactive, QPalette.ToolTipText, brush6)
         brush12 = QBrush(QColor(210, 210, 210, 128))
         brush12.setStyle(Qt.NoBrush)
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        # if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette.setBrush(QPalette.Inactive, QPalette.PlaceholderText, brush12)
-#endif
+        # endif
         palette.setBrush(QPalette.Disabled, QPalette.WindowText, brush4)
         palette.setBrush(QPalette.Disabled, QPalette.Button, brush1)
         palette.setBrush(QPalette.Disabled, QPalette.Light, brush2)
@@ -122,25 +122,27 @@ class Ui_MainWindow(object):
         palette.setBrush(QPalette.Disabled, QPalette.ToolTipText, brush6)
         brush14 = QBrush(QColor(210, 210, 210, 128))
         brush14.setStyle(Qt.NoBrush)
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        # if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush14)
-#endif
+        # endif
+
+        ## CENTRAL-STYLE DEFS | START
         MainWindow.setPalette(palette)
         font = QFont()
         font.setFamily(u"Segoe UI")
         font.setPointSize(10)
         MainWindow.setFont(font)
         MainWindow.setStyleSheet(u"QMainWindow {background: transparent; }\n"
-"QToolTip {\n"
-"	color: #ffffff;\n"
-"	background-color: rgba(27, 29, 35, 160);\n"
-"	border: 1px solid rgb(40, 40, 40);\n"
-"	border-radius: 2px;\n"
-"}")
+                                 "QToolTip {\n"
+                                 "	color: #ffffff;\n"
+                                 "	background-color: rgba(27, 29, 35, 160);\n"
+                                 "	border: 1px solid rgb(40, 40, 40);\n"
+                                 "	border-radius: 2px;\n"
+                                 "}")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setStyleSheet(u"background: transparent;\n"
-"color: rgb(210, 210, 210);")
+                                         "color: rgb(210, 210, 210);")
         self.horizontalLayout = QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -148,215 +150,218 @@ class Ui_MainWindow(object):
         self.frame_main = QFrame(self.centralwidget)
         self.frame_main.setObjectName(u"frame_main")
         self.frame_main.setStyleSheet(u"/* LINE EDIT */\n"
-"QLineEdit {\n"
-"	background-color: rgb(27, 29, 35);\n"
-"	border-radius: 5px;\n"
-"	border: 2px solid rgb(27, 29, 35);\n"
-"	padding-left: 10px;\n"
-"}\n"
-"QLineEdit:hover {\n"
-"	border: 2px solid rgb(64, 71, 88);\n"
-"}\n"
-"QLineEdit:focus {\n"
-"	border: 2px solid rgb(91, 101, 124);\n"
-"}\n"
-"\n"
-"/* SCROLL BARS */\n"
-"QScrollBar:horizontal {\n"
-"    border: none;\n"
-"    background: rgb(52, 59, 72);\n"
-"    height: 14px;\n"
-"    margin: 0px 21px 0 21px;\n"
-"	border-radius: 0px;\n"
-"}\n"
-"QScrollBar::handle:horizontal {\n"
-"    background: rgb(85, 170, 255);\n"
-"    min-width: 25px;\n"
-"	border-radius: 7px\n"
-"}\n"
-"QScrollBar::add-line:horizontal {\n"
-"    border: none;\n"
-"    background: rgb(55, 63, 77);\n"
-"    width: 20px;\n"
-"	border-top-right-radius: 7px;\n"
-"    border-bottom-right-radius: 7px;\n"
-"    subcontrol-position: right;\n"
-"    subcontrol-origin: margin;\n"
-"}\n"
-"QScrollBar::sub-line:horizontal {\n"
-"    border: none;\n"
-"    background: rgb(55, 63, 77);\n"
-"    width: 20px;\n"
-""
-"	border-top-left-radius: 7px;\n"
-"    border-bottom-left-radius: 7px;\n"
-"    subcontrol-position: left;\n"
-"    subcontrol-origin: margin;\n"
-"}\n"
-"QScrollBar::up-arrow:horizontal, QScrollBar::down-arrow:horizontal\n"
-"{\n"
-"     background: none;\n"
-"}\n"
-"QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal\n"
-"{\n"
-"     background: none;\n"
-"}\n"
-" QScrollBar:vertical {\n"
-"	border: none;\n"
-"    background: rgb(52, 59, 72);\n"
-"    width: 14px;\n"
-"    margin: 21px 0 21px 0;\n"
-"	border-radius: 0px;\n"
-" }\n"
-" QScrollBar::handle:vertical {	\n"
-"	background: rgb(85, 170, 255);\n"
-"    min-height: 25px;\n"
-"	border-radius: 7px\n"
-" }\n"
-" QScrollBar::add-line:vertical {\n"
-"     border: none;\n"
-"    background: rgb(55, 63, 77);\n"
-"     height: 20px;\n"
-"	border-bottom-left-radius: 7px;\n"
-"    border-bottom-right-radius: 7px;\n"
-"     subcontrol-position: bottom;\n"
-"     subcontrol-origin: margin;\n"
-" }\n"
-" QScrollBar::sub-line:vertical {\n"
-"	border: none;\n"
-"    background: rgb(55, 63"
-                        ", 77);\n"
-"     height: 20px;\n"
-"	border-top-left-radius: 7px;\n"
-"    border-top-right-radius: 7px;\n"
-"     subcontrol-position: top;\n"
-"     subcontrol-origin: margin;\n"
-" }\n"
-" QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {\n"
-"     background: none;\n"
-" }\n"
-"\n"
-" QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {\n"
-"     background: none;\n"
-" }\n"
-"\n"
-"/* CHECKBOX */\n"
-"QCheckBox::indicator {\n"
-"    border: 3px solid rgb(52, 59, 72);\n"
-"	width: 15px;\n"
-"	height: 15px;\n"
-"	border-radius: 10px;\n"
-"    background: rgb(44, 49, 60);\n"
-"}\n"
-"QCheckBox::indicator:hover {\n"
-"    border: 3px solid rgb(58, 66, 81);\n"
-"}\n"
-"QCheckBox::indicator:checked {\n"
-"    background: 3px solid rgb(52, 59, 72);\n"
-"	border: 3px solid rgb(52, 59, 72);	\n"
-"	background-image: url(:/16x16/icons/16x16/cil-check-alt.png);\n"
-"}\n"
-"\n"
-"/* RADIO BUTTON */\n"
-"QRadioButton::indicator {\n"
-"    border: 3px solid rgb(52, 59, 72);\n"
-"	width: 15px;\n"
-"	height: 15px;\n"
-"	border-radius"
-                        ": 10px;\n"
-"    background: rgb(44, 49, 60);\n"
-"}\n"
-"QRadioButton::indicator:hover {\n"
-"    border: 3px solid rgb(58, 66, 81);\n"
-"}\n"
-"QRadioButton::indicator:checked {\n"
-"    background: 3px solid rgb(94, 106, 130);\n"
-"	border: 3px solid rgb(52, 59, 72);	\n"
-"}\n"
-"\n"
-"/* COMBOBOX */\n"
-"QComboBox{\n"
-"	background-color: rgb(27, 29, 35);\n"
-"	border-radius: 5px;\n"
-"	border: 2px solid rgb(27, 29, 35);\n"
-"	padding: 5px;\n"
-"	padding-left: 10px;\n"
-"}\n"
-"QComboBox:hover{\n"
-"	border: 2px solid rgb(64, 71, 88);\n"
-"}\n"
-"QComboBox::drop-down {\n"
-"	subcontrol-origin: padding;\n"
-"	subcontrol-position: top right;\n"
-"	width: 25px; \n"
-"	border-left-width: 3px;\n"
-"	border-left-color: rgba(39, 44, 54, 150);\n"
-"	border-left-style: solid;\n"
-"	border-top-right-radius: 3px;\n"
-"	border-bottom-right-radius: 3px;	\n"
-"	background-image: url(:/16x16/icons/16x16/cil-arrow-bottom.png);\n"
-"	background-position: center;\n"
-"	background-repeat: no-reperat;\n"
-" }\n"
-"QComboBox QAbstractItemView {\n"
-"	color: rgb("
-                        "85, 170, 255);	\n"
-"	background-color: rgb(27, 29, 35);\n"
-"	padding: 10px;\n"
-"	selection-background-color: rgb(39, 44, 54);\n"
-"}\n"
-"\n"
-"/* SLIDERS */\n"
-"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;\n"
-"    height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(52, 59, 72);\n"
-"}\n"
-"QSlider::groove:horizontal:hover {\n"
-"	background-color: rgb(55, 62, 76);\n"
-"}\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}\n"
-"\n"
-"QSlider::groove:vertical {\n"
-"    border-radius: 9px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	background-color: rgb(52, 59, 72);\n"
-"}\n"
-"QSlider::groove:vertical:hover {\n"
-"	background-color: rgb(55, 62, 76);\n"
-"}\n"
-"QSlider::handle:verti"
-                        "cal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"	border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:vertical:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:vertical:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}\n"
-"\n"
-"")
+                                      "QLineEdit {\n"
+                                      "	background-color: rgb(27, 29, 35);\n"
+                                      "	border-radius: 5px;\n"
+                                      "	border: 2px solid rgb(27, 29, 35);\n"
+                                      "	padding-left: 10px;\n"
+                                      "}\n"
+                                      "QLineEdit:hover {\n"
+                                      "	border: 2px solid rgb(64, 71, 88);\n"
+                                      "}\n"
+                                      "QLineEdit:focus {\n"
+                                      "	border: 2px solid rgb(91, 101, 124);\n"
+                                      "}\n"
+                                      "\n"
+                                      "/* SCROLL BARS */\n"
+                                      "QScrollBar:horizontal {\n"
+                                      "    border: none;\n"
+                                      "    background: rgb(52, 59, 72);\n"
+                                      "    height: 14px;\n"
+                                      "    margin: 0px 21px 0 21px;\n"
+                                      "	border-radius: 0px;\n"
+                                      "}\n"
+                                      "QScrollBar::handle:horizontal {\n"
+                                      "    background: rgb(85, 170, 255);\n"
+                                      "    min-width: 25px;\n"
+                                      "	border-radius: 7px\n"
+                                      "}\n"
+                                      "QScrollBar::add-line:horizontal {\n"
+                                      "    border: none;\n"
+                                      "    background: rgb(55, 63, 77);\n"
+                                      "    width: 20px;\n"
+                                      "	border-top-right-radius: 7px;\n"
+                                      "    border-bottom-right-radius: 7px;\n"
+                                      "    subcontrol-position: right;\n"
+                                      "    subcontrol-origin: margin;\n"
+                                      "}\n"
+                                      "QScrollBar::sub-line:horizontal {\n"
+                                      "    border: none;\n"
+                                      "    background: rgb(55, 63, 77);\n"
+                                      "    width: 20px;\n"
+                                      ""
+                                      "	border-top-left-radius: 7px;\n"
+                                      "    border-bottom-left-radius: 7px;\n"
+                                      "    subcontrol-position: left;\n"
+                                      "    subcontrol-origin: margin;\n"
+                                      "}\n"
+                                      "QScrollBar::up-arrow:horizontal, QScrollBar::down-arrow:horizontal\n"
+                                      "{\n"
+                                      "     background: none;\n"
+                                      "}\n"
+                                      "QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal\n"
+                                      "{\n"
+                                      "     background: none;\n"
+                                      "}\n"
+                                      " QScrollBar:vertical {\n"
+                                      "	border: none;\n"
+                                      "    background: rgb(52, 59, 72);\n"
+                                      "    width: 14px;\n"
+                                      "    margin: 21px 0 21px 0;\n"
+                                      "	border-radius: 0px;\n"
+                                      " }\n"
+                                      " QScrollBar::handle:vertical {	\n"
+                                      "	background: rgb(85, 170, 255);\n"
+                                      "    min-height: 25px;\n"
+                                      "	border-radius: 7px\n"
+                                      " }\n"
+                                      " QScrollBar::add-line:vertical {\n"
+                                      "     border: none;\n"
+                                      "    background: rgb(55, 63, 77);\n"
+                                      "     height: 20px;\n"
+                                      "	border-bottom-left-radius: 7px;\n"
+                                      "    border-bottom-right-radius: 7px;\n"
+                                      "     subcontrol-position: bottom;\n"
+                                      "     subcontrol-origin: margin;\n"
+                                      " }\n"
+                                      " QScrollBar::sub-line:vertical {\n"
+                                      "	border: none;\n"
+                                      "    background: rgb(55, 63"
+                                      ", 77);\n"
+                                      "     height: 20px;\n"
+                                      "	border-top-left-radius: 7px;\n"
+                                      "    border-top-right-radius: 7px;\n"
+                                      "     subcontrol-position: top;\n"
+                                      "     subcontrol-origin: margin;\n"
+                                      " }\n"
+                                      " QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {\n"
+                                      "     background: none;\n"
+                                      " }\n"
+                                      "\n"
+                                      " QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {\n"
+                                      "     background: none;\n"
+                                      " }\n"
+                                      "\n"
+                                      "/* CHECKBOX */\n"
+                                      "QCheckBox::indicator {\n"
+                                      "    border: 3px solid rgb(52, 59, 72);\n"
+                                      "	width: 15px;\n"
+                                      "	height: 15px;\n"
+                                      "	border-radius: 10px;\n"
+                                      "    background: rgb(44, 49, 60);\n"
+                                      "}\n"
+                                      "QCheckBox::indicator:hover {\n"
+                                      "    border: 3px solid rgb(58, 66, 81);\n"
+                                      "}\n"
+                                      "QCheckBox::indicator:checked {\n"
+                                      "    background: 3px solid rgb(52, 59, 72);\n"
+                                      "	border: 3px solid rgb(52, 59, 72);	\n"
+                                      "	background-image: url(:/16x16/icons/16x16/cil-check-alt.png);\n"
+                                      "}\n"
+                                      "\n"
+                                      "/* RADIO BUTTON */\n"
+                                      "QRadioButton::indicator {\n"
+                                      "    border: 3px solid rgb(52, 59, 72);\n"
+                                      "	width: 15px;\n"
+                                      "	height: 15px;\n"
+                                      "	border-radius"
+                                      ": 10px;\n"
+                                      "    background: rgb(44, 49, 60);\n"
+                                      "}\n"
+                                      "QRadioButton::indicator:hover {\n"
+                                      "    border: 3px solid rgb(58, 66, 81);\n"
+                                      "}\n"
+                                      "QRadioButton::indicator:checked {\n"
+                                      "    background: 3px solid rgb(94, 106, 130);\n"
+                                      "	border: 3px solid rgb(52, 59, 72);	\n"
+                                      "}\n"
+                                      "\n"
+                                      "/* COMBOBOX */\n"
+                                      "QComboBox{\n"
+                                      "	background-color: rgb(27, 29, 35);\n"
+                                      "	border-radius: 5px;\n"
+                                      "	border: 2px solid rgb(27, 29, 35);\n"
+                                      "	padding: 5px;\n"
+                                      "	padding-left: 10px;\n"
+                                      "}\n"
+                                      "QComboBox:hover{\n"
+                                      "	border: 2px solid rgb(64, 71, 88);\n"
+                                      "}\n"
+                                      "QComboBox::drop-down {\n"
+                                      "	subcontrol-origin: padding;\n"
+                                      "	subcontrol-position: top right;\n"
+                                      "	width: 25px; \n"
+                                      "	border-left-width: 3px;\n"
+                                      "	border-left-color: rgba(39, 44, 54, 150);\n"
+                                      "	border-left-style: solid;\n"
+                                      "	border-top-right-radius: 3px;\n"
+                                      "	border-bottom-right-radius: 3px;	\n"
+                                      "	background-image: url(:/16x16/icons/16x16/cil-arrow-bottom.png);\n"
+                                      "	background-position: center;\n"
+                                      "	background-repeat: no-reperat;\n"
+                                      " }\n"
+                                      "QComboBox QAbstractItemView {\n"
+                                      "	color: rgb("
+                                      "85, 170, 255);	\n"
+                                      "	background-color: rgb(27, 29, 35);\n"
+                                      "	padding: 10px;\n"
+                                      "	selection-background-color: rgb(39, 44, 54);\n"
+                                      "}\n"
+                                      "\n"
+                                      "/* SLIDERS */\n"
+                                      "QSlider::groove:horizontal {\n"
+                                      "    border-radius: 9px;\n"
+                                      "    height: 18px;\n"
+                                      "	margin: 0px;\n"
+                                      "	background-color: rgb(52, 59, 72);\n"
+                                      "}\n"
+                                      "QSlider::groove:horizontal:hover {\n"
+                                      "	background-color: rgb(55, 62, 76);\n"
+                                      "}\n"
+                                      "QSlider::handle:horizontal {\n"
+                                      "    background-color: rgb(85, 170, 255);\n"
+                                      "    border: none;\n"
+                                      "    height: 18px;\n"
+                                      "    width: 18px;\n"
+                                      "    margin: 0px;\n"
+                                      "	border-radius: 9px;\n"
+                                      "}\n"
+                                      "QSlider::handle:horizontal:hover {\n"
+                                      "    background-color: rgb(105, 180, 255);\n"
+                                      "}\n"
+                                      "QSlider::handle:horizontal:pressed {\n"
+                                      "    background-color: rgb(65, 130, 195);\n"
+                                      "}\n"
+                                      "\n"
+                                      "QSlider::groove:vertical {\n"
+                                      "    border-radius: 9px;\n"
+                                      "    width: 18px;\n"
+                                      "    margin: 0px;\n"
+                                      "	background-color: rgb(52, 59, 72);\n"
+                                      "}\n"
+                                      "QSlider::groove:vertical:hover {\n"
+                                      "	background-color: rgb(55, 62, 76);\n"
+                                      "}\n"
+                                      "QSlider::handle:verti"
+                                      "cal {\n"
+                                      "    background-color: rgb(85, 170, 255);\n"
+                                      "	border: none;\n"
+                                      "    height: 18px;\n"
+                                      "    width: 18px;\n"
+                                      "    margin: 0px;\n"
+                                      "	border-radius: 9px;\n"
+                                      "}\n"
+                                      "QSlider::handle:vertical:hover {\n"
+                                      "    background-color: rgb(105, 180, 255);\n"
+                                      "}\n"
+                                      "QSlider::handle:vertical:pressed {\n"
+                                      "    background-color: rgb(65, 130, 195);\n"
+                                      "}\n"
+                                      "\n"
+                                      "")
+        ## CENTRAL-STYLE DEFS | END
+
+        ## TOGGLE MENU DEFS | START
         self.frame_main.setFrameShape(QFrame.NoFrame)
         self.frame_main.setFrameShadow(QFrame.Raised)
         self.verticalLayout = QVBoxLayout(self.frame_main)
@@ -392,22 +397,24 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.btn_toggle_menu.sizePolicy().hasHeightForWidth())
         self.btn_toggle_menu.setSizePolicy(sizePolicy)
         self.btn_toggle_menu.setStyleSheet(u"QPushButton {\n"
-"	background-image: url(:/24x24/icons/24x24/cil-menu.png);\n"
-"	background-position: center;\n"
-"	background-repeat: no-repeat;\n"
-"	border: none;\n"
-"	background-color: rgb(37, 39, 77);\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(48, 51, 102);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                           "	background-image: url(:/24x24/icons/24x24/cil-menu.png);\n"
+                                           "	background-position: center;\n"
+                                           "	background-repeat: no-repeat;\n"
+                                           "	border: none;\n"
+                                           "	background-color: rgb(37, 39, 77);\n"
+                                           "}\n"
+                                           "QPushButton:hover {\n"
+                                           "	background-color: rgb(48, 51, 102);\n"
+                                           "}\n"
+                                           "QPushButton:pressed {	\n"
+                                           "	background-color: rgb(85, 170, 255);\n"
+                                           "}")
 
         self.verticalLayout_3.addWidget(self.btn_toggle_menu)
         self.horizontalLayout_3.addWidget(self.frame_toggle)
+        ## TOGGLE MENU DEFS | END
 
+        ## TOP FRAME DEFS | START
         self.frame_top_right = QFrame(self.frame_top)
         self.frame_top_right.setObjectName(u"frame_top_right")
         self.frame_top_right.setStyleSheet(u"background: transparent;")
@@ -444,10 +451,10 @@ class Ui_MainWindow(object):
         self.frame_icon_top_bar.setObjectName(u"frame_icon_top_bar")
         self.frame_icon_top_bar.setMaximumSize(QSize(30, 30))
         self.frame_icon_top_bar.setStyleSheet(u"background: transparent;\n"
-"background-image: url(:/16x16/icons/16x16/cil-terminal.png);\n"
-"background-position: center;\n"
-"background-repeat: no-repeat;\n"
-"")
+                                              "background-image: url(:/16x16/icons/16x16/cil-terminal.png);\n"
+                                              "background-position: center;\n"
+                                              "background-repeat: no-repeat;\n"
+                                              "")
         self.frame_icon_top_bar.setFrameShape(QFrame.StyledPanel)
         self.frame_icon_top_bar.setFrameShadow(QFrame.Raised)
 
@@ -462,10 +469,9 @@ class Ui_MainWindow(object):
         font1.setWeight(75)
         self.label_title_bar_top.setFont(font1)
         self.label_title_bar_top.setStyleSheet(u"background: transparent;\n"
-"")
+                                               "")
 
         self.horizontalLayout_10.addWidget(self.label_title_bar_top)
-
 
         self.horizontalLayout_4.addWidget(self.frame_label_top_btns)
 
@@ -490,15 +496,15 @@ class Ui_MainWindow(object):
         self.btn_minimize.setMinimumSize(QSize(40, 0))
         self.btn_minimize.setMaximumSize(QSize(40, 16777215))
         self.btn_minimize.setStyleSheet(u"QPushButton {	\n"
-"	border: none;\n"
-"	background-color: transparent;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(48, 51, 102);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                        "	border: none;\n"
+                                        "	background-color: transparent;\n"
+                                        "}\n"
+                                        "QPushButton:hover {\n"
+                                        "	background-color: rgb(48, 51, 102);\n"
+                                        "}\n"
+                                        "QPushButton:pressed {	\n"
+                                        "	background-color: rgb(85, 170, 255);\n"
+                                        "}")
         icon = QIcon()
         icon.addFile(u":/16x16/icons/16x16/cil-window-minimize.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_minimize.setIcon(icon)
@@ -512,15 +518,15 @@ class Ui_MainWindow(object):
         self.btn_maximize_restore.setMinimumSize(QSize(40, 0))
         self.btn_maximize_restore.setMaximumSize(QSize(40, 16777215))
         self.btn_maximize_restore.setStyleSheet(u"QPushButton {	\n"
-"	border: none;\n"
-"	background-color: transparent;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(48, 51, 102);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                                "	border: none;\n"
+                                                "	background-color: transparent;\n"
+                                                "}\n"
+                                                "QPushButton:hover {\n"
+                                                "	background-color: rgb(48, 51, 102);\n"
+                                                "}\n"
+                                                "QPushButton:pressed {	\n"
+                                                "	background-color: rgb(85, 170, 255);\n"
+                                                "}")
         icon1 = QIcon()
         icon1.addFile(u":/16x16/icons/16x16/cil-window-maximize.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_maximize_restore.setIcon(icon1)
@@ -534,24 +540,22 @@ class Ui_MainWindow(object):
         self.btn_close.setMinimumSize(QSize(40, 0))
         self.btn_close.setMaximumSize(QSize(40, 16777215))
         self.btn_close.setStyleSheet(u"QPushButton {	\n"
-"	border: none;\n"
-"	background-color: transparent;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(48, 51, 102);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                     "	border: none;\n"
+                                     "	background-color: transparent;\n"
+                                     "}\n"
+                                     "QPushButton:hover {\n"
+                                     "	background-color: rgb(48, 51, 102);\n"
+                                     "}\n"
+                                     "QPushButton:pressed {	\n"
+                                     "	background-color: rgb(85, 170, 255);\n"
+                                     "}")
         icon2 = QIcon()
         icon2.addFile(u":/16x16/icons/16x16/cil-x.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_close.setIcon(icon2)
 
         self.horizontalLayout_5.addWidget(self.btn_close)
 
-
         self.horizontalLayout_4.addWidget(self.frame_btns_right, 0, Qt.AlignRight)
-
 
         self.verticalLayout_2.addWidget(self.frame_top_btns)
 
@@ -585,19 +589,18 @@ class Ui_MainWindow(object):
         font3.setWeight(75)
         self.label_top_info_2.setFont(font3)
         self.label_top_info_2.setStyleSheet(u"color: rgb(98, 103, 111);")
-        self.label_top_info_2.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.label_top_info_2.setAlignment(Qt.AlignRight | Qt.AlignTrailing | Qt.AlignVCenter)
 
         self.horizontalLayout_8.addWidget(self.label_top_info_2)
 
-
         self.verticalLayout_2.addWidget(self.frame_top_info)
-
 
         self.horizontalLayout_3.addWidget(self.frame_top_right)
 
-
         self.verticalLayout.addWidget(self.frame_top)
+        ## TOP FRAME DEFS | END
 
+        ## CENTER FRAME DEFS | START
         self.frame_center = QFrame(self.frame_main)
         self.frame_center.setObjectName(u"frame_center")
         sizePolicy.setHeightForWidth(self.frame_center.sizePolicy().hasHeightForWidth())
@@ -661,19 +664,17 @@ class Ui_MainWindow(object):
         font4.setPointSize(12)
         self.label_user_icon.setFont(font4)
         self.label_user_icon.setStyleSheet(u"QLabel {\n"
-"	border-radius: 30px;\n"
-"	background-color: rgb(44, 49, 60);\n"
-"	border: 5px solid rgb(39, 44, 54);\n"
-"	background-position: center;\n"
-"	background-repeat: no-repeat;\n"
-"}")
+                                           "	border-radius: 30px;\n"
+                                           "	background-color: rgb(44, 49, 60);\n"
+                                           "	border: 5px solid rgb(39, 44, 54);\n"
+                                           "	background-position: center;\n"
+                                           "	background-repeat: no-repeat;\n"
+                                           "}")
         self.label_user_icon.setAlignment(Qt.AlignCenter)
 
         self.layout_menu_bottom.addWidget(self.label_user_icon, 0, Qt.AlignHCenter)
 
-
         self.verticalLayout_5.addWidget(self.frame_extra_menus, 0, Qt.AlignBottom)
-
 
         self.horizontalLayout_2.addWidget(self.frame_left_menu)
 
@@ -682,23 +683,28 @@ class Ui_MainWindow(object):
         self.frame_content_right.setStyleSheet(u"background-color: rgb(70, 72, 102);")
         self.frame_content_right.setFrameShape(QFrame.NoFrame)
         self.frame_content_right.setFrameShadow(QFrame.Raised)
+
         self.verticalLayout_4 = QVBoxLayout(self.frame_content_right)
         self.verticalLayout_4.setSpacing(0)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+
         self.frame_content = QFrame(self.frame_content_right)
         self.frame_content.setObjectName(u"frame_content")
         self.frame_content.setFrameShape(QFrame.NoFrame)
         self.frame_content.setFrameShadow(QFrame.Raised)
+
         self.verticalLayout_9 = QVBoxLayout(self.frame_content)
         self.verticalLayout_9.setSpacing(0)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
         self.verticalLayout_9.setContentsMargins(5, 5, 5, 5)
+        ## CENTER FRAME DEFS | END
+
         self.stackedWidget = QStackedWidget(self.frame_content)
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.stackedWidget.setStyleSheet(u"background: transparent;")
 
-## HOME_PAGE | START
+        # HOME_PAGE | ~START~
         self.page_home = QWidget()
         self.page_home.setObjectName(u"page_home")
         self.verticalLayout_10 = QVBoxLayout(self.page_home)
@@ -711,7 +717,9 @@ class Ui_MainWindow(object):
         self.label_6.setFont(font5)
         self.label_6.setStyleSheet(u"")
         self.label_6.setAlignment(Qt.AlignCenter)
+
         self.verticalLayout_10.addWidget(self.label_6)
+
         self.label = QLabel(self.page_home)
         self.label.setObjectName(u"label")
         font6 = QFont()
@@ -719,7 +727,9 @@ class Ui_MainWindow(object):
         font6.setPointSize(14)
         self.label.setFont(font6)
         self.label.setAlignment(Qt.AlignCenter)
+
         self.verticalLayout_10.addWidget(self.label)
+
         self.label_7 = QLabel(self.page_home)
         self.label_7.setObjectName(u"label_7")
         font7 = QFont()
@@ -727,27 +737,45 @@ class Ui_MainWindow(object):
         font7.setPointSize(15)
         self.label_7.setFont(font7)
         self.label_7.setAlignment(Qt.AlignCenter)
+
         self.verticalLayout_10.addWidget(self.label_7)
-## HOME_PAGE | END
 
+        self.stackedWidget.addWidget(self.page_home)
+        # HOME_PAGE | ~END~
 
-## APPOINTMENTS_PAGE | START
         self.page_appointments = QWidget()
-        self.page_appointments.setObjectName("page_appointments")
-        self.verticalLayout_page_appointments = QVBoxLayout(self.page_appointments)
-        self.verticalLayout_page_appointments.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_page_appointments.setSpacing(0)
-        self.verticalLayout_page_appointments.setObjectName("verticalLayout_page_appointments")
-        self.stackedWidget_appointments = QStackedWidget(self.page_appointments)
+        self.page_appointments.setObjectName(u"page_appointments")
+        self.verticalLayout_10_appt = QVBoxLayout(self.page_appointments)
+        self.verticalLayout_10_appt.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_10_appt.setSpacing(0)
+        self.verticalLayout_10_appt.setObjectName(u"verticalLayout_10_appt")
+
+        self.stackedWidget_appointments = QtWidgets.QStackedWidget(self.page_appointments)
         self.stackedWidget_appointments.setObjectName("stackedWidget_appointments")
-        self.page_student_appnt = QWidget()
+
+        self.page_appointments_changeUserF = QFrame(self.page_appointments)
+        self.page_appointments_changeUserF.setObjectName(u"page_appointments_changeUserF")
+        self.horizontalLayout_page_appointments_changeUserF = QHBoxLayout(self.page_appointments_changeUserF)
+        self.horizontalLayout_page_appointments_changeUserF.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_page_appointments_changeUserF.setSpacing(0)
+        self.horizontalLayout_page_appointments_changeUserF.setObjectName(
+            u"self.horizontalLayout_page_appointments_changeUserF")
+
+        self.page_appointments_changeUserButton = QPushButton()
+
+        self.page_appointments_changeUserButton.setObjectName(u'page_appointments_changeUserButton')
+        self.page_appointments_changeUserButton.setFixedSize(20, 12)
+        self.horizontalLayout_page_appointments_changeUserF.addWidget(self.page_appointments_changeUserButton)
+
+        ## APPOINTMENTS_PAGE - STUDENT | START
+        self.page_student_appnt = QtWidgets.QWidget()
         self.page_student_appnt.setStyleSheet("")
         self.page_student_appnt.setObjectName("page_student_appnt")
-        self.verticalLayout_page_student_appnt = QVBoxLayout(self.page_student_appnt)
+        self.verticalLayout_page_student_appnt = QtWidgets.QVBoxLayout(self.page_student_appnt)
         self.verticalLayout_page_student_appnt.setContentsMargins(0, 6, 0, 0)
         self.verticalLayout_page_student_appnt.setSpacing(0)
         self.verticalLayout_page_student_appnt.setObjectName("verticalLayout_page_student_appnt")
-        self.tabWidget_student_appnt = QTabWidget(self.page_student_appnt)
+        self.tabWidget_student_appnt = QtWidgets.QTabWidget(self.page_student_appnt)
         self.tabWidget_student_appnt.setStyleSheet("\n"
                                                    "QTabWidget::pane { /* The tab widget frame */\n"
                                                    "border:0\n"
@@ -787,24 +815,24 @@ class Ui_MainWindow(object):
                                                    "}")
         self.tabWidget_student_appnt.setTabBarAutoHide(False)
         self.tabWidget_student_appnt.setObjectName("tabWidget_student_appnt")
-        self.student_appnt_main = QWidget()
+        self.student_appnt_main = QtWidgets.QWidget()
         self.student_appnt_main.setObjectName("student_appnt_main")
-        self.verticalLayout_student_appnt_main = QVBoxLayout(self.student_appnt_main)
+        self.verticalLayout_student_appnt_main = QtWidgets.QVBoxLayout(self.student_appnt_main)
         self.verticalLayout_student_appnt_main.setContentsMargins(12, 8, 12, 12)
         self.verticalLayout_student_appnt_main.setSpacing(0)
         self.verticalLayout_student_appnt_main.setObjectName("verticalLayout_student_appnt_main")
-        self.student_appnt_main_topF = QFrame(self.student_appnt_main)
+        self.student_appnt_main_topF = QtWidgets.QFrame(self.student_appnt_main)
         self.student_appnt_main_topF.setStyleSheet("QFrame{\n"
                                                    "border: 0\n"
                                                    "}")
-        self.student_appnt_main_topF.setFrameShape(QFrame.StyledPanel)
-        self.student_appnt_main_topF.setFrameShadow(QFrame.Raised)
+        self.student_appnt_main_topF.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.student_appnt_main_topF.setFrameShadow(QtWidgets.QFrame.Raised)
         self.student_appnt_main_topF.setObjectName("student_appnt_main_topF")
-        self.horizontalLayout_student_appnt_main_topF = QHBoxLayout(self.student_appnt_main_topF)
+        self.horizontalLayout_student_appnt_main_topF = QtWidgets.QHBoxLayout(self.student_appnt_main_topF)
         self.horizontalLayout_student_appnt_main_topF.setContentsMargins(10, 8, 10, 4)
         self.horizontalLayout_student_appnt_main_topF.setSpacing(26)
         self.horizontalLayout_student_appnt_main_topF.setObjectName("horizontalLayout_student_appnt_main_topF")
-        self.profile_frame = QFrame(self.student_appnt_main_topF)
+        self.profile_frame = QtWidgets.QFrame(self.student_appnt_main_topF)
         self.profile_frame.setStyleSheet("QFrame{\n"
                                          "border: 1px solid #69cdff;\n"
                                          "}\n"
@@ -814,59 +842,59 @@ class Ui_MainWindow(object):
                                          "background-color: rgb(248, 248, 248);\n"
                                          "font-size: 12pt;\n"
                                          "}")
-        self.profile_frame.setFrameShape(QFrame.StyledPanel)
-        self.profile_frame.setFrameShadow(QFrame.Raised)
+        self.profile_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.profile_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.profile_frame.setObjectName("profile_frame")
-        self.verticalLayout_profile_frame = QVBoxLayout(self.profile_frame)
+        self.verticalLayout_profile_frame = QtWidgets.QVBoxLayout(self.profile_frame)
         self.verticalLayout_profile_frame.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_profile_frame.setSpacing(4)
         self.verticalLayout_profile_frame.setObjectName("verticalLayout_profile_frame")
-        self.profile_frame_top = QFrame(self.profile_frame)
+        self.profile_frame_top = QtWidgets.QFrame(self.profile_frame)
         self.profile_frame_top.setStyleSheet("QFrame{\n"
                                              "border:0;\n"
                                              "}\n"
                                              "\n"
                                              "QWidget{\n"
-                                             "font-size: 15pt;\n"
+                                             "font-size: 13pt;\n"
                                              "}")
-        self.profile_frame_top.setFrameShape(QFrame.StyledPanel)
-        self.profile_frame_top.setFrameShadow(QFrame.Raised)
+        self.profile_frame_top.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.profile_frame_top.setFrameShadow(QtWidgets.QFrame.Raised)
         self.profile_frame_top.setObjectName("profile_frame_top")
-        self.verticalLayout_profile_frame_top = QVBoxLayout(self.profile_frame_top)
+        self.verticalLayout_profile_frame_top = QtWidgets.QVBoxLayout(self.profile_frame_top)
         self.verticalLayout_profile_frame_top.setContentsMargins(10, 10, 10, 10)
         self.verticalLayout_profile_frame_top.setSpacing(6)
         self.verticalLayout_profile_frame_top.setObjectName("verticalLayout_profile_frame_top")
-        self.info_frame_top = QFrame(self.profile_frame_top)
-        self.info_frame_top.setFrameShape(QFrame.StyledPanel)
-        self.info_frame_top.setFrameShadow(QFrame.Raised)
+        self.info_frame_top = QtWidgets.QFrame(self.profile_frame_top)
+        self.info_frame_top.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.info_frame_top.setFrameShadow(QtWidgets.QFrame.Raised)
         self.info_frame_top.setObjectName("info_frame_top")
-        self.verticalLayout_info_frame_top = QVBoxLayout(self.info_frame_top)
+        self.verticalLayout_info_frame_top = QtWidgets.QVBoxLayout(self.info_frame_top)
         self.verticalLayout_info_frame_top.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_info_frame_top.setSpacing(4)
         self.verticalLayout_info_frame_top.setObjectName("verticalLayout_info_frame_top")
-        self.info_frame_top_image = QFrame(self.info_frame_top)
-        self.info_frame_top_image.setFrameShape(QFrame.StyledPanel)
-        self.info_frame_top_image.setFrameShadow(QFrame.Raised)
+        self.info_frame_top_image = QtWidgets.QFrame(self.info_frame_top)
+        self.info_frame_top_image.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.info_frame_top_image.setFrameShadow(QtWidgets.QFrame.Raised)
         self.info_frame_top_image.setObjectName("info_frame_top_image")
-        self.verticalLayout_info_frame_top_image = QVBoxLayout(self.info_frame_top_image)
+        self.verticalLayout_info_frame_top_image = QtWidgets.QVBoxLayout(self.info_frame_top_image)
         self.verticalLayout_info_frame_top_image.setContentsMargins(30, 4, 30, 4)
         self.verticalLayout_info_frame_top_image.setSpacing(0)
         self.verticalLayout_info_frame_top_image.setObjectName("verticalLayout_info_frame_top_image")
-        self.image_faculty_studSide = QLabel(self.info_frame_top_image)
+        self.image_faculty_studSide = QtWidgets.QLabel(self.info_frame_top_image)
         self.image_faculty_studSide.setObjectName("image_faculty_studSide")
         self.verticalLayout_info_frame_top_image.addWidget(self.image_faculty_studSide)
         self.verticalLayout_info_frame_top.addWidget(self.info_frame_top_image)
-        self.info_frame_top_pickFac = QFrame(self.info_frame_top)
-        self.info_frame_top_pickFac.setFrameShape(QFrame.StyledPanel)
-        self.info_frame_top_pickFac.setFrameShadow(QFrame.Raised)
+        self.info_frame_top_pickFac = QtWidgets.QFrame(self.info_frame_top)
+        self.info_frame_top_pickFac.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.info_frame_top_pickFac.setFrameShadow(QtWidgets.QFrame.Raised)
         self.info_frame_top_pickFac.setObjectName("info_frame_top_pickFac")
-        self.horizontalLayout_info_frame_top_pickFac = QHBoxLayout(self.info_frame_top_pickFac)
+        self.horizontalLayout_info_frame_top_pickFac = QtWidgets.QHBoxLayout(self.info_frame_top_pickFac)
         self.horizontalLayout_info_frame_top_pickFac.setSpacing(14)
         self.horizontalLayout_info_frame_top_pickFac.setObjectName("horizontalLayout_info_frame_top_pickFac")
-        self.comboBox_pick_facultyDept = QComboBox(self.info_frame_top_pickFac)
+        self.comboBox_pick_facultyDept = QtWidgets.QComboBox(self.info_frame_top_pickFac)
         self.comboBox_pick_facultyDept.setObjectName("comboBox_pick_facultyDept")
         self.horizontalLayout_info_frame_top_pickFac.addWidget(self.comboBox_pick_facultyDept)
-        self.pick_faculty_studSide = QComboBox(self.info_frame_top_pickFac)
+        self.pick_faculty_studSide = QtWidgets.QComboBox(self.info_frame_top_pickFac)
         self.pick_faculty_studSide.setObjectName("pick_faculty_studSide")
         self.horizontalLayout_info_frame_top_pickFac.addWidget(self.pick_faculty_studSide)
         self.horizontalLayout_info_frame_top_pickFac.setStretch(0, 2)
@@ -875,32 +903,32 @@ class Ui_MainWindow(object):
         self.verticalLayout_info_frame_top.setStretch(0, 3)
         self.verticalLayout_info_frame_top.setStretch(1, 1)
         self.verticalLayout_profile_frame_top.addWidget(self.info_frame_top)
-        self.info_frame_bot = QFrame(self.profile_frame_top)
-        self.info_frame_bot.setFrameShape(QFrame.StyledPanel)
-        self.info_frame_bot.setFrameShadow(QFrame.Raised)
+        self.info_frame_bot = QtWidgets.QFrame(self.profile_frame_top)
+        self.info_frame_bot.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.info_frame_bot.setFrameShadow(QtWidgets.QFrame.Raised)
         self.info_frame_bot.setObjectName("info_frame_bot")
-        self.verticalLayout_info_frame_bot = QVBoxLayout(self.info_frame_bot)
+        self.verticalLayout_info_frame_bot = QtWidgets.QVBoxLayout(self.info_frame_bot)
         self.verticalLayout_info_frame_bot.setObjectName("verticalLayout_info_frame_bot")
-        self.availability_details = QLabel(self.info_frame_bot)
+        self.availability_details = QtWidgets.QLabel(self.info_frame_bot)
         self.availability_details.setObjectName("availability_details")
         self.verticalLayout_info_frame_bot.addWidget(self.availability_details)
         self.verticalLayout_profile_frame_top.addWidget(self.info_frame_bot)
         self.verticalLayout_profile_frame_top.setStretch(0, 5)
         self.verticalLayout_profile_frame_top.setStretch(1, 4)
         self.verticalLayout_profile_frame.addWidget(self.profile_frame_top)
-        self.profile_frame_bot = QFrame(self.profile_frame)
+        self.profile_frame_bot = QtWidgets.QFrame(self.profile_frame)
         self.profile_frame_bot.setStyleSheet("QFrame{\n"
                                              "border:0\n"
                                              "}")
-        self.profile_frame_bot.setFrameShape(QFrame.StyledPanel)
-        self.profile_frame_bot.setFrameShadow(QFrame.Raised)
+        self.profile_frame_bot.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.profile_frame_bot.setFrameShadow(QtWidgets.QFrame.Raised)
         self.profile_frame_bot.setObjectName("profile_frame_bot")
-        self.horizontalLayout_profile_frame_bot = QHBoxLayout(self.profile_frame_bot)
+        self.horizontalLayout_profile_frame_bot = QtWidgets.QHBoxLayout(self.profile_frame_bot)
         self.horizontalLayout_profile_frame_bot.setContentsMargins(90, 2, 90, 7)
         self.horizontalLayout_profile_frame_bot.setSpacing(0)
         self.horizontalLayout_profile_frame_bot.setObjectName("horizontalLayout_profile_frame_bot")
-        self.setApp_button = QPushButton(self.profile_frame_bot)
-        self.setApp_button.setMaximumSize(QSize(16777215, 24))
+        self.setApp_button = QtWidgets.QPushButton(self.profile_frame_bot)
+        self.setApp_button.setMaximumSize(QtCore.QSize(16777215, 24))
         self.setApp_button.setStyleSheet("")
         self.setApp_button.setFlat(False)
         self.setApp_button.setObjectName("setApp_button")
@@ -909,42 +937,42 @@ class Ui_MainWindow(object):
         self.verticalLayout_profile_frame.setStretch(0, 10)
         self.verticalLayout_profile_frame.setStretch(1, 1)
         self.horizontalLayout_student_appnt_main_topF.addWidget(self.profile_frame)
-        self.student_calendar_frame = QFrame(self.student_appnt_main_topF)
+        self.student_calendar_frame = QtWidgets.QFrame(self.student_appnt_main_topF)
         self.student_calendar_frame.setStyleSheet("QFrame{\n"
                                                   "border: 1px solid #69cdff;\n"
                                                   "background-color: rgb(248, 248, 248);\n"
                                                   "}")
-        self.student_calendar_frame.setFrameShape(QFrame.StyledPanel)
-        self.student_calendar_frame.setFrameShadow(QFrame.Raised)
+        self.student_calendar_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.student_calendar_frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.student_calendar_frame.setObjectName("student_calendar_frame")
-        self.verticalLayout_calendar_frame = QVBoxLayout(self.student_calendar_frame)
+        self.verticalLayout_calendar_frame = QtWidgets.QVBoxLayout(self.student_calendar_frame)
         self.verticalLayout_calendar_frame.setContentsMargins(18, 18, 18, 18)
         self.verticalLayout_calendar_frame.setSpacing(0)
         self.verticalLayout_calendar_frame.setObjectName("verticalLayout_calendar_frame")
-        self.student_calendarWidget_pickdate = QCalendarWidget(self.student_calendar_frame)
+        self.student_calendarWidget_pickdate = QtWidgets.QCalendarWidget(self.student_calendar_frame)
         self.student_calendarWidget_pickdate.setStyleSheet("QWidget{background-color: rgb(248, 248, 248);}\n"
                                                            "\n"
                                                            "\n"
                                                            "\n"
                                                            "QCalendarWidget QToolButton {\n"
                                                            "    height: 30px;\n"
-                                                           "    width: 55px;\n"
+                                                           "    width: 85px;\n"
                                                            "    color: black;\n"
-                                                           "    font-size: 15pt;\n"
+                                                           "    font-size: 12pt;\n"
                                                            "    icon-size: 30px, 30px;\n"
                                                            "}\n"
                                                            "\n"
                                                            "QCalendarWidget QMenu {\n"
-                                                           "    width: 95px;\n"
+                                                           "    width: 130px;\n"
                                                            "    left: 3px;\n"
                                                            "    color: black;\n"
-                                                           "    font-size: 13pt;\n"
+                                                           "    font-size: 12pt;\n"
                                                            "    background-color: rgb(219, 219, 219);\n"
                                                            "}\n"
                                                            "\n"
                                                            "QCalendarWidget QSpinBox { \n"
-                                                           "    width: 70px; \n"
-                                                           "    font-size:13pt; \n"
+                                                           "    width: 80px; \n"
+                                                           "    font-size:12pt; \n"
                                                            "    color: black; \n"
                                                            "    background-color: transparent; \n"
                                                            "    selection-background-color: rgb(219, 219, 219);\n"
@@ -973,7 +1001,7 @@ class Ui_MainWindow(object):
                                                            "/* normal days */\n"
                                                            "QCalendarWidget QAbstractItemView:enabled \n"
                                                            "{\n"
-                                                           "    font-size:15pt;  \n"
+                                                           "    font-size:12pt;  \n"
                                                            "    color: black;  \n"
                                                            "    selection-background-color: rgba(242, 242, 242, 40); \n"
                                                            "    selection-color: rgb(0, 255, 0); \n"
@@ -993,36 +1021,36 @@ class Ui_MainWindow(object):
         self.horizontalLayout_student_appnt_main_topF.setStretch(0, 1)
         self.horizontalLayout_student_appnt_main_topF.setStretch(1, 2)
         self.verticalLayout_student_appnt_main.addWidget(self.student_appnt_main_topF)
-        self.student_appnt_main_botF = QFrame(self.student_appnt_main)
+        self.student_appnt_main_botF = QtWidgets.QFrame(self.student_appnt_main)
         self.student_appnt_main_botF.setStyleSheet("QFrame{\n"
                                                    "border: 0\n"
                                                    "}")
-        self.student_appnt_main_botF.setFrameShape(QFrame.StyledPanel)
-        self.student_appnt_main_botF.setFrameShadow(QFrame.Raised)
+        self.student_appnt_main_botF.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.student_appnt_main_botF.setFrameShadow(QtWidgets.QFrame.Raised)
         self.student_appnt_main_botF.setObjectName("student_appnt_main_botF")
-        self.verticalLayout_student_appnt_main_botF = QVBoxLayout(self.student_appnt_main_botF)
+        self.verticalLayout_student_appnt_main_botF = QtWidgets.QVBoxLayout(self.student_appnt_main_botF)
         self.verticalLayout_student_appnt_main_botF.setContentsMargins(8, 4, 8, 8)
         self.verticalLayout_student_appnt_main_botF.setSpacing(0)
         self.verticalLayout_student_appnt_main_botF.setObjectName("verticalLayout_student_appnt_main_botF")
-        self.appnt_main_botF_label = QFrame(self.student_appnt_main_botF)
-        self.appnt_main_botF_label.setFrameShape(QFrame.StyledPanel)
-        self.appnt_main_botF_label.setFrameShadow(QFrame.Raised)
+        self.appnt_main_botF_label = QtWidgets.QFrame(self.student_appnt_main_botF)
+        self.appnt_main_botF_label.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.appnt_main_botF_label.setFrameShadow(QtWidgets.QFrame.Raised)
         self.appnt_main_botF_label.setObjectName("appnt_main_botF_label")
-        self.horizontalLayout_appnt_main_botF_topFlabels = QHBoxLayout(self.appnt_main_botF_label)
+        self.horizontalLayout_appnt_main_botF_topFlabels = QtWidgets.QHBoxLayout(self.appnt_main_botF_label)
         self.horizontalLayout_appnt_main_botF_topFlabels.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_appnt_main_botF_topFlabels.setSpacing(0)
         self.horizontalLayout_appnt_main_botF_topFlabels.setObjectName("horizontalLayout_appnt_main_botF_topFlabels")
-        self.listofappnt_label = QLabel(self.appnt_main_botF_label)
+        self.listofappnt_label = QtWidgets.QLabel(self.appnt_main_botF_label)
         self.listofappnt_label.setStyleSheet("QLabel{\n"
                                              "color: white;\n"
-                                             "font-size: 15pt;\n"
+                                             "font-size: 12pt;\n"
                                              "margin-left: 4px;\n"
                                              "margin-bottom: 2px;\n"
                                              "}")
         self.listofappnt_label.setObjectName("listofappnt_label")
         self.horizontalLayout_appnt_main_botF_topFlabels.addWidget(self.listofappnt_label)
         self.verticalLayout_student_appnt_main_botF.addWidget(self.appnt_main_botF_label)
-        self.appnt_main_botF_tickets = QFrame(self.student_appnt_main_botF)
+        self.appnt_main_botF_tickets = QtWidgets.QFrame(self.student_appnt_main_botF)
         self.appnt_main_botF_tickets.setStyleSheet("QFrame{\n"
                                                    "border: 1px solid #69cdff;\n"
                                                    "}\n"
@@ -1030,20 +1058,20 @@ class Ui_MainWindow(object):
                                                    "QWidget{\n"
                                                    "background-color: rgb(248, 248, 248);\n"
                                                    "}")
-        self.appnt_main_botF_tickets.setFrameShape(QFrame.StyledPanel)
-        self.appnt_main_botF_tickets.setFrameShadow(QFrame.Raised)
+        self.appnt_main_botF_tickets.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.appnt_main_botF_tickets.setFrameShadow(QtWidgets.QFrame.Raised)
         self.appnt_main_botF_tickets.setObjectName("appnt_main_botF_tickets")
-        self.horizontalLayout_appnt_main_botF_topFtickets = QHBoxLayout(self.appnt_main_botF_tickets)
+        self.horizontalLayout_appnt_main_botF_topFtickets = QtWidgets.QHBoxLayout(self.appnt_main_botF_tickets)
         self.horizontalLayout_appnt_main_botF_topFtickets.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_appnt_main_botF_topFtickets.setSpacing(0)
         self.horizontalLayout_appnt_main_botF_topFtickets.setObjectName("horizontalLayout_appnt_main_botF_topFtickets")
-        self.student_scrollArea_tickets = QScrollArea(self.appnt_main_botF_tickets)
+        self.student_scrollArea_tickets = QtWidgets.QScrollArea(self.appnt_main_botF_tickets)
         self.student_scrollArea_tickets.setWidgetResizable(True)
         self.student_scrollArea_tickets.setObjectName("student_scrollArea_tickets")
-        self.student_scrollArea_tickets_content = QWidget()
-        self.student_scrollArea_tickets_content.setGeometry(QRect(0, 0, 98, 28))
+        self.student_scrollArea_tickets_content = QtWidgets.QWidget()
+        self.student_scrollArea_tickets_content.setGeometry(QtCore.QRect(0, 0, 1294, 108))
         self.student_scrollArea_tickets_content.setObjectName("student_scrollArea_tickets_content")
-        self.horizontalLayout_student_scrollArea_tickets_content = QHBoxLayout(
+        self.horizontalLayout_student_scrollArea_tickets_content = QtWidgets.QHBoxLayout(
             self.student_scrollArea_tickets_content)
         self.horizontalLayout_student_scrollArea_tickets_content.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_student_scrollArea_tickets_content.setSpacing(3)
@@ -1058,62 +1086,62 @@ class Ui_MainWindow(object):
         self.verticalLayout_student_appnt_main.setStretch(0, 3)
         self.verticalLayout_student_appnt_main.setStretch(1, 1)
         self.tabWidget_student_appnt.addTab(self.student_appnt_main, "")
-        self.student_appnt_histofappnts = QWidget()
+        self.student_appnt_histofappnts = QtWidgets.QWidget()
         self.student_appnt_histofappnts.setStyleSheet("QWidget{\n"
                                                       "color: white;\n"
                                                       "font-size: 12pt;\n"
                                                       "font-family: Helvetica;\n"
                                                       "}")
         self.student_appnt_histofappnts.setObjectName("student_appnt_histofappnts")
-        self.verticalLayout_student_appnt_histofappnts = QVBoxLayout(self.student_appnt_histofappnts)
+        self.verticalLayout_student_appnt_histofappnts = QtWidgets.QVBoxLayout(self.student_appnt_histofappnts)
         self.verticalLayout_student_appnt_histofappnts.setContentsMargins(12, 8, 12, 12)
         self.verticalLayout_student_appnt_histofappnts.setSpacing(0)
         self.verticalLayout_student_appnt_histofappnts.setObjectName("verticalLayout_student_appnt_histofappnts")
-        self.student_appnt_Fhistofappnts = QFrame(self.student_appnt_histofappnts)
-        self.student_appnt_Fhistofappnts.setFrameShape(QFrame.StyledPanel)
-        self.student_appnt_Fhistofappnts.setFrameShadow(QFrame.Raised)
+        self.student_appnt_Fhistofappnts = QtWidgets.QFrame(self.student_appnt_histofappnts)
+        self.student_appnt_Fhistofappnts.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.student_appnt_Fhistofappnts.setFrameShadow(QtWidgets.QFrame.Raised)
         self.student_appnt_Fhistofappnts.setObjectName("student_appnt_Fhistofappnts")
-        self.verticalLayout_student_appnt_Fhistofappnts = QVBoxLayout(self.student_appnt_Fhistofappnts)
+        self.verticalLayout_student_appnt_Fhistofappnts = QtWidgets.QVBoxLayout(self.student_appnt_Fhistofappnts)
         self.verticalLayout_student_appnt_Fhistofappnts.setContentsMargins(15, 4, 15, 12)
         self.verticalLayout_student_appnt_Fhistofappnts.setObjectName("verticalLayout_student_appnt_Fhistofappnts")
-        self.student_appnt_Fhistofappnts_Ftop = QFrame(self.student_appnt_Fhistofappnts)
-        self.student_appnt_Fhistofappnts_Ftop.setFrameShape(QFrame.StyledPanel)
-        self.student_appnt_Fhistofappnts_Ftop.setFrameShadow(QFrame.Raised)
+        self.student_appnt_Fhistofappnts_Ftop = QtWidgets.QFrame(self.student_appnt_Fhistofappnts)
+        self.student_appnt_Fhistofappnts_Ftop.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.student_appnt_Fhistofappnts_Ftop.setFrameShadow(QtWidgets.QFrame.Raised)
         self.student_appnt_Fhistofappnts_Ftop.setObjectName("student_appnt_Fhistofappnts_Ftop")
-        self.horizontalLayout_student_appnt_Fhistofappnts_Ftop = QHBoxLayout(
+        self.horizontalLayout_student_appnt_Fhistofappnts_Ftop = QtWidgets.QHBoxLayout(
             self.student_appnt_Fhistofappnts_Ftop)
         self.horizontalLayout_student_appnt_Fhistofappnts_Ftop.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_student_appnt_Fhistofappnts_Ftop.setSpacing(0)
         self.horizontalLayout_student_appnt_Fhistofappnts_Ftop.setObjectName(
             "horizontalLayout_student_appnt_Fhistofappnts_Ftop")
-        self.student_appnt_Fhistofappnts_Ltop = QLabel(self.student_appnt_Fhistofappnts_Ftop)
+        self.student_appnt_Fhistofappnts_Ltop = QtWidgets.QLabel(self.student_appnt_Fhistofappnts_Ftop)
         self.student_appnt_Fhistofappnts_Ltop.setStyleSheet("QLabel{\n"
                                                             "margin-left: 3px;\n"
                                                             "margin-right: 3px;\n"
                                                             "}")
         self.student_appnt_Fhistofappnts_Ltop.setObjectName("student_appnt_Fhistofappnts_Ltop")
         self.horizontalLayout_student_appnt_Fhistofappnts_Ftop.addWidget(self.student_appnt_Fhistofappnts_Ltop)
-        self.student_appnt__Fhistofappnts_Ftop_Fright = QFrame(self.student_appnt_Fhistofappnts_Ftop)
-        self.student_appnt__Fhistofappnts_Ftop_Fright.setFrameShape(QFrame.StyledPanel)
-        self.student_appnt__Fhistofappnts_Ftop_Fright.setFrameShadow(QFrame.Raised)
+        self.student_appnt__Fhistofappnts_Ftop_Fright = QtWidgets.QFrame(self.student_appnt_Fhistofappnts_Ftop)
+        self.student_appnt__Fhistofappnts_Ftop_Fright.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.student_appnt__Fhistofappnts_Ftop_Fright.setFrameShadow(QtWidgets.QFrame.Raised)
         self.student_appnt__Fhistofappnts_Ftop_Fright.setObjectName("student_appnt__Fhistofappnts_Ftop_Fright")
         self.horizontalLayout_student_appnt_Fhistofappnts_Ftop.addWidget(self.student_appnt__Fhistofappnts_Ftop_Fright)
         self.horizontalLayout_student_appnt_Fhistofappnts_Ftop.setStretch(1, 3)
         self.verticalLayout_student_appnt_Fhistofappnts.addWidget(self.student_appnt_Fhistofappnts_Ftop)
-        self.student_scrollArea_histofappnts = QScrollArea(self.student_appnt_Fhistofappnts)
+        self.student_scrollArea_histofappnts = QtWidgets.QScrollArea(self.student_appnt_Fhistofappnts)
         self.student_scrollArea_histofappnts.setStyleSheet("background-color: rgb(248, 248, 248);")
         self.student_scrollArea_histofappnts.setWidgetResizable(True)
         self.student_scrollArea_histofappnts.setObjectName("student_scrollArea_histofappnts")
-        self.student_scrollArea_histofappnts_content = QWidget()
-        self.student_scrollArea_histofappnts_content.setGeometry(QRect(0, 0, 85, 54))
+        self.student_scrollArea_histofappnts_content = QtWidgets.QWidget()
+        self.student_scrollArea_histofappnts_content.setGeometry(QtCore.QRect(0, 0, 1280, 593))
         self.student_scrollArea_histofappnts_content.setObjectName("student_scrollArea_histofappnts_content")
-        self.verticalLayout_student_scrollArea_histofappnts_content = QVBoxLayout(
+        self.verticalLayout_student_scrollArea_histofappnts_content = QtWidgets.QVBoxLayout(
             self.student_scrollArea_histofappnts_content)
         self.verticalLayout_student_scrollArea_histofappnts_content.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_student_scrollArea_histofappnts_content.setSpacing(0)
         self.verticalLayout_student_scrollArea_histofappnts_content.setObjectName(
             "verticalLayout_student_scrollArea_histofappnts_content")
-        self.student_tableView_histofappnts = QTableView(self.student_scrollArea_histofappnts_content)
+        self.student_tableView_histofappnts = QtWidgets.QTableView(self.student_scrollArea_histofappnts_content)
         self.student_tableView_histofappnts.setObjectName("student_tableView_histofappnts")
         self.verticalLayout_student_scrollArea_histofappnts_content.addWidget(self.student_tableView_histofappnts)
         self.student_scrollArea_histofappnts.setWidget(self.student_scrollArea_histofappnts_content)
@@ -1124,14 +1152,17 @@ class Ui_MainWindow(object):
         self.tabWidget_student_appnt.addTab(self.student_appnt_histofappnts, "")
         self.verticalLayout_page_student_appnt.addWidget(self.tabWidget_student_appnt)
         self.stackedWidget_appointments.addWidget(self.page_student_appnt)
-        self.page_faculty_appnt = QWidget()
+        ## APPOINTMENTS_PAGE - STUDENT | END
+
+        ## APPOINTMENTS_PAGE - FACULTY | START
+        self.page_faculty_appnt = QtWidgets.QWidget()
         self.page_faculty_appnt.setStyleSheet("")
         self.page_faculty_appnt.setObjectName("page_faculty_appnt")
-        self.verticalLayout_page_faculty_appnt = QVBoxLayout(self.page_faculty_appnt)
+        self.verticalLayout_page_faculty_appnt = QtWidgets.QVBoxLayout(self.page_faculty_appnt)
         self.verticalLayout_page_faculty_appnt.setContentsMargins(0, -1, 0, 0)
         self.verticalLayout_page_faculty_appnt.setSpacing(0)
         self.verticalLayout_page_faculty_appnt.setObjectName("verticalLayout_page_faculty_appnt")
-        self.tabWidget_faculty_appnt = QTabWidget(self.page_faculty_appnt)
+        self.tabWidget_faculty_appnt = QtWidgets.QTabWidget(self.page_faculty_appnt)
         self.tabWidget_faculty_appnt.setStyleSheet("\n"
                                                    "QTabWidget::pane { /* The tab widget frame */\n"
                                                    "border:0\n"
@@ -1170,51 +1201,51 @@ class Ui_MainWindow(object):
                                                    "border-bottom: 3px solid #69cdff;\n"
                                                    "}")
         self.tabWidget_faculty_appnt.setObjectName("tabWidget_faculty_appnt")
-        self.fac_appnt_main = QWidget()
+        self.fac_appnt_main = QtWidgets.QWidget()
         self.fac_appnt_main.setObjectName("fac_appnt_main")
-        self.verticalLayout_fac_appnt_main = QVBoxLayout(self.fac_appnt_main)
+        self.verticalLayout_fac_appnt_main = QtWidgets.QVBoxLayout(self.fac_appnt_main)
         self.verticalLayout_fac_appnt_main.setContentsMargins(12, 8, 12, 12)
         self.verticalLayout_fac_appnt_main.setSpacing(0)
         self.verticalLayout_fac_appnt_main.setObjectName("verticalLayout_fac_appnt_main")
-        self.fac_appnt_main_Fcontent = QFrame(self.fac_appnt_main)
-        self.fac_appnt_main_Fcontent.setFrameShape(QFrame.StyledPanel)
-        self.fac_appnt_main_Fcontent.setFrameShadow(QFrame.Raised)
+        self.fac_appnt_main_Fcontent = QtWidgets.QFrame(self.fac_appnt_main)
+        self.fac_appnt_main_Fcontent.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.fac_appnt_main_Fcontent.setFrameShadow(QtWidgets.QFrame.Raised)
         self.fac_appnt_main_Fcontent.setObjectName("fac_appnt_main_Fcontent")
-        self.horizontalLayout_fac_appnt_main_Fcontent = QHBoxLayout(self.fac_appnt_main_Fcontent)
+        self.horizontalLayout_fac_appnt_main_Fcontent = QtWidgets.QHBoxLayout(self.fac_appnt_main_Fcontent)
         self.horizontalLayout_fac_appnt_main_Fcontent.setContentsMargins(10, 8, 10, 10)
         self.horizontalLayout_fac_appnt_main_Fcontent.setSpacing(18)
         self.horizontalLayout_fac_appnt_main_Fcontent.setObjectName("horizontalLayout_fac_appnt_main_Fcontent")
-        self.fac_appnt_main_FcontentLeft = QFrame(self.fac_appnt_main_Fcontent)
+        self.fac_appnt_main_FcontentLeft = QtWidgets.QFrame(self.fac_appnt_main_Fcontent)
         self.fac_appnt_main_FcontentLeft.setStyleSheet("QWidget{\n"
                                                        "color: rgb(255, 255, 255);\n"
                                                        "}")
-        self.fac_appnt_main_FcontentLeft.setFrameShape(QFrame.StyledPanel)
-        self.fac_appnt_main_FcontentLeft.setFrameShadow(QFrame.Raised)
+        self.fac_appnt_main_FcontentLeft.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.fac_appnt_main_FcontentLeft.setFrameShadow(QtWidgets.QFrame.Raised)
         self.fac_appnt_main_FcontentLeft.setObjectName("fac_appnt_main_FcontentLeft")
-        self.verticalLayout_fac_appnt_main_FcontentLeft = QVBoxLayout(self.fac_appnt_main_FcontentLeft)
+        self.verticalLayout_fac_appnt_main_FcontentLeft = QtWidgets.QVBoxLayout(self.fac_appnt_main_FcontentLeft)
         self.verticalLayout_fac_appnt_main_FcontentLeft.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_fac_appnt_main_FcontentLeft.setSpacing(20)
         self.verticalLayout_fac_appnt_main_FcontentLeft.setObjectName("verticalLayout_fac_appnt_main_FcontentLeft")
-        self.fac_FcontentLeft_top = QFrame(self.fac_appnt_main_FcontentLeft)
+        self.fac_FcontentLeft_top = QtWidgets.QFrame(self.fac_appnt_main_FcontentLeft)
         self.fac_FcontentLeft_top.setStyleSheet("")
-        self.fac_FcontentLeft_top.setFrameShape(QFrame.StyledPanel)
-        self.fac_FcontentLeft_top.setFrameShadow(QFrame.Raised)
+        self.fac_FcontentLeft_top.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.fac_FcontentLeft_top.setFrameShadow(QtWidgets.QFrame.Raised)
         self.fac_FcontentLeft_top.setObjectName("fac_FcontentLeft_top")
-        self.verticalLayout_fac_FcontentLeft_top = QVBoxLayout(self.fac_FcontentLeft_top)
+        self.verticalLayout_fac_FcontentLeft_top = QtWidgets.QVBoxLayout(self.fac_FcontentLeft_top)
         self.verticalLayout_fac_FcontentLeft_top.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_fac_FcontentLeft_top.setObjectName("verticalLayout_fac_FcontentLeft_top")
-        self.fac_Favl_top = QFrame(self.fac_FcontentLeft_top)
+        self.fac_Favl_top = QtWidgets.QFrame(self.fac_FcontentLeft_top)
         self.fac_Favl_top.setStyleSheet("QFrame{\n"
                                         "border:0;\n"
                                         "}")
-        self.fac_Favl_top.setFrameShape(QFrame.StyledPanel)
-        self.fac_Favl_top.setFrameShadow(QFrame.Raised)
+        self.fac_Favl_top.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.fac_Favl_top.setFrameShadow(QtWidgets.QFrame.Raised)
         self.fac_Favl_top.setObjectName("fac_Favl_top")
-        self.horizontalLayout_fac_Favl_top = QHBoxLayout(self.fac_Favl_top)
+        self.horizontalLayout_fac_Favl_top = QtWidgets.QHBoxLayout(self.fac_Favl_top)
         self.horizontalLayout_fac_Favl_top.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_fac_Favl_top.setSpacing(0)
         self.horizontalLayout_fac_Favl_top.setObjectName("horizontalLayout_fac_Favl_top")
-        self.fac_avl_label = QLabel(self.fac_Favl_top)
+        self.fac_avl_label = QtWidgets.QLabel(self.fac_Favl_top)
         self.fac_avl_label.setStyleSheet("QWidget{\n"
                                          "border:0;\n"
                                          "}\n"
@@ -1226,15 +1257,15 @@ class Ui_MainWindow(object):
                                          "}")
         self.fac_avl_label.setObjectName("fac_avl_label")
         self.horizontalLayout_fac_Favl_top.addWidget(self.fac_avl_label)
-        self.fac_avl_addsched = QFrame(self.fac_Favl_top)
-        self.fac_avl_addsched.setFrameShape(QFrame.StyledPanel)
-        self.fac_avl_addsched.setFrameShadow(QFrame.Raised)
+        self.fac_avl_addsched = QtWidgets.QFrame(self.fac_Favl_top)
+        self.fac_avl_addsched.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.fac_avl_addsched.setFrameShadow(QtWidgets.QFrame.Raised)
         self.fac_avl_addsched.setObjectName("fac_avl_addsched")
-        self.horizontalLayout_fac_avl_addsched = QHBoxLayout(self.fac_avl_addsched)
+        self.horizontalLayout_fac_avl_addsched = QtWidgets.QHBoxLayout(self.fac_avl_addsched)
         self.horizontalLayout_fac_avl_addsched.setContentsMargins(2, 2, 2, 2)
         self.horizontalLayout_fac_avl_addsched.setSpacing(3)
         self.horizontalLayout_fac_avl_addsched.setObjectName("horizontalLayout_fac_avl_addsched")
-        self.clear = QPushButton(self.fac_avl_addsched)
+        self.clear = QtWidgets.QPushButton(self.fac_avl_addsched)
         self.clear.setStyleSheet("QPushButton:hover {\n"
                                  "background-color: rgb(57, 65, 80);\n"
                                  "border: 2px solid rgb(61, 70, 86);\n"
@@ -1244,14 +1275,14 @@ class Ui_MainWindow(object):
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/20x20/icons/20x20/cil-trash.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
         self.clear.setIcon(icon)
-        self.clear.setIconSize(QSize(16, 16))
+        self.clear.setIconSize(QtCore.QSize(16, 16))
         self.clear.setObjectName("clear")
         self.horizontalLayout_fac_avl_addsched.addWidget(self.clear)
-        self.horizontalLayout_fac_Favl_top.addWidget(self.fac_avl_addsched, 0, Qt.AlignRight)
+        self.horizontalLayout_fac_Favl_top.addWidget(self.fac_avl_addsched, 0, QtCore.Qt.AlignRight)
         self.horizontalLayout_fac_Favl_top.setStretch(0, 1)
         self.horizontalLayout_fac_Favl_top.setStretch(1, 4)
         self.verticalLayout_fac_FcontentLeft_top.addWidget(self.fac_Favl_top)
-        self.fac_avl_contentF = QFrame(self.fac_FcontentLeft_top)
+        self.fac_avl_contentF = QtWidgets.QFrame(self.fac_FcontentLeft_top)
         self.fac_avl_contentF.setStyleSheet("QWidget{\n"
                                             "border: 1px solid #69cdff;\n"
                                             "color: black;\n"
@@ -1261,76 +1292,76 @@ class Ui_MainWindow(object):
                                             "#fac_avl_contentF QFrame{\n"
                                             "border:0;\n"
                                             "}")
-        self.fac_avl_contentF.setFrameShape(QFrame.StyledPanel)
-        self.fac_avl_contentF.setFrameShadow(QFrame.Raised)
+        self.fac_avl_contentF.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.fac_avl_contentF.setFrameShadow(QtWidgets.QFrame.Raised)
         self.fac_avl_contentF.setObjectName("fac_avl_contentF")
-        self.verticalLayout_fac_avl_contentF = QVBoxLayout(self.fac_avl_contentF)
+        self.verticalLayout_fac_avl_contentF = QtWidgets.QVBoxLayout(self.fac_avl_contentF)
         self.verticalLayout_fac_avl_contentF.setObjectName("verticalLayout_fac_avl_contentF")
-        self.fac_avl_contents = QFrame(self.fac_avl_contentF)
-        self.fac_avl_contents.setFrameShape(QFrame.StyledPanel)
-        self.fac_avl_contents.setFrameShadow(QFrame.Raised)
+        self.fac_avl_contents = QtWidgets.QFrame(self.fac_avl_contentF)
+        self.fac_avl_contents.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.fac_avl_contents.setFrameShadow(QtWidgets.QFrame.Raised)
         self.fac_avl_contents.setObjectName("fac_avl_contents")
-        self.horizontalLayout = QHBoxLayout(self.fac_avl_contents)
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.fac_avl_contents)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.day_avlF = QFrame(self.fac_avl_contents)
-        self.day_avlF.setFrameShape(QFrame.StyledPanel)
-        self.day_avlF.setFrameShadow(QFrame.Raised)
+        self.day_avlF = QtWidgets.QFrame(self.fac_avl_contents)
+        self.day_avlF.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.day_avlF.setFrameShadow(QtWidgets.QFrame.Raised)
         self.day_avlF.setObjectName("day_avlF")
-        self.verticalLayout_3 = QVBoxLayout(self.day_avlF)
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.day_avlF)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.day_avl_l1 = QLabel(self.day_avlF)
+        self.day_avl_l1 = QtWidgets.QLabel(self.day_avlF)
         self.day_avl_l1.setStyleSheet("font-size:11pt;")
-        self.day_avl_l1.setAlignment(Qt.AlignLeading | Qt.AlignLeft | Qt.AlignTop)
+        self.day_avl_l1.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
         self.day_avl_l1.setObjectName("day_avl_l1")
         self.verticalLayout_3.addWidget(self.day_avl_l1)
-        self.day_avl_l2 = QLabel(self.day_avlF)
+        self.day_avl_l2 = QtWidgets.QLabel(self.day_avlF)
         self.day_avl_l2.setStyleSheet("font-size:10pt;\n"
                                       "margin-top:4px;")
         self.day_avl_l2.setText("")
-        self.day_avl_l2.setAlignment(Qt.AlignLeading | Qt.AlignLeft | Qt.AlignTop)
+        self.day_avl_l2.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
         self.day_avl_l2.setObjectName("day_avl_l2")
         self.verticalLayout_3.addWidget(self.day_avl_l2)
         self.verticalLayout_3.setStretch(0, 1)
         self.verticalLayout_3.setStretch(1, 10)
         self.horizontalLayout.addWidget(self.day_avlF)
-        self.time_avlF = QFrame(self.fac_avl_contents)
-        self.time_avlF.setFrameShape(QFrame.StyledPanel)
-        self.time_avlF.setFrameShadow(QFrame.Raised)
+        self.time_avlF = QtWidgets.QFrame(self.fac_avl_contents)
+        self.time_avlF.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.time_avlF.setFrameShadow(QtWidgets.QFrame.Raised)
         self.time_avlF.setObjectName("time_avlF")
-        self.verticalLayout_4 = QVBoxLayout(self.time_avlF)
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.time_avlF)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
-        self.time_avl_l1 = QLabel(self.time_avlF)
+        self.time_avl_l1 = QtWidgets.QLabel(self.time_avlF)
         self.time_avl_l1.setStyleSheet("font-size:11pt;")
-        self.time_avl_l1.setAlignment(Qt.AlignLeading | Qt.AlignLeft | Qt.AlignTop)
+        self.time_avl_l1.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
         self.time_avl_l1.setObjectName("time_avl_l1")
         self.verticalLayout_4.addWidget(self.time_avl_l1)
-        self.time_avl_l2 = QLabel(self.time_avlF)
+        self.time_avl_l2 = QtWidgets.QLabel(self.time_avlF)
         self.time_avl_l2.setStyleSheet("font-size:10pt;\n"
                                        "margin-top:4px;")
         self.time_avl_l2.setText("")
-        self.time_avl_l2.setAlignment(Qt.AlignLeading | Qt.AlignLeft | Qt.AlignTop)
+        self.time_avl_l2.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
         self.time_avl_l2.setObjectName("time_avl_l2")
         self.verticalLayout_4.addWidget(self.time_avl_l2)
         self.verticalLayout_4.setStretch(0, 1)
         self.verticalLayout_4.setStretch(1, 10)
         self.horizontalLayout.addWidget(self.time_avlF)
         self.verticalLayout_fac_avl_contentF.addWidget(self.fac_avl_contents)
-        self.fac_avl_ctrl = QFrame(self.fac_avl_contentF)
-        self.fac_avl_ctrl.setFrameShape(QFrame.StyledPanel)
-        self.fac_avl_ctrl.setFrameShadow(QFrame.Raised)
+        self.fac_avl_ctrl = QtWidgets.QFrame(self.fac_avl_contentF)
+        self.fac_avl_ctrl.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.fac_avl_ctrl.setFrameShadow(QtWidgets.QFrame.Raised)
         self.fac_avl_ctrl.setObjectName("fac_avl_ctrl")
-        self.horizontalLayout_2 = QHBoxLayout(self.fac_avl_ctrl)
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.fac_avl_ctrl)
         self.horizontalLayout_2.setContentsMargins(24, -1, 24, -1)
         self.horizontalLayout_2.setSpacing(36)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.comboBox_day_avl = QComboBox(self.fac_avl_ctrl)
+        self.comboBox_day_avl = QtWidgets.QComboBox(self.fac_avl_ctrl)
         self.comboBox_day_avl.setObjectName("comboBox_day_avl")
         self.horizontalLayout_2.addWidget(self.comboBox_day_avl)
-        self.comboBox_time_avl = QComboBox(self.fac_avl_ctrl)
+        self.comboBox_time_avl = QtWidgets.QComboBox(self.fac_avl_ctrl)
         self.comboBox_time_avl.setObjectName("comboBox_time_avl")
         self.horizontalLayout_2.addWidget(self.comboBox_time_avl)
-        self.comboBox_colorTheme = QComboBox(self.fac_avl_ctrl)
+        self.comboBox_colorTheme = QtWidgets.QComboBox(self.fac_avl_ctrl)
         self.comboBox_colorTheme.setObjectName("comboBox_colorTheme")
         self.horizontalLayout_2.addWidget(self.comboBox_colorTheme)
         self.verticalLayout_fac_avl_contentF.addWidget(self.fac_avl_ctrl)
@@ -1340,20 +1371,20 @@ class Ui_MainWindow(object):
         self.verticalLayout_fac_FcontentLeft_top.setStretch(0, 1)
         self.verticalLayout_fac_FcontentLeft_top.setStretch(1, 20)
         self.verticalLayout_fac_appnt_main_FcontentLeft.addWidget(self.fac_FcontentLeft_top)
-        self.fac_FcontentLeft_bot = QFrame(self.fac_appnt_main_FcontentLeft)
+        self.fac_FcontentLeft_bot = QtWidgets.QFrame(self.fac_appnt_main_FcontentLeft)
         self.fac_FcontentLeft_bot.setStyleSheet("QWidget{\n"
                                                 "border: 1px solid #69cdff;\n"
                                                 "color: black;\n"
                                                 "background-color: rgb(248, 248, 248);\n"
                                                 "}")
-        self.fac_FcontentLeft_bot.setFrameShape(QFrame.StyledPanel)
-        self.fac_FcontentLeft_bot.setFrameShadow(QFrame.Raised)
+        self.fac_FcontentLeft_bot.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.fac_FcontentLeft_bot.setFrameShadow(QtWidgets.QFrame.Raised)
         self.fac_FcontentLeft_bot.setObjectName("fac_FcontentLeft_bot")
-        self.verticalLayout_fac_FcontentLeft_bot = QVBoxLayout(self.fac_FcontentLeft_bot)
+        self.verticalLayout_fac_FcontentLeft_bot = QtWidgets.QVBoxLayout(self.fac_FcontentLeft_bot)
         self.verticalLayout_fac_FcontentLeft_bot.setContentsMargins(8, 8, 8, 8)
         self.verticalLayout_fac_FcontentLeft_bot.setSpacing(0)
         self.verticalLayout_fac_FcontentLeft_bot.setObjectName("verticalLayout_fac_FcontentLeft_bot")
-        self.queue_label = QLabel(self.fac_FcontentLeft_bot)
+        self.queue_label = QtWidgets.QLabel(self.fac_FcontentLeft_bot)
         self.queue_label.setStyleSheet("QLabel{\n"
                                        "border: 0;\n"
                                        "}")
@@ -1363,27 +1394,27 @@ class Ui_MainWindow(object):
         self.verticalLayout_fac_appnt_main_FcontentLeft.setStretch(0, 4)
         self.verticalLayout_fac_appnt_main_FcontentLeft.setStretch(1, 6)
         self.horizontalLayout_fac_appnt_main_Fcontent.addWidget(self.fac_appnt_main_FcontentLeft)
-        self.fac_appnt_main_FcontentRight = QFrame(self.fac_appnt_main_Fcontent)
-        self.fac_appnt_main_FcontentRight.setFrameShape(QFrame.StyledPanel)
-        self.fac_appnt_main_FcontentRight.setFrameShadow(QFrame.Raised)
+        self.fac_appnt_main_FcontentRight = QtWidgets.QFrame(self.fac_appnt_main_Fcontent)
+        self.fac_appnt_main_FcontentRight.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.fac_appnt_main_FcontentRight.setFrameShadow(QtWidgets.QFrame.Raised)
         self.fac_appnt_main_FcontentRight.setObjectName("fac_appnt_main_FcontentRight")
-        self.verticalLayout_fac_appnt_main_FcontentRight = QVBoxLayout(self.fac_appnt_main_FcontentRight)
+        self.verticalLayout_fac_appnt_main_FcontentRight = QtWidgets.QVBoxLayout(self.fac_appnt_main_FcontentRight)
         self.verticalLayout_fac_appnt_main_FcontentRight.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_fac_appnt_main_FcontentRight.setSpacing(20)
         self.verticalLayout_fac_appnt_main_FcontentRight.setObjectName("verticalLayout_fac_appnt_main_FcontentRight")
-        self.fac_FcontentRight_top = QFrame(self.fac_appnt_main_FcontentRight)
+        self.fac_FcontentRight_top = QtWidgets.QFrame(self.fac_appnt_main_FcontentRight)
         self.fac_FcontentRight_top.setStyleSheet("QWidget{\n"
                                                  "border: 1px solid #69cdff;\n"
                                                  "    background-color: rgb(248, 248, 248);\n"
                                                  "}")
-        self.fac_FcontentRight_top.setFrameShape(QFrame.StyledPanel)
-        self.fac_FcontentRight_top.setFrameShadow(QFrame.Raised)
+        self.fac_FcontentRight_top.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.fac_FcontentRight_top.setFrameShadow(QtWidgets.QFrame.Raised)
         self.fac_FcontentRight_top.setObjectName("fac_FcontentRight_top")
-        self.verticalLayout_fac_FcontentRight_top = QVBoxLayout(self.fac_FcontentRight_top)
+        self.verticalLayout_fac_FcontentRight_top = QtWidgets.QVBoxLayout(self.fac_FcontentRight_top)
         self.verticalLayout_fac_FcontentRight_top.setContentsMargins(8, 8, 8, 8)
         self.verticalLayout_fac_FcontentRight_top.setSpacing(0)
         self.verticalLayout_fac_FcontentRight_top.setObjectName("verticalLayout_fac_FcontentRight_top")
-        self.fac_calendarWidget_appnts = QCalendarWidget(self.fac_FcontentRight_top)
+        self.fac_calendarWidget_appnts = QtWidgets.QCalendarWidget(self.fac_FcontentRight_top)
         self.fac_calendarWidget_appnts.setStyleSheet("QWidget{background-color: rgb(248, 248, 248);}\n"
                                                      "\n"
                                                      "\n"
@@ -1451,22 +1482,22 @@ class Ui_MainWindow(object):
         self.fac_calendarWidget_appnts.setObjectName("fac_calendarWidget_appnts")
         self.verticalLayout_fac_FcontentRight_top.addWidget(self.fac_calendarWidget_appnts)
         self.verticalLayout_fac_appnt_main_FcontentRight.addWidget(self.fac_FcontentRight_top)
-        self.fac_FcontentRight_bot = QFrame(self.fac_appnt_main_FcontentRight)
+        self.fac_FcontentRight_bot = QtWidgets.QFrame(self.fac_appnt_main_FcontentRight)
         self.fac_FcontentRight_bot.setStyleSheet("")
-        self.fac_FcontentRight_bot.setFrameShape(QFrame.StyledPanel)
-        self.fac_FcontentRight_bot.setFrameShadow(QFrame.Raised)
+        self.fac_FcontentRight_bot.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.fac_FcontentRight_bot.setFrameShadow(QtWidgets.QFrame.Raised)
         self.fac_FcontentRight_bot.setObjectName("fac_FcontentRight_bot")
-        self.verticalLayout_fac_FcontentRight_bot = QVBoxLayout(self.fac_FcontentRight_bot)
+        self.verticalLayout_fac_FcontentRight_bot = QtWidgets.QVBoxLayout(self.fac_FcontentRight_bot)
         self.verticalLayout_fac_FcontentRight_bot.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_fac_FcontentRight_bot.setObjectName("verticalLayout_fac_FcontentRight_bot")
-        self.fac_FcontentRight_bot_Ltop = QLabel(self.fac_FcontentRight_bot)
+        self.fac_FcontentRight_bot_Ltop = QtWidgets.QLabel(self.fac_FcontentRight_bot)
         self.fac_FcontentRight_bot_Ltop.setStyleSheet("font-size: 15pt;\n"
                                                       "color: rgb(255, 255, 255);\n"
                                                       "border: 0;\n"
                                                       "margin-left: 4px;")
         self.fac_FcontentRight_bot_Ltop.setObjectName("fac_FcontentRight_bot_Ltop")
         self.verticalLayout_fac_FcontentRight_bot.addWidget(self.fac_FcontentRight_bot_Ltop)
-        self.fac_scrollArea_logs = QScrollArea(self.fac_FcontentRight_bot)
+        self.fac_scrollArea_logs = QtWidgets.QScrollArea(self.fac_FcontentRight_bot)
         self.fac_scrollArea_logs.setStyleSheet("QScrollArea{\n"
                                                "border: 1px solid #69cdff;\n"
                                                "}\n"
@@ -1475,10 +1506,10 @@ class Ui_MainWindow(object):
                                                "")
         self.fac_scrollArea_logs.setWidgetResizable(True)
         self.fac_scrollArea_logs.setObjectName("fac_scrollArea_logs")
-        self.fac_scrollArea_logs_contents = QWidget()
-        self.fac_scrollArea_logs_contents.setGeometry(QRect(0, 0, 758, 124))
+        self.fac_scrollArea_logs_contents = QtWidgets.QWidget()
+        self.fac_scrollArea_logs_contents.setGeometry(QtCore.QRect(0, 0, 758, 124))
         self.fac_scrollArea_logs_contents.setObjectName("fac_scrollArea_logs_contents")
-        self.horizontalLayout_fac_scrollArea_logs_contents = QHBoxLayout(self.fac_scrollArea_logs_contents)
+        self.horizontalLayout_fac_scrollArea_logs_contents = QtWidgets.QHBoxLayout(self.fac_scrollArea_logs_contents)
         self.horizontalLayout_fac_scrollArea_logs_contents.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_fac_scrollArea_logs_contents.setObjectName(
             "horizontalLayout_fac_scrollArea_logs_contents")
@@ -1494,29 +1525,29 @@ class Ui_MainWindow(object):
         self.horizontalLayout_fac_appnt_main_Fcontent.setStretch(1, 3)
         self.verticalLayout_fac_appnt_main.addWidget(self.fac_appnt_main_Fcontent)
         self.tabWidget_faculty_appnt.addTab(self.fac_appnt_main, "")
-        self.fac_appnt_avl = QWidget()
+        self.fac_appnt_avl = QtWidgets.QWidget()
         self.fac_appnt_avl.setObjectName("fac_appnt_avl")
-        self.verticalLayout_fac_appnt_avl = QVBoxLayout(self.fac_appnt_avl)
+        self.verticalLayout_fac_appnt_avl = QtWidgets.QVBoxLayout(self.fac_appnt_avl)
         self.verticalLayout_fac_appnt_avl.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_fac_appnt_avl.setSpacing(0)
         self.verticalLayout_fac_appnt_avl.setObjectName("verticalLayout_fac_appnt_avl")
         self.tabWidget_faculty_appnt.addTab(self.fac_appnt_avl, "")
-        self.fac_appnt_histofappnts = QWidget()
+        self.fac_appnt_histofappnts = QtWidgets.QWidget()
         self.fac_appnt_histofappnts.setStyleSheet("")
         self.fac_appnt_histofappnts.setObjectName("fac_appnt_histofappnts")
-        self.verticalLayout_fac_appnt_histofappnts = QVBoxLayout(self.fac_appnt_histofappnts)
+        self.verticalLayout_fac_appnt_histofappnts = QtWidgets.QVBoxLayout(self.fac_appnt_histofappnts)
         self.verticalLayout_fac_appnt_histofappnts.setContentsMargins(20, 8, 20, 20)
         self.verticalLayout_fac_appnt_histofappnts.setObjectName("verticalLayout_fac_appnt_histofappnts")
-        self.fac_appnt_Fhistofappnts_Ftop = QFrame(self.fac_appnt_histofappnts)
+        self.fac_appnt_Fhistofappnts_Ftop = QtWidgets.QFrame(self.fac_appnt_histofappnts)
         self.fac_appnt_Fhistofappnts_Ftop.setStyleSheet("color: rgb(255, 255, 255);")
-        self.fac_appnt_Fhistofappnts_Ftop.setFrameShape(QFrame.StyledPanel)
-        self.fac_appnt_Fhistofappnts_Ftop.setFrameShadow(QFrame.Raised)
+        self.fac_appnt_Fhistofappnts_Ftop.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.fac_appnt_Fhistofappnts_Ftop.setFrameShadow(QtWidgets.QFrame.Raised)
         self.fac_appnt_Fhistofappnts_Ftop.setObjectName("fac_appnt_Fhistofappnts_Ftop")
-        self.horizontalLayout_fac_appnt_Fhistofappnts_Ftop = QHBoxLayout(self.fac_appnt_Fhistofappnts_Ftop)
+        self.horizontalLayout_fac_appnt_Fhistofappnts_Ftop = QtWidgets.QHBoxLayout(self.fac_appnt_Fhistofappnts_Ftop)
         self.horizontalLayout_fac_appnt_Fhistofappnts_Ftop.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_fac_appnt_Fhistofappnts_Ftop.setObjectName(
             "horizontalLayout_fac_appnt_Fhistofappnts_Ftop")
-        self.fac_Fhistofappnts_Ltop = QLabel(self.fac_appnt_Fhistofappnts_Ftop)
+        self.fac_Fhistofappnts_Ltop = QtWidgets.QLabel(self.fac_appnt_Fhistofappnts_Ftop)
         self.fac_Fhistofappnts_Ltop.setStyleSheet("QWidget{\n"
                                                   "margin-left: 4px;\n"
                                                   "font-size: 15pt;\n"
@@ -1524,26 +1555,26 @@ class Ui_MainWindow(object):
         self.fac_Fhistofappnts_Ltop.setIndent(-1)
         self.fac_Fhistofappnts_Ltop.setObjectName("fac_Fhistofappnts_Ltop")
         self.horizontalLayout_fac_appnt_Fhistofappnts_Ftop.addWidget(self.fac_Fhistofappnts_Ltop)
-        self.fac_appnt_histofappnts_Ftop_Fright = QFrame(self.fac_appnt_Fhistofappnts_Ftop)
-        self.fac_appnt_histofappnts_Ftop_Fright.setFrameShape(QFrame.StyledPanel)
-        self.fac_appnt_histofappnts_Ftop_Fright.setFrameShadow(QFrame.Raised)
+        self.fac_appnt_histofappnts_Ftop_Fright = QtWidgets.QFrame(self.fac_appnt_Fhistofappnts_Ftop)
+        self.fac_appnt_histofappnts_Ftop_Fright.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.fac_appnt_histofappnts_Ftop_Fright.setFrameShadow(QtWidgets.QFrame.Raised)
         self.fac_appnt_histofappnts_Ftop_Fright.setObjectName("fac_appnt_histofappnts_Ftop_Fright")
         self.horizontalLayout_fac_appnt_Fhistofappnts_Ftop.addWidget(self.fac_appnt_histofappnts_Ftop_Fright)
         self.verticalLayout_fac_appnt_histofappnts.addWidget(self.fac_appnt_Fhistofappnts_Ftop)
-        self.fac_scrollarea_histofappnts = QScrollArea(self.fac_appnt_histofappnts)
+        self.fac_scrollarea_histofappnts = QtWidgets.QScrollArea(self.fac_appnt_histofappnts)
         self.fac_scrollarea_histofappnts.setStyleSheet("background-color: rgb(248, 248, 248);")
         self.fac_scrollarea_histofappnts.setWidgetResizable(True)
         self.fac_scrollarea_histofappnts.setObjectName("fac_scrollarea_histofappnts")
-        self.fac_scrollAreaWidgetContents_histofappnts = QWidget()
-        self.fac_scrollAreaWidgetContents_histofappnts.setGeometry(QRect(0, 0, 1296, 603))
+        self.fac_scrollAreaWidgetContents_histofappnts = QtWidgets.QWidget()
+        self.fac_scrollAreaWidgetContents_histofappnts.setGeometry(QtCore.QRect(0, 0, 1296, 603))
         self.fac_scrollAreaWidgetContents_histofappnts.setObjectName("fac_scrollAreaWidgetContents_histofappnts")
-        self.verticalLayout_fac_scrollAreaWidgetContents_histofappnts = QVBoxLayout(
+        self.verticalLayout_fac_scrollAreaWidgetContents_histofappnts = QtWidgets.QVBoxLayout(
             self.fac_scrollAreaWidgetContents_histofappnts)
         self.verticalLayout_fac_scrollAreaWidgetContents_histofappnts.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_fac_scrollAreaWidgetContents_histofappnts.setSpacing(0)
         self.verticalLayout_fac_scrollAreaWidgetContents_histofappnts.setObjectName(
             "verticalLayout_fac_scrollAreaWidgetContents_histofappnts")
-        self.fac_tableView_histofappnts = QTableView(self.fac_scrollAreaWidgetContents_histofappnts)
+        self.fac_tableView_histofappnts = QtWidgets.QTableView(self.fac_scrollAreaWidgetContents_histofappnts)
         self.fac_tableView_histofappnts.setObjectName("fac_tableView_histofappnts")
         self.verticalLayout_fac_scrollAreaWidgetContents_histofappnts.addWidget(self.fac_tableView_histofappnts)
         self.fac_scrollarea_histofappnts.setWidget(self.fac_scrollAreaWidgetContents_histofappnts)
@@ -1553,28 +1584,60 @@ class Ui_MainWindow(object):
         self.tabWidget_faculty_appnt.addTab(self.fac_appnt_histofappnts, "")
         self.verticalLayout_page_faculty_appnt.addWidget(self.tabWidget_faculty_appnt)
         self.stackedWidget_appointments.addWidget(self.page_faculty_appnt)
-        self.verticalLayout_page_appointments.addWidget(self.stackedWidget_appointments)
+        ## APPOINTMENTS_PAGE - FACULTY | END
+
+        self.verticalLayout_10_appt.addWidget(self.stackedWidget_appointments)
+        self.verticalLayout_10_appt.addWidget(self.page_appointments_changeUserF, 0,
+                                              QtCore.Qt.AlignRight | QtCore.Qt.AlignBottom)
+        self.verticalLayout_10_appt.setStretch(20, 1)
         self.stackedWidget.addWidget(self.page_appointments)
-## APPOINTMENTS_PAGE | END
 
+        self.popMenu_appointments = QtWidgets.QMenu()
+        self.popMenu_appointments.setObjectName('popMenu_appointments')
+        self.studAction_appointments = QtWidgets.QAction("Student")
+        self.facAction_appointments = QtWidgets.QAction("Faculty")
+        self.popMenu_appointments.addAction(self.studAction_appointments)
+        self.popMenu_appointments.addAction(self.facAction_appointments)
+        self.studAction_appointments.triggered.connect(
+            lambda: self.stackedWidget_appointments.setCurrentWidget(self.page_student_appnt))
+        self.facAction_appointments.triggered.connect(
+            lambda: self.stackedWidget_appointments.setCurrentWidget(self.page_faculty_appnt))
 
-## SPECIAL-SERVICES_PAGE | START
+        self.page_appointments_changeUserButton.setMenu(self.popMenu_appointments)
+
         self.page_special_services = QWidget()
-        self.page_special_services.setObjectName("page_special_services")
-        self.verticalLayout_page_special_services = QVBoxLayout(self.page_special_services)
-        self.verticalLayout_page_special_services.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_page_special_services.setSpacing(0)
-        self.verticalLayout_page_special_services.setObjectName("verticalLayout_page_special_services")
-        self.stackedWidget_special_services = QStackedWidget(self.page_special_services)
+        self.page_special_services.setObjectName(u"page_special_services")
+        self.verticalLayout_10_specserv = QVBoxLayout(self.page_special_services)
+        self.verticalLayout_10_specserv.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_10_specserv.setSpacing(0)
+        self.verticalLayout_10_specserv.setObjectName(u"verticalLayout_10_specserv")
+
+        self.stackedWidget_special_services = QtWidgets.QStackedWidget(self.page_special_services)
         self.stackedWidget_special_services.setObjectName("stackedWidget_special_services")
-        self.page_student_ss = QWidget()
+
+        self.page_special_services_changeUserF = QFrame(self.page_special_services)
+        self.page_special_services_changeUserF.setObjectName(u"page_special_services_changeUserF")
+        self.horizontalLayout_page_special_services_changeUserF = QHBoxLayout(self.page_special_services_changeUserF)
+        self.horizontalLayout_page_special_services_changeUserF.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_page_special_services_changeUserF.setSpacing(0)
+        self.horizontalLayout_page_special_services_changeUserF.setObjectName(
+            u"self.horizontalLayout_page_special_services_changeUserF")
+
+        self.page_special_services_changeUserButton = QPushButton()
+        self.page_special_services_changeUserButton.setFixedSize(20, 12)
+        self.page_special_services_changeUserButton.setObjectName(u'page_special_services_changeUserButton')
+
+        self.horizontalLayout_page_special_services_changeUserF.addWidget(self.page_special_services_changeUserButton)
+
+        ## SPECIAL SERVICES_PAGE - STUDENT | START
+        self.page_student_ss = QtWidgets.QWidget()
         self.page_student_ss.setStyleSheet("")
         self.page_student_ss.setObjectName("page_student_ss")
-        self.verticalLayout_page_student_ss = QVBoxLayout(self.page_student_ss)
+        self.verticalLayout_page_student_ss = QtWidgets.QVBoxLayout(self.page_student_ss)
         self.verticalLayout_page_student_ss.setContentsMargins(0, 6, 0, 0)
         self.verticalLayout_page_student_ss.setSpacing(0)
         self.verticalLayout_page_student_ss.setObjectName("verticalLayout_page_student_ss")
-        self.tabWidget_student_ss = QTabWidget(self.page_student_ss)
+        self.tabWidget_student_ss = QtWidgets.QTabWidget(self.page_student_ss)
         self.tabWidget_student_ss.setStyleSheet("\n"
                                                 "QTabWidget::pane { /* The tab widget frame */\n"
                                                 "border:0\n"
@@ -1613,50 +1676,50 @@ class Ui_MainWindow(object):
                                                 "border-bottom: 3px solid #69cdff;\n"
                                                 "}")
         self.tabWidget_student_ss.setObjectName("tabWidget_student_ss")
-        self.student_ss_mainTab = QWidget()
+        self.student_ss_mainTab = QtWidgets.QWidget()
         self.student_ss_mainTab.setObjectName("student_ss_mainTab")
-        self.verticalLayout_student_ss_mainTab = QVBoxLayout(self.student_ss_mainTab)
+        self.verticalLayout_student_ss_mainTab = QtWidgets.QVBoxLayout(self.student_ss_mainTab)
         self.verticalLayout_student_ss_mainTab.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_student_ss_mainTab.setSpacing(0)
         self.verticalLayout_student_ss_mainTab.setObjectName("verticalLayout_student_ss_mainTab")
-        self.page_student_Fss = QFrame(self.student_ss_mainTab)
-        self.page_student_Fss.setFrameShape(QFrame.StyledPanel)
-        self.page_student_Fss.setFrameShadow(QFrame.Raised)
+        self.page_student_Fss = QtWidgets.QFrame(self.student_ss_mainTab)
+        self.page_student_Fss.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.page_student_Fss.setFrameShadow(QtWidgets.QFrame.Raised)
         self.page_student_Fss.setObjectName("page_student_Fss")
-        self.horizontalLayout_page_student_Fss = QHBoxLayout(self.page_student_Fss)
+        self.horizontalLayout_page_student_Fss = QtWidgets.QHBoxLayout(self.page_student_Fss)
         self.horizontalLayout_page_student_Fss.setContentsMargins(16, 10, 16, 16)
         self.horizontalLayout_page_student_Fss.setSpacing(22)
         self.horizontalLayout_page_student_Fss.setObjectName("horizontalLayout_page_student_Fss")
-        self.page_student_ss_Fleft = QFrame(self.page_student_Fss)
+        self.page_student_ss_Fleft = QtWidgets.QFrame(self.page_student_Fss)
         self.page_student_ss_Fleft.setStyleSheet("QScrollArea{\n"
                                                  "border: 1px solid #69cdff;\n"
                                                  "}")
-        self.page_student_ss_Fleft.setFrameShape(QFrame.StyledPanel)
-        self.page_student_ss_Fleft.setFrameShadow(QFrame.Raised)
+        self.page_student_ss_Fleft.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.page_student_ss_Fleft.setFrameShadow(QtWidgets.QFrame.Raised)
         self.page_student_ss_Fleft.setObjectName("page_student_ss_Fleft")
-        self.verticalLayout_page_student_ss_Fleft = QVBoxLayout(self.page_student_ss_Fleft)
+        self.verticalLayout_page_student_ss_Fleft = QtWidgets.QVBoxLayout(self.page_student_ss_Fleft)
         self.verticalLayout_page_student_ss_Fleft.setContentsMargins(4, 4, 4, 4)
         self.verticalLayout_page_student_ss_Fleft.setSpacing(6)
         self.verticalLayout_page_student_ss_Fleft.setObjectName("verticalLayout_page_student_ss_Fleft")
-        self.student_ss_LavlTasks = QLabel(self.page_student_ss_Fleft)
+        self.student_ss_LavlTasks = QtWidgets.QLabel(self.page_student_ss_Fleft)
         self.student_ss_LavlTasks.setStyleSheet("QLabel{\n"
                                                 "color: white;\n"
-                                                "font-size: 15pt;\n"
+                                                "font-size:12pt;\n"
                                                 "border: 0;\n"
                                                 "margin-left: 4px;\n"
                                                 "}")
         self.student_ss_LavlTasks.setObjectName("student_ss_LavlTasks")
         self.verticalLayout_page_student_ss_Fleft.addWidget(self.student_ss_LavlTasks)
-        self.student_scrollArea_ssLeft = QScrollArea(self.page_student_ss_Fleft)
+        self.student_scrollArea_ssLeft = QtWidgets.QScrollArea(self.page_student_ss_Fleft)
         self.student_scrollArea_ssLeft.setStyleSheet("background-color: rgb(248, 248, 248);\n"
                                                      "color: rgb(0, 0, 0);")
         self.student_scrollArea_ssLeft.setWidgetResizable(True)
         self.student_scrollArea_ssLeft.setObjectName("student_scrollArea_ssLeft")
-        self.student_scrollAreaWidgetContents_ssLeft_contents = QWidget()
-        self.student_scrollAreaWidgetContents_ssLeft_contents.setGeometry(QRect(0, 0, 629, 591))
+        self.student_scrollAreaWidgetContents_ssLeft_contents = QtWidgets.QWidget()
+        self.student_scrollAreaWidgetContents_ssLeft_contents.setGeometry(QtCore.QRect(0, 0, 629, 591))
         self.student_scrollAreaWidgetContents_ssLeft_contents.setObjectName(
             "student_scrollAreaWidgetContents_ssLeft_contents")
-        self.gridLayout_student_scrollAreaWidgetContents_ssLeft_contents = QGridLayout(
+        self.gridLayout_student_scrollAreaWidgetContents_ssLeft_contents = QtWidgets.QGridLayout(
             self.student_scrollAreaWidgetContents_ssLeft_contents)
         self.gridLayout_student_scrollAreaWidgetContents_ssLeft_contents.setContentsMargins(0, 0, 0, 0)
         self.gridLayout_student_scrollAreaWidgetContents_ssLeft_contents.setHorizontalSpacing(7)
@@ -1668,15 +1731,15 @@ class Ui_MainWindow(object):
         self.verticalLayout_page_student_ss_Fleft.setStretch(0, 1)
         self.verticalLayout_page_student_ss_Fleft.setStretch(1, 20)
         self.horizontalLayout_page_student_Fss.addWidget(self.page_student_ss_Fleft)
-        self.page_student_ss_Fright = QFrame(self.page_student_Fss)
-        self.page_student_ss_Fright.setFrameShape(QFrame.StyledPanel)
-        self.page_student_ss_Fright.setFrameShadow(QFrame.Raised)
+        self.page_student_ss_Fright = QtWidgets.QFrame(self.page_student_Fss)
+        self.page_student_ss_Fright.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.page_student_ss_Fright.setFrameShadow(QtWidgets.QFrame.Raised)
         self.page_student_ss_Fright.setObjectName("page_student_ss_Fright")
-        self.verticalLayout_page_student_ss_Fright = QVBoxLayout(self.page_student_ss_Fright)
+        self.verticalLayout_page_student_ss_Fright = QtWidgets.QVBoxLayout(self.page_student_ss_Fright)
         self.verticalLayout_page_student_ss_Fright.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_page_student_ss_Fright.setSpacing(22)
         self.verticalLayout_page_student_ss_Fright.setObjectName("verticalLayout_page_student_ss_Fright")
-        self.student_ss_taskInfo = QFrame(self.page_student_ss_Fright)
+        self.student_ss_taskInfo = QtWidgets.QFrame(self.page_student_ss_Fright)
         self.student_ss_taskInfo.setStyleSheet("QFrame{\n"
                                                "border: 1px solid #69cdff;\n"
                                                "}\n"
@@ -1689,59 +1752,59 @@ class Ui_MainWindow(object):
                                                "QLabel{\n"
                                                "border:0;\n"
                                                "}")
-        self.student_ss_taskInfo.setFrameShape(QFrame.StyledPanel)
-        self.student_ss_taskInfo.setFrameShadow(QFrame.Raised)
+        self.student_ss_taskInfo.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.student_ss_taskInfo.setFrameShadow(QtWidgets.QFrame.Raised)
         self.student_ss_taskInfo.setObjectName("student_ss_taskInfo")
-        self.verticalLayout_student_ss_taskInfo = QVBoxLayout(self.student_ss_taskInfo)
+        self.verticalLayout_student_ss_taskInfo = QtWidgets.QVBoxLayout(self.student_ss_taskInfo)
         self.verticalLayout_student_ss_taskInfo.setContentsMargins(10, 10, 10, 8)
         self.verticalLayout_student_ss_taskInfo.setObjectName("verticalLayout_student_ss_taskInfo")
-        self.student_ss_taskInfo_mainInf = QLabel(self.student_ss_taskInfo)
+        self.student_ss_taskInfo_mainInf = QtWidgets.QLabel(self.student_ss_taskInfo)
         self.student_ss_taskInfo_mainInf.setStyleSheet("QLabel{\n"
-                                                       "font-size: 13pt;\n"
+                                                       "font-size: 12pt;\n"
                                                        "}")
-        self.student_ss_taskInfo_mainInf.setAlignment(Qt.AlignLeading | Qt.AlignLeft | Qt.AlignTop)
+        self.student_ss_taskInfo_mainInf.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
         self.student_ss_taskInfo_mainInf.setObjectName("student_ss_taskInfo_mainInf")
         self.verticalLayout_student_ss_taskInfo.addWidget(self.student_ss_taskInfo_mainInf)
-        self.student_ss_taskInfo_hoursRend = QLabel(self.student_ss_taskInfo)
+        self.student_ss_taskInfo_hoursRend = QtWidgets.QLabel(self.student_ss_taskInfo)
         self.student_ss_taskInfo_hoursRend.setStyleSheet("QLabel{\n"
-                                                         "font-size: 13pt;\n"
+                                                         "font-size: 12pt;\n"
                                                          "}")
         self.student_ss_taskInfo_hoursRend.setObjectName("student_ss_taskInfo_hoursRend")
         self.verticalLayout_student_ss_taskInfo.addWidget(self.student_ss_taskInfo_hoursRend)
         self.verticalLayout_student_ss_taskInfo.setStretch(0, 3)
         self.verticalLayout_student_ss_taskInfo.setStretch(1, 1)
         self.verticalLayout_page_student_ss_Fright.addWidget(self.student_ss_taskInfo)
-        self.student_ss_currentTasks = QFrame(self.page_student_ss_Fright)
+        self.student_ss_currentTasks = QtWidgets.QFrame(self.page_student_ss_Fright)
         self.student_ss_currentTasks.setStyleSheet("QFrame{border: 0;}\n"
                                                    "\n"
                                                    "QLabel{border:0}\n"
                                                    "\n"
                                                    "QScrollArea{border: 1px solid #69cdff;}")
-        self.student_ss_currentTasks.setFrameShape(QFrame.StyledPanel)
-        self.student_ss_currentTasks.setFrameShadow(QFrame.Raised)
+        self.student_ss_currentTasks.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.student_ss_currentTasks.setFrameShadow(QtWidgets.QFrame.Raised)
         self.student_ss_currentTasks.setObjectName("student_ss_currentTasks")
-        self.verticalLayout_student_ss_currentTasks = QVBoxLayout(self.student_ss_currentTasks)
+        self.verticalLayout_student_ss_currentTasks = QtWidgets.QVBoxLayout(self.student_ss_currentTasks)
         self.verticalLayout_student_ss_currentTasks.setContentsMargins(4, 4, 4, 4)
         self.verticalLayout_student_ss_currentTasks.setSpacing(6)
         self.verticalLayout_student_ss_currentTasks.setObjectName("verticalLayout_student_ss_currentTasks")
-        self.student_ss_LcurrentTasks = QLabel(self.student_ss_currentTasks)
+        self.student_ss_LcurrentTasks = QtWidgets.QLabel(self.student_ss_currentTasks)
         self.student_ss_LcurrentTasks.setStyleSheet("QLabel{\n"
                                                     "color: white;\n"
-                                                    "font-size: 15pt;\n"
+                                                    "font-size:12pt;\n"
                                                     "border: 0;\n"
                                                     "margin-left: 4px;\n"
                                                     "}")
         self.student_ss_LcurrentTasks.setObjectName("student_ss_LcurrentTasks")
         self.verticalLayout_student_ss_currentTasks.addWidget(self.student_ss_LcurrentTasks)
-        self.student_scrollArea_sscurrentTasks = QScrollArea(self.student_ss_currentTasks)
+        self.student_scrollArea_sscurrentTasks = QtWidgets.QScrollArea(self.student_ss_currentTasks)
         self.student_scrollArea_sscurrentTasks.setStyleSheet("color: black;\n"
                                                              "background-color: rgb(248, 248, 248);")
         self.student_scrollArea_sscurrentTasks.setWidgetResizable(True)
         self.student_scrollArea_sscurrentTasks.setObjectName("student_scrollArea_sscurrentTasks")
-        self.student_scrollArea_sscurrentTasks_contents = QWidget()
-        self.student_scrollArea_sscurrentTasks_contents.setGeometry(QRect(0, 0, 629, 364))
+        self.student_scrollArea_sscurrentTasks_contents = QtWidgets.QWidget()
+        self.student_scrollArea_sscurrentTasks_contents.setGeometry(QtCore.QRect(0, 0, 629, 364))
         self.student_scrollArea_sscurrentTasks_contents.setObjectName("student_scrollArea_sscurrentTasks_contents")
-        self.gridLayout_student_scrollArea_sscurrentTasks_contents = QGridLayout(
+        self.gridLayout_student_scrollArea_sscurrentTasks_contents = QtWidgets.QGridLayout(
             self.student_scrollArea_sscurrentTasks_contents)
         self.gridLayout_student_scrollArea_sscurrentTasks_contents.setContentsMargins(0, 0, 0, 0)
         self.gridLayout_student_scrollArea_sscurrentTasks_contents.setSpacing(6)
@@ -1757,19 +1820,19 @@ class Ui_MainWindow(object):
         self.horizontalLayout_page_student_Fss.addWidget(self.page_student_ss_Fright)
         self.verticalLayout_student_ss_mainTab.addWidget(self.page_student_Fss)
         self.tabWidget_student_ss.addTab(self.student_ss_mainTab, "")
-        self.tab_3 = QWidget()
-        self.tab_3.setObjectName("tab_3")
-        self.tabWidget_student_ss.addTab(self.tab_3, "")
         self.verticalLayout_page_student_ss.addWidget(self.tabWidget_student_ss)
         self.stackedWidget_special_services.addWidget(self.page_student_ss)
-        self.page_faculty_ss = QWidget()
+        ##  SPECIAL SERVICES_PAGE - STUDENT | END
+
+        ##  SPECIAL SERVICES_PAGE - FACULTY | START
+        self.page_faculty_ss = QtWidgets.QWidget()
         self.page_faculty_ss.setStyleSheet("")
         self.page_faculty_ss.setObjectName("page_faculty_ss")
-        self.verticalLayout_page_faculty_ss = QVBoxLayout(self.page_faculty_ss)
+        self.verticalLayout_page_faculty_ss = QtWidgets.QVBoxLayout(self.page_faculty_ss)
         self.verticalLayout_page_faculty_ss.setContentsMargins(0, 6, 0, 0)
         self.verticalLayout_page_faculty_ss.setSpacing(0)
         self.verticalLayout_page_faculty_ss.setObjectName("verticalLayout_page_faculty_ss")
-        self.tabWidget_faculty_ss = QTabWidget(self.page_faculty_ss)
+        self.tabWidget_faculty_ss = QtWidgets.QTabWidget(self.page_faculty_ss)
         self.tabWidget_faculty_ss.setStyleSheet("\n"
                                                 "QTabWidget::pane { /* The tab widget frame */\n"
                                                 "border:0\n"
@@ -1808,49 +1871,49 @@ class Ui_MainWindow(object):
                                                 "border-bottom: 3px solid #69cdff;\n"
                                                 "}")
         self.tabWidget_faculty_ss.setObjectName("tabWidget_faculty_ss")
-        self.faculty_ss_mainTab = QWidget()
+        self.faculty_ss_mainTab = QtWidgets.QWidget()
         self.faculty_ss_mainTab.setObjectName("faculty_ss_mainTab")
-        self.verticalLayout_faculty_ss_mainTab = QVBoxLayout(self.faculty_ss_mainTab)
+        self.verticalLayout_faculty_ss_mainTab = QtWidgets.QVBoxLayout(self.faculty_ss_mainTab)
         self.verticalLayout_faculty_ss_mainTab.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_faculty_ss_mainTab.setSpacing(0)
         self.verticalLayout_faculty_ss_mainTab.setObjectName("verticalLayout_faculty_ss_mainTab")
-        self.page_faculty_Fss = QFrame(self.faculty_ss_mainTab)
-        self.page_faculty_Fss.setFrameShape(QFrame.StyledPanel)
-        self.page_faculty_Fss.setFrameShadow(QFrame.Raised)
+        self.page_faculty_Fss = QtWidgets.QFrame(self.faculty_ss_mainTab)
+        self.page_faculty_Fss.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.page_faculty_Fss.setFrameShadow(QtWidgets.QFrame.Raised)
         self.page_faculty_Fss.setObjectName("page_faculty_Fss")
-        self.horizontalLayout_page_faculty_Fss = QHBoxLayout(self.page_faculty_Fss)
+        self.horizontalLayout_page_faculty_Fss = QtWidgets.QHBoxLayout(self.page_faculty_Fss)
         self.horizontalLayout_page_faculty_Fss.setContentsMargins(16, 10, 16, 16)
         self.horizontalLayout_page_faculty_Fss.setSpacing(22)
         self.horizontalLayout_page_faculty_Fss.setObjectName("horizontalLayout_page_faculty_Fss")
-        self.page_faculty_ss_Fleft = QFrame(self.page_faculty_Fss)
+        self.page_faculty_ss_Fleft = QtWidgets.QFrame(self.page_faculty_Fss)
         self.page_faculty_ss_Fleft.setStyleSheet("QFrame{\n"
                                                  "border: 0;\n"
                                                  "}\n"
                                                  "\n"
                                                  "QScrollArea{border: 1px solid #69cdff;}")
-        self.page_faculty_ss_Fleft.setFrameShape(QFrame.StyledPanel)
-        self.page_faculty_ss_Fleft.setFrameShadow(QFrame.Raised)
+        self.page_faculty_ss_Fleft.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.page_faculty_ss_Fleft.setFrameShadow(QtWidgets.QFrame.Raised)
         self.page_faculty_ss_Fleft.setObjectName("page_faculty_ss_Fleft")
-        self.verticalLayout_page_faculty_ss_Fleft = QVBoxLayout(self.page_faculty_ss_Fleft)
+        self.verticalLayout_page_faculty_ss_Fleft = QtWidgets.QVBoxLayout(self.page_faculty_ss_Fleft)
         self.verticalLayout_page_faculty_ss_Fleft.setObjectName("verticalLayout_page_faculty_ss_Fleft")
-        self.faculty_ss_Fleft_tcreatedLabel = QLabel(self.page_faculty_ss_Fleft)
+        self.faculty_ss_Fleft_tcreatedLabel = QtWidgets.QLabel(self.page_faculty_ss_Fleft)
         self.faculty_ss_Fleft_tcreatedLabel.setStyleSheet("QLabel{\n"
                                                           "color: white;\n"
-                                                          "font-size: 15pt;\n"
+                                                          "font-size:12pt;\n"
                                                           "margin-left: 4px;\n"
                                                           "border:0 ;\n"
                                                           "}")
         self.faculty_ss_Fleft_tcreatedLabel.setObjectName("faculty_ss_Fleft_tcreatedLabel")
         self.verticalLayout_page_faculty_ss_Fleft.addWidget(self.faculty_ss_Fleft_tcreatedLabel)
-        self.faculty_scrollArea_tcreated = QScrollArea(self.page_faculty_ss_Fleft)
+        self.faculty_scrollArea_tcreated = QtWidgets.QScrollArea(self.page_faculty_ss_Fleft)
         self.faculty_scrollArea_tcreated.setStyleSheet("background-color: rgb(248, 248, 248);\n"
                                                        "")
         self.faculty_scrollArea_tcreated.setWidgetResizable(True)
         self.faculty_scrollArea_tcreated.setObjectName("faculty_scrollArea_tcreated")
-        self.faculty_scrollArea_tcreated_contents = QWidget()
-        self.faculty_scrollArea_tcreated_contents.setGeometry(QRect(0, 0, 627, 591))
+        self.faculty_scrollArea_tcreated_contents = QtWidgets.QWidget()
+        self.faculty_scrollArea_tcreated_contents.setGeometry(QtCore.QRect(0, 0, 627, 591))
         self.faculty_scrollArea_tcreated_contents.setObjectName("faculty_scrollArea_tcreated_contents")
-        self.verticalLayout_faculty_scrollArea_tcreated_contents = QVBoxLayout(
+        self.verticalLayout_faculty_scrollArea_tcreated_contents = QtWidgets.QVBoxLayout(
             self.faculty_scrollArea_tcreated_contents)
         self.verticalLayout_faculty_scrollArea_tcreated_contents.setContentsMargins(0, -1, 0, 0)
         self.verticalLayout_faculty_scrollArea_tcreated_contents.setSpacing(4)
@@ -1861,42 +1924,42 @@ class Ui_MainWindow(object):
         self.verticalLayout_page_faculty_ss_Fleft.setStretch(0, 1)
         self.verticalLayout_page_faculty_ss_Fleft.setStretch(1, 20)
         self.horizontalLayout_page_faculty_Fss.addWidget(self.page_faculty_ss_Fleft)
-        self.page_faculty_ss_Fright = QFrame(self.page_faculty_Fss)
-        self.page_faculty_ss_Fright.setFrameShape(QFrame.StyledPanel)
-        self.page_faculty_ss_Fright.setFrameShadow(QFrame.Raised)
+        self.page_faculty_ss_Fright = QtWidgets.QFrame(self.page_faculty_Fss)
+        self.page_faculty_ss_Fright.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.page_faculty_ss_Fright.setFrameShadow(QtWidgets.QFrame.Raised)
         self.page_faculty_ss_Fright.setObjectName("page_faculty_ss_Fright")
-        self.verticalLayout_page_faculty_ss_Fright = QVBoxLayout(self.page_faculty_ss_Fright)
+        self.verticalLayout_page_faculty_ss_Fright = QtWidgets.QVBoxLayout(self.page_faculty_ss_Fright)
         self.verticalLayout_page_faculty_ss_Fright.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_page_faculty_ss_Fright.setSpacing(22)
         self.verticalLayout_page_faculty_ss_Fright.setObjectName("verticalLayout_page_faculty_ss_Fright")
-        self.page_faculty_ss_right_Ftop = QFrame(self.page_faculty_ss_Fright)
+        self.page_faculty_ss_right_Ftop = QtWidgets.QFrame(self.page_faculty_ss_Fright)
         self.page_faculty_ss_right_Ftop.setStyleSheet("QFrame{\n"
                                                       "border: 0;\n"
                                                       "}")
-        self.page_faculty_ss_right_Ftop.setFrameShape(QFrame.StyledPanel)
-        self.page_faculty_ss_right_Ftop.setFrameShadow(QFrame.Raised)
+        self.page_faculty_ss_right_Ftop.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.page_faculty_ss_right_Ftop.setFrameShadow(QtWidgets.QFrame.Raised)
         self.page_faculty_ss_right_Ftop.setObjectName("page_faculty_ss_right_Ftop")
-        self.verticalLayout_page_faculty_ss_right_Ftop = QVBoxLayout(self.page_faculty_ss_right_Ftop)
+        self.verticalLayout_page_faculty_ss_right_Ftop = QtWidgets.QVBoxLayout(self.page_faculty_ss_right_Ftop)
         self.verticalLayout_page_faculty_ss_right_Ftop.setContentsMargins(4, 4, 4, 4)
         self.verticalLayout_page_faculty_ss_right_Ftop.setObjectName("verticalLayout_page_faculty_ss_right_Ftop")
-        self.faculty_ss_right_Ftop_iconLabel = QLabel(self.page_faculty_ss_right_Ftop)
+        self.faculty_ss_right_Ftop_iconLabel = QtWidgets.QLabel(self.page_faculty_ss_right_Ftop)
         self.faculty_ss_right_Ftop_iconLabel.setStyleSheet("QLabel{\n"
                                                            "color: white;\n"
-                                                           "font-size: 15pt;\n"
+                                                           "font-size:12pt;\n"
                                                            "margin-left: 4px;\n"
                                                            "border:0 ;\n"
                                                            "}")
         self.faculty_ss_right_Ftop_iconLabel.setObjectName("faculty_ss_right_Ftop_iconLabel")
         self.verticalLayout_page_faculty_ss_right_Ftop.addWidget(self.faculty_ss_right_Ftop_iconLabel)
-        self.page_faculty_ss_right_Ftop_iconContents = QFrame(self.page_faculty_ss_right_Ftop)
+        self.page_faculty_ss_right_Ftop_iconContents = QtWidgets.QFrame(self.page_faculty_ss_right_Ftop)
         self.page_faculty_ss_right_Ftop_iconContents.setStyleSheet("QFrame{\n"
                                                                    "border: 1px solid #69cdff;\n"
                                                                    "    background-color: rgb(248, 248, 248);\n"
                                                                    "}")
-        self.page_faculty_ss_right_Ftop_iconContents.setFrameShape(QFrame.StyledPanel)
-        self.page_faculty_ss_right_Ftop_iconContents.setFrameShadow(QFrame.Raised)
+        self.page_faculty_ss_right_Ftop_iconContents.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.page_faculty_ss_right_Ftop_iconContents.setFrameShadow(QtWidgets.QFrame.Raised)
         self.page_faculty_ss_right_Ftop_iconContents.setObjectName("page_faculty_ss_right_Ftop_iconContents")
-        self.gridLayout_page_faculty_ss_right_Ftop_iconContents = QGridLayout(
+        self.gridLayout_page_faculty_ss_right_Ftop_iconContents = QtWidgets.QGridLayout(
             self.page_faculty_ss_right_Ftop_iconContents)
         self.gridLayout_page_faculty_ss_right_Ftop_iconContents.setContentsMargins(0, 0, 0, 0)
         self.gridLayout_page_faculty_ss_right_Ftop_iconContents.setSpacing(3)
@@ -1906,52 +1969,52 @@ class Ui_MainWindow(object):
         self.verticalLayout_page_faculty_ss_right_Ftop.setStretch(0, 1)
         self.verticalLayout_page_faculty_ss_right_Ftop.setStretch(1, 10)
         self.verticalLayout_page_faculty_ss_Fright.addWidget(self.page_faculty_ss_right_Ftop)
-        self.page_faculty_ss_right_Fbot = QFrame(self.page_faculty_ss_Fright)
+        self.page_faculty_ss_right_Fbot = QtWidgets.QFrame(self.page_faculty_ss_Fright)
         self.page_faculty_ss_right_Fbot.setStyleSheet("QFrame{\n"
                                                       "border: 0;\n"
                                                       "}\n"
                                                       "\n"
                                                       "QScrollArea{border: 1px solid #69cdff;}")
-        self.page_faculty_ss_right_Fbot.setFrameShape(QFrame.StyledPanel)
-        self.page_faculty_ss_right_Fbot.setFrameShadow(QFrame.Raised)
+        self.page_faculty_ss_right_Fbot.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.page_faculty_ss_right_Fbot.setFrameShadow(QtWidgets.QFrame.Raised)
         self.page_faculty_ss_right_Fbot.setObjectName("page_faculty_ss_right_Fbot")
-        self.verticalLayout_page_faculty_ss_right_Fbot = QVBoxLayout(self.page_faculty_ss_right_Fbot)
+        self.verticalLayout_page_faculty_ss_right_Fbot = QtWidgets.QVBoxLayout(self.page_faculty_ss_right_Fbot)
         self.verticalLayout_page_faculty_ss_right_Fbot.setContentsMargins(4, 4, 4, 4)
         self.verticalLayout_page_faculty_ss_right_Fbot.setSpacing(4)
         self.verticalLayout_page_faculty_ss_right_Fbot.setObjectName("verticalLayout_page_faculty_ss_right_Fbot")
-        self.faculty_ss_right_bot_Ftcreation = QFrame(self.page_faculty_ss_right_Fbot)
+        self.faculty_ss_right_bot_Ftcreation = QtWidgets.QFrame(self.page_faculty_ss_right_Fbot)
         self.faculty_ss_right_bot_Ftcreation.setStyleSheet("QFrame{\n"
                                                            "border: 0;\n"
                                                            "}")
-        self.faculty_ss_right_bot_Ftcreation.setFrameShape(QFrame.StyledPanel)
-        self.faculty_ss_right_bot_Ftcreation.setFrameShadow(QFrame.Raised)
+        self.faculty_ss_right_bot_Ftcreation.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.faculty_ss_right_bot_Ftcreation.setFrameShadow(QtWidgets.QFrame.Raised)
         self.faculty_ss_right_bot_Ftcreation.setObjectName("faculty_ss_right_bot_Ftcreation")
-        self.horizontalLayout_faculty_ss_right_bot_Ftcreation = QHBoxLayout(
+        self.horizontalLayout_faculty_ss_right_bot_Ftcreation = QtWidgets.QHBoxLayout(
             self.faculty_ss_right_bot_Ftcreation)
         self.horizontalLayout_faculty_ss_right_bot_Ftcreation.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_faculty_ss_right_bot_Ftcreation.setSpacing(0)
         self.horizontalLayout_faculty_ss_right_bot_Ftcreation.setObjectName(
             "horizontalLayout_faculty_ss_right_bot_Ftcreation")
-        self.faculty_ss_tcreationLabel = QLabel(self.faculty_ss_right_bot_Ftcreation)
+        self.faculty_ss_tcreationLabel = QtWidgets.QLabel(self.faculty_ss_right_bot_Ftcreation)
         self.faculty_ss_tcreationLabel.setStyleSheet("QLabel{\n"
                                                      "color: white;\n"
-                                                     "font-size: 15pt;\n"
+                                                     "font-size:12pt;\n"
                                                      "margin-left: 4px;\n"
                                                      "border:0 ;\n"
                                                      "}")
         self.faculty_ss_tcreationLabel.setObjectName("faculty_ss_tcreationLabel")
         self.horizontalLayout_faculty_ss_right_bot_Ftcreation.addWidget(self.faculty_ss_tcreationLabel)
-        self.faculty_ss_right_bot_tcreation_Fright = QFrame(self.faculty_ss_right_bot_Ftcreation)
-        self.faculty_ss_right_bot_tcreation_Fright.setFrameShape(QFrame.StyledPanel)
-        self.faculty_ss_right_bot_tcreation_Fright.setFrameShadow(QFrame.Raised)
+        self.faculty_ss_right_bot_tcreation_Fright = QtWidgets.QFrame(self.faculty_ss_right_bot_Ftcreation)
+        self.faculty_ss_right_bot_tcreation_Fright.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.faculty_ss_right_bot_tcreation_Fright.setFrameShadow(QtWidgets.QFrame.Raised)
         self.faculty_ss_right_bot_tcreation_Fright.setObjectName("faculty_ss_right_bot_tcreation_Fright")
-        self.horizontalLayout_faculty_ss_right_bot_tcreation_Fright = QHBoxLayout(
+        self.horizontalLayout_faculty_ss_right_bot_tcreation_Fright = QtWidgets.QHBoxLayout(
             self.faculty_ss_right_bot_tcreation_Fright)
         self.horizontalLayout_faculty_ss_right_bot_tcreation_Fright.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_faculty_ss_right_bot_tcreation_Fright.setSpacing(2)
         self.horizontalLayout_faculty_ss_right_bot_tcreation_Fright.setObjectName(
             "horizontalLayout_faculty_ss_right_bot_tcreation_Fright")
-        self.faculty_ss_right_top_tcreation_right_okCreationButton = QPushButton(
+        self.faculty_ss_right_top_tcreation_right_okCreationButton = QtWidgets.QPushButton(
             self.faculty_ss_right_bot_tcreation_Fright)
         self.faculty_ss_right_top_tcreation_right_okCreationButton.setStyleSheet("color: white;")
         self.faculty_ss_right_top_tcreation_right_okCreationButton.setObjectName(
@@ -1959,17 +2022,17 @@ class Ui_MainWindow(object):
         self.horizontalLayout_faculty_ss_right_bot_tcreation_Fright.addWidget(
             self.faculty_ss_right_top_tcreation_right_okCreationButton)
         self.horizontalLayout_faculty_ss_right_bot_Ftcreation.addWidget(self.faculty_ss_right_bot_tcreation_Fright, 0,
-                                                                        Qt.AlignRight)
+                                                                        QtCore.Qt.AlignRight)
         self.verticalLayout_page_faculty_ss_right_Fbot.addWidget(self.faculty_ss_right_bot_Ftcreation)
-        self.faculty_scrollArea_tcreation = QScrollArea(self.page_faculty_ss_right_Fbot)
+        self.faculty_scrollArea_tcreation = QtWidgets.QScrollArea(self.page_faculty_ss_right_Fbot)
         self.faculty_scrollArea_tcreation.setStyleSheet("color: rgb(0, 0, 0);\n"
                                                         "background-color: rgb(248, 248, 248);")
         self.faculty_scrollArea_tcreation.setWidgetResizable(True)
         self.faculty_scrollArea_tcreation.setObjectName("faculty_scrollArea_tcreation")
-        self.faculty_scrollArea_tcreation_contents = QWidget()
-        self.faculty_scrollArea_tcreation_contents.setGeometry(QRect(0, 0, 629, 336))
+        self.faculty_scrollArea_tcreation_contents = QtWidgets.QWidget()
+        self.faculty_scrollArea_tcreation_contents.setGeometry(QtCore.QRect(0, 0, 629, 336))
         self.faculty_scrollArea_tcreation_contents.setObjectName("faculty_scrollArea_tcreation_contents")
-        self.verticalLayout_faculty_scrollArea_tcreation_contents = QVBoxLayout(
+        self.verticalLayout_faculty_scrollArea_tcreation_contents = QtWidgets.QVBoxLayout(
             self.faculty_scrollArea_tcreation_contents)
         self.verticalLayout_faculty_scrollArea_tcreation_contents.setContentsMargins(4, 4, 4, 4)
         self.verticalLayout_faculty_scrollArea_tcreation_contents.setSpacing(0)
@@ -1984,32 +2047,60 @@ class Ui_MainWindow(object):
         self.horizontalLayout_page_faculty_Fss.addWidget(self.page_faculty_ss_Fright)
         self.verticalLayout_faculty_ss_mainTab.addWidget(self.page_faculty_Fss)
         self.tabWidget_faculty_ss.addTab(self.faculty_ss_mainTab, "")
-        self.tab_2 = QWidget()
-        self.tab_2.setObjectName("tab_2")
-        self.tabWidget_faculty_ss.addTab(self.tab_2, "")
         self.verticalLayout_page_faculty_ss.addWidget(self.tabWidget_faculty_ss)
         self.stackedWidget_special_services.addWidget(self.page_faculty_ss)
-        self.verticalLayout_page_special_services.addWidget(self.stackedWidget_special_services)
+        ##  SPECIAL SERVICES_PAGE - FACULTY | END
+
+        self.verticalLayout_10_specserv.addWidget(self.stackedWidget_special_services)
+        self.verticalLayout_10_specserv.addWidget(self.page_special_services_changeUserF, 0,
+                                                  QtCore.Qt.AlignRight | QtCore.Qt.AlignBottom)
+        self.verticalLayout_10_specserv.setStretch(20, 1)
         self.stackedWidget.addWidget(self.page_special_services)
-        ## SPECIAL-SERVICES_PAGE | END
 
+        self.popMenu_special_services = QtWidgets.QMenu()
+        self.popMenu_special_services.setObjectName('popMenu_special_services')
+        self.studAction_special_services = QtWidgets.QAction("Student")
+        self.facAction_special_services = QtWidgets.QAction("Faculty")
+        self.popMenu_special_services.addAction(self.studAction_special_services)
+        self.popMenu_special_services.addAction(self.facAction_special_services)
+        self.studAction_special_services.triggered.connect(
+            lambda: self.stackedWidget_special_services.setCurrentWidget(self.page_student_ss))
+        self.facAction_special_services.triggered.connect(
+            lambda: self.stackedWidget_special_services.setCurrentWidget(self.page_faculty_ss))
 
-## ROOM-RESERVATION_PAGE | START
-        self.page_roomNkey = QWidget()
+        self.page_special_services_changeUserButton.setMenu(self.popMenu_special_services)
+
+        self.page_roomNkey = QtWidgets.QWidget()
         self.page_roomNkey.setObjectName("page_roomNkey")
-        self.verticalLayout_page_roomNkey = QVBoxLayout(self.page_roomNkey)
+        self.verticalLayout_page_roomNkey = QtWidgets.QVBoxLayout(self.page_roomNkey)
         self.verticalLayout_page_roomNkey.setContentsMargins(10, 10, 10, 10)
         self.verticalLayout_page_roomNkey.setSpacing(0)
         self.verticalLayout_page_roomNkey.setObjectName("verticalLayout_page_roomNkey")
-        self.page_stackedWidget_roomNkey = QStackedWidget(self.page_roomNkey)
+
+        self.page_stackedWidget_roomNkey = QtWidgets.QStackedWidget(self.page_roomNkey)
         self.page_stackedWidget_roomNkey.setObjectName("page_stackedWidget_roomNkey")
-        self.page_student_roomNkey = QWidget()
+
+        self.page_roomNkey_changeUserF = QFrame(self.page_roomNkey)
+        self.page_roomNkey_changeUserF.setObjectName(u"page_roomNkey_changeUserF")
+        self.horizontalLayout_page_roomNkey_changeUserF = QHBoxLayout(self.page_roomNkey_changeUserF)
+        self.horizontalLayout_page_roomNkey_changeUserF.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_page_roomNkey_changeUserF.setSpacing(0)
+        self.horizontalLayout_page_roomNkey_changeUserF.setObjectName(u"horizontalLayout_page_roomNkey_changeUserF")
+
+        self.page_roomNkey_changeUserButton = QPushButton()
+        self.page_roomNkey_changeUserButton.setFixedSize(20, 12)
+        self.page_roomNkey_changeUserButton.setObjectName(u'page_roomNkey_changeUserButton')
+
+        self.horizontalLayout_page_roomNkey_changeUserF.addWidget(self.page_roomNkey_changeUserButton)
+
+        ##  ROOM RESERVATION_PAGE - STUDENT | START
+        self.page_student_roomNkey = QtWidgets.QWidget()
         self.page_student_roomNkey.setObjectName("page_student_roomNkey")
-        self.verticalLayout_page_student_roomNkey = QVBoxLayout(self.page_student_roomNkey)
+        self.verticalLayout_page_student_roomNkey = QtWidgets.QVBoxLayout(self.page_student_roomNkey)
         self.verticalLayout_page_student_roomNkey.setContentsMargins(0, 6, 0, 0)
         self.verticalLayout_page_student_roomNkey.setSpacing(0)
         self.verticalLayout_page_student_roomNkey.setObjectName("verticalLayout_page_student_roomNkey")
-        self.tabWidget_student_roomNkey = QTabWidget(self.page_student_roomNkey)
+        self.tabWidget_student_roomNkey = QtWidgets.QTabWidget(self.page_student_roomNkey)
         self.tabWidget_student_roomNkey.setStyleSheet("\n"
                                                       "QTabWidget::pane { /* The tab widget frame */\n"
                                                       "border:0\n"
@@ -2048,24 +2139,24 @@ class Ui_MainWindow(object):
                                                       "border-bottom: 3px solid #69cdff;\n"
                                                       "}")
         self.tabWidget_student_roomNkey.setObjectName("tabWidget_student_roomNkey")
-        self.student_roomNkey_mainTab = QWidget()
+        self.student_roomNkey_mainTab = QtWidgets.QWidget()
         self.student_roomNkey_mainTab.setObjectName("student_roomNkey_mainTab")
-        self.verticalLayout_student_roomNkey_mainTab = QVBoxLayout(self.student_roomNkey_mainTab)
+        self.verticalLayout_student_roomNkey_mainTab = QtWidgets.QVBoxLayout(self.student_roomNkey_mainTab)
         self.verticalLayout_student_roomNkey_mainTab.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_student_roomNkey_mainTab.setSpacing(0)
         self.verticalLayout_student_roomNkey_mainTab.setObjectName("verticalLayout_student_roomNkey_mainTab")
-        self.page_student_FroomNkey = QFrame(self.student_roomNkey_mainTab)
+        self.page_student_FroomNkey = QtWidgets.QFrame(self.student_roomNkey_mainTab)
         self.page_student_FroomNkey.setStyleSheet("QFrame{\n"
                                                   "border: 0;\n"
                                                   "}")
-        self.page_student_FroomNkey.setFrameShape(QFrame.StyledPanel)
-        self.page_student_FroomNkey.setFrameShadow(QFrame.Raised)
+        self.page_student_FroomNkey.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.page_student_FroomNkey.setFrameShadow(QtWidgets.QFrame.Raised)
         self.page_student_FroomNkey.setObjectName("page_student_FroomNkey")
-        self.verticalLayout_page_student_FroomNkey = QVBoxLayout(self.page_student_FroomNkey)
+        self.verticalLayout_page_student_FroomNkey = QtWidgets.QVBoxLayout(self.page_student_FroomNkey)
         self.verticalLayout_page_student_FroomNkey.setContentsMargins(8, 8, 8, 8)
         self.verticalLayout_page_student_FroomNkey.setSpacing(0)
         self.verticalLayout_page_student_FroomNkey.setObjectName("verticalLayout_page_student_FroomNkey")
-        self.page_student_FroomNkey_contents = QFrame(self.page_student_FroomNkey)
+        self.page_student_FroomNkey_contents = QtWidgets.QFrame(self.page_student_FroomNkey)
         self.page_student_FroomNkey_contents.setStyleSheet("QFrame{\n"
                                                            "border: 0;\n"
                                                            "}\n"
@@ -2076,28 +2167,28 @@ class Ui_MainWindow(object):
                                                            "margin-left: 4px;\n"
                                                            "}\n"
                                                            "")
-        self.page_student_FroomNkey_contents.setFrameShape(QFrame.StyledPanel)
-        self.page_student_FroomNkey_contents.setFrameShadow(QFrame.Raised)
+        self.page_student_FroomNkey_contents.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.page_student_FroomNkey_contents.setFrameShadow(QtWidgets.QFrame.Raised)
         self.page_student_FroomNkey_contents.setObjectName("page_student_FroomNkey_contents")
-        self.gridLayout_page_student_FroomNkey_contents = QGridLayout(self.page_student_FroomNkey_contents)
+        self.gridLayout_page_student_FroomNkey_contents = QtWidgets.QGridLayout(self.page_student_FroomNkey_contents)
         self.gridLayout_page_student_FroomNkey_contents.setContentsMargins(10, 10, 10, 10)
         self.gridLayout_page_student_FroomNkey_contents.setSpacing(10)
         self.gridLayout_page_student_FroomNkey_contents.setObjectName("gridLayout_page_student_FroomNkey_contents")
-        self.student_room1 = QFrame(self.page_student_FroomNkey_contents)
+        self.student_room1 = QtWidgets.QFrame(self.page_student_FroomNkey_contents)
         self.student_room1.setStyleSheet("QFrame {\n"
                                          "border: 1px solid #69cdff;\n"
                                          "border-radius: 6px;\n"
                                          "}\n"
                                          "")
-        self.student_room1.setFrameShape(QFrame.StyledPanel)
-        self.student_room1.setFrameShadow(QFrame.Raised)
+        self.student_room1.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.student_room1.setFrameShadow(QtWidgets.QFrame.Raised)
         self.student_room1.setObjectName("student_room1")
-        self.verticalLayout_student_room1 = QVBoxLayout(self.student_room1)
+        self.verticalLayout_student_room1 = QtWidgets.QVBoxLayout(self.student_room1)
         self.verticalLayout_student_room1.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_student_room1.setSpacing(0)
         self.verticalLayout_student_room1.setObjectName("verticalLayout_student_room1")
-        self.student_pushButton_room1 = QPushButton(self.student_room1)
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        self.student_pushButton_room1 = QtWidgets.QPushButton(self.student_room1)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.student_pushButton_room1.sizePolicy().hasHeightForWidth())
@@ -2105,7 +2196,7 @@ class Ui_MainWindow(object):
         self.student_pushButton_room1.setText("")
         self.student_pushButton_room1.setObjectName("student_pushButton_room1")
         self.verticalLayout_student_room1.addWidget(self.student_pushButton_room1)
-        self.student_label_room1 = QLabel(self.student_room1)
+        self.student_label_room1 = QtWidgets.QLabel(self.student_room1)
         self.student_label_room1.setStyleSheet("border: 0;\n"
                                                "margin-left: 4px;")
         self.student_label_room1.setObjectName("student_label_room1")
@@ -2113,21 +2204,21 @@ class Ui_MainWindow(object):
         self.verticalLayout_student_room1.setStretch(0, 7)
         self.verticalLayout_student_room1.setStretch(1, 1)
         self.gridLayout_page_student_FroomNkey_contents.addWidget(self.student_room1, 2, 1, 1, 1)
-        self.student_room2 = QFrame(self.page_student_FroomNkey_contents)
+        self.student_room2 = QtWidgets.QFrame(self.page_student_FroomNkey_contents)
         self.student_room2.setStyleSheet("QFrame {\n"
                                          "border: 1px solid #69cdff;\n"
                                          "border-radius: 6px;\n"
                                          "}\n"
                                          "")
-        self.student_room2.setFrameShape(QFrame.StyledPanel)
-        self.student_room2.setFrameShadow(QFrame.Raised)
+        self.student_room2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.student_room2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.student_room2.setObjectName("student_room2")
-        self.verticalLayout_student_room2 = QVBoxLayout(self.student_room2)
+        self.verticalLayout_student_room2 = QtWidgets.QVBoxLayout(self.student_room2)
         self.verticalLayout_student_room2.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_student_room2.setSpacing(0)
         self.verticalLayout_student_room2.setObjectName("verticalLayout_student_room2")
-        self.student_pushButton_room2 = QPushButton(self.student_room2)
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        self.student_pushButton_room2 = QtWidgets.QPushButton(self.student_room2)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.student_pushButton_room2.sizePolicy().hasHeightForWidth())
@@ -2135,7 +2226,7 @@ class Ui_MainWindow(object):
         self.student_pushButton_room2.setText("")
         self.student_pushButton_room2.setObjectName("student_pushButton_room2")
         self.verticalLayout_student_room2.addWidget(self.student_pushButton_room2)
-        self.student_label_room2 = QLabel(self.student_room2)
+        self.student_label_room2 = QtWidgets.QLabel(self.student_room2)
         self.student_label_room2.setStyleSheet("border: 0;\n"
                                                "margin-left: 4px;")
         self.student_label_room2.setObjectName("student_label_room2")
@@ -2143,21 +2234,21 @@ class Ui_MainWindow(object):
         self.verticalLayout_student_room2.setStretch(0, 7)
         self.verticalLayout_student_room2.setStretch(1, 1)
         self.gridLayout_page_student_FroomNkey_contents.addWidget(self.student_room2, 2, 2, 1, 1)
-        self.student_room3 = QFrame(self.page_student_FroomNkey_contents)
+        self.student_room3 = QtWidgets.QFrame(self.page_student_FroomNkey_contents)
         self.student_room3.setStyleSheet("QFrame {\n"
                                          "border: 1px solid #69cdff;\n"
                                          "border-radius: 6px;\n"
                                          "}\n"
                                          "")
-        self.student_room3.setFrameShape(QFrame.StyledPanel)
-        self.student_room3.setFrameShadow(QFrame.Raised)
+        self.student_room3.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.student_room3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.student_room3.setObjectName("student_room3")
-        self.verticalLayout_student_room3 = QVBoxLayout(self.student_room3)
+        self.verticalLayout_student_room3 = QtWidgets.QVBoxLayout(self.student_room3)
         self.verticalLayout_student_room3.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_student_room3.setSpacing(0)
         self.verticalLayout_student_room3.setObjectName("verticalLayout_student_room3")
-        self.student_pushButton_room3 = QPushButton(self.student_room3)
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        self.student_pushButton_room3 = QtWidgets.QPushButton(self.student_room3)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.student_pushButton_room3.sizePolicy().hasHeightForWidth())
@@ -2165,7 +2256,7 @@ class Ui_MainWindow(object):
         self.student_pushButton_room3.setText("")
         self.student_pushButton_room3.setObjectName("student_pushButton_room3")
         self.verticalLayout_student_room3.addWidget(self.student_pushButton_room3)
-        self.student_label_room3 = QLabel(self.student_room3)
+        self.student_label_room3 = QtWidgets.QLabel(self.student_room3)
         self.student_label_room3.setStyleSheet("border: 0;\n"
                                                "margin-left: 4px;")
         self.student_label_room3.setObjectName("student_label_room3")
@@ -2173,21 +2264,21 @@ class Ui_MainWindow(object):
         self.verticalLayout_student_room3.setStretch(0, 7)
         self.verticalLayout_student_room3.setStretch(1, 1)
         self.gridLayout_page_student_FroomNkey_contents.addWidget(self.student_room3, 2, 3, 1, 1)
-        self.student_room5 = QFrame(self.page_student_FroomNkey_contents)
+        self.student_room5 = QtWidgets.QFrame(self.page_student_FroomNkey_contents)
         self.student_room5.setStyleSheet("QFrame {\n"
                                          "border: 1px solid #69cdff;\n"
                                          "border-radius: 6px;\n"
                                          "}\n"
                                          "")
-        self.student_room5.setFrameShape(QFrame.StyledPanel)
-        self.student_room5.setFrameShadow(QFrame.Raised)
+        self.student_room5.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.student_room5.setFrameShadow(QtWidgets.QFrame.Raised)
         self.student_room5.setObjectName("student_room5")
-        self.verticalLayout_student_room5 = QVBoxLayout(self.student_room5)
+        self.verticalLayout_student_room5 = QtWidgets.QVBoxLayout(self.student_room5)
         self.verticalLayout_student_room5.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_student_room5.setSpacing(0)
         self.verticalLayout_student_room5.setObjectName("verticalLayout_student_room5")
-        self.student_pushButton_room5 = QPushButton(self.student_room5)
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        self.student_pushButton_room5 = QtWidgets.QPushButton(self.student_room5)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.student_pushButton_room5.sizePolicy().hasHeightForWidth())
@@ -2195,7 +2286,7 @@ class Ui_MainWindow(object):
         self.student_pushButton_room5.setText("")
         self.student_pushButton_room5.setObjectName("student_pushButton_room5")
         self.verticalLayout_student_room5.addWidget(self.student_pushButton_room5)
-        self.student_label_room5 = QLabel(self.student_room5)
+        self.student_label_room5 = QtWidgets.QLabel(self.student_room5)
         self.student_label_room5.setStyleSheet("border: 0;\n"
                                                "margin-left: 4px;")
         self.student_label_room5.setObjectName("student_label_room5")
@@ -2203,21 +2294,21 @@ class Ui_MainWindow(object):
         self.verticalLayout_student_room5.setStretch(0, 7)
         self.verticalLayout_student_room5.setStretch(1, 1)
         self.gridLayout_page_student_FroomNkey_contents.addWidget(self.student_room5, 4, 2, 1, 1)
-        self.student_room4 = QFrame(self.page_student_FroomNkey_contents)
+        self.student_room4 = QtWidgets.QFrame(self.page_student_FroomNkey_contents)
         self.student_room4.setStyleSheet("QFrame {\n"
                                          "border: 1px solid #69cdff;\n"
                                          "border-radius: 6px;\n"
                                          "}\n"
                                          "")
-        self.student_room4.setFrameShape(QFrame.StyledPanel)
-        self.student_room4.setFrameShadow(QFrame.Raised)
+        self.student_room4.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.student_room4.setFrameShadow(QtWidgets.QFrame.Raised)
         self.student_room4.setObjectName("student_room4")
-        self.verticalLayout_student_room4 = QVBoxLayout(self.student_room4)
+        self.verticalLayout_student_room4 = QtWidgets.QVBoxLayout(self.student_room4)
         self.verticalLayout_student_room4.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_student_room4.setSpacing(0)
         self.verticalLayout_student_room4.setObjectName("verticalLayout_student_room4")
-        self.student_pushButton_room4 = QPushButton(self.student_room4)
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        self.student_pushButton_room4 = QtWidgets.QPushButton(self.student_room4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.student_pushButton_room4.sizePolicy().hasHeightForWidth())
@@ -2225,7 +2316,7 @@ class Ui_MainWindow(object):
         self.student_pushButton_room4.setText("")
         self.student_pushButton_room4.setObjectName("student_pushButton_room4")
         self.verticalLayout_student_room4.addWidget(self.student_pushButton_room4)
-        self.student_label_room4 = QLabel(self.student_room4)
+        self.student_label_room4 = QtWidgets.QLabel(self.student_room4)
         self.student_label_room4.setStyleSheet("border: 0;\n"
                                                "margin-left: 4px;")
         self.student_label_room4.setObjectName("student_label_room4")
@@ -2233,21 +2324,21 @@ class Ui_MainWindow(object):
         self.verticalLayout_student_room4.setStretch(0, 7)
         self.verticalLayout_student_room4.setStretch(1, 1)
         self.gridLayout_page_student_FroomNkey_contents.addWidget(self.student_room4, 4, 1, 1, 1)
-        self.student_room6 = QFrame(self.page_student_FroomNkey_contents)
+        self.student_room6 = QtWidgets.QFrame(self.page_student_FroomNkey_contents)
         self.student_room6.setStyleSheet("QFrame {\n"
                                          "border: 1px solid #69cdff;\n"
                                          "border-radius: 6px;\n"
                                          "}\n"
                                          "")
-        self.student_room6.setFrameShape(QFrame.StyledPanel)
-        self.student_room6.setFrameShadow(QFrame.Raised)
+        self.student_room6.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.student_room6.setFrameShadow(QtWidgets.QFrame.Raised)
         self.student_room6.setObjectName("student_room6")
-        self.verticalLayout_student_room6 = QVBoxLayout(self.student_room6)
+        self.verticalLayout_student_room6 = QtWidgets.QVBoxLayout(self.student_room6)
         self.verticalLayout_student_room6.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_student_room6.setSpacing(0)
         self.verticalLayout_student_room6.setObjectName("verticalLayout_student_room6")
-        self.student_pushButton_room6 = QPushButton(self.student_room6)
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        self.student_pushButton_room6 = QtWidgets.QPushButton(self.student_room6)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.student_pushButton_room6.sizePolicy().hasHeightForWidth())
@@ -2255,7 +2346,7 @@ class Ui_MainWindow(object):
         self.student_pushButton_room6.setText("")
         self.student_pushButton_room6.setObjectName("student_pushButton_room6")
         self.verticalLayout_student_room6.addWidget(self.student_pushButton_room6)
-        self.student_label_room6 = QLabel(self.student_room6)
+        self.student_label_room6 = QtWidgets.QLabel(self.student_room6)
         self.student_label_room6.setStyleSheet("border: 0;\n"
                                                "margin-left: 4px;")
         self.student_label_room6.setObjectName("student_label_room6")
@@ -2266,18 +2357,18 @@ class Ui_MainWindow(object):
         self.verticalLayout_page_student_FroomNkey.addWidget(self.page_student_FroomNkey_contents)
         self.verticalLayout_student_roomNkey_mainTab.addWidget(self.page_student_FroomNkey)
         self.tabWidget_student_roomNkey.addTab(self.student_roomNkey_mainTab, "")
-        self.tab_4 = QWidget()
-        self.tab_4.setObjectName("tab_4")
-        self.tabWidget_student_roomNkey.addTab(self.tab_4, "")
         self.verticalLayout_page_student_roomNkey.addWidget(self.tabWidget_student_roomNkey)
         self.page_stackedWidget_roomNkey.addWidget(self.page_student_roomNkey)
-        self.page_faculty_roomNkey = QWidget()
+        ##  ROOM RESERVATION_PAGE - STUDENT | END
+
+        ##  ROOM RESERVATION_PAGE - FACULTY | START
+        self.page_faculty_roomNkey = QtWidgets.QWidget()
         self.page_faculty_roomNkey.setObjectName("page_faculty_roomNkey")
-        self.verticalLayout_page_faculty_roomNkey = QVBoxLayout(self.page_faculty_roomNkey)
+        self.verticalLayout_page_faculty_roomNkey = QtWidgets.QVBoxLayout(self.page_faculty_roomNkey)
         self.verticalLayout_page_faculty_roomNkey.setContentsMargins(0, 6, 0, 0)
         self.verticalLayout_page_faculty_roomNkey.setSpacing(0)
         self.verticalLayout_page_faculty_roomNkey.setObjectName("verticalLayout_page_faculty_roomNkey")
-        self.tabWidget_faculty_roomNkey = QTabWidget(self.page_faculty_roomNkey)
+        self.tabWidget_faculty_roomNkey = QtWidgets.QTabWidget(self.page_faculty_roomNkey)
         self.tabWidget_faculty_roomNkey.setStyleSheet("\n"
                                                       "QTabWidget::pane { /* The tab widget frame */\n"
                                                       "border:0\n"
@@ -2316,24 +2407,24 @@ class Ui_MainWindow(object):
                                                       "border-bottom: 3px solid #69cdff;\n"
                                                       "}")
         self.tabWidget_faculty_roomNkey.setObjectName("tabWidget_faculty_roomNkey")
-        self.faculty_roomNkey_mainTab = QWidget()
+        self.faculty_roomNkey_mainTab = QtWidgets.QWidget()
         self.faculty_roomNkey_mainTab.setObjectName("faculty_roomNkey_mainTab")
-        self.verticalLayout_faculty_roomNkey_mainTab = QVBoxLayout(self.faculty_roomNkey_mainTab)
+        self.verticalLayout_faculty_roomNkey_mainTab = QtWidgets.QVBoxLayout(self.faculty_roomNkey_mainTab)
         self.verticalLayout_faculty_roomNkey_mainTab.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_faculty_roomNkey_mainTab.setSpacing(0)
         self.verticalLayout_faculty_roomNkey_mainTab.setObjectName("verticalLayout_faculty_roomNkey_mainTab")
-        self.page_faculty_FroomNkey = QFrame(self.faculty_roomNkey_mainTab)
+        self.page_faculty_FroomNkey = QtWidgets.QFrame(self.faculty_roomNkey_mainTab)
         self.page_faculty_FroomNkey.setStyleSheet("QFrame{\n"
                                                   "border: 0;\n"
                                                   "}")
-        self.page_faculty_FroomNkey.setFrameShape(QFrame.StyledPanel)
-        self.page_faculty_FroomNkey.setFrameShadow(QFrame.Raised)
+        self.page_faculty_FroomNkey.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.page_faculty_FroomNkey.setFrameShadow(QtWidgets.QFrame.Raised)
         self.page_faculty_FroomNkey.setObjectName("page_faculty_FroomNkey")
-        self.verticalLayout_page_faculty_FroomNkey = QVBoxLayout(self.page_faculty_FroomNkey)
+        self.verticalLayout_page_faculty_FroomNkey = QtWidgets.QVBoxLayout(self.page_faculty_FroomNkey)
         self.verticalLayout_page_faculty_FroomNkey.setContentsMargins(8, 8, 8, 8)
         self.verticalLayout_page_faculty_FroomNkey.setSpacing(0)
         self.verticalLayout_page_faculty_FroomNkey.setObjectName("verticalLayout_page_faculty_FroomNkey")
-        self.page_faculty_FroomNkey_contents = QFrame(self.page_faculty_FroomNkey)
+        self.page_faculty_FroomNkey_contents = QtWidgets.QFrame(self.page_faculty_FroomNkey)
         self.page_faculty_FroomNkey_contents.setStyleSheet("QFrame{\n"
                                                            "border: 0;\n"
                                                            "}\n"
@@ -2343,28 +2434,28 @@ class Ui_MainWindow(object):
                                                            "color:white;\n"
                                                            "}\n"
                                                            "")
-        self.page_faculty_FroomNkey_contents.setFrameShape(QFrame.StyledPanel)
-        self.page_faculty_FroomNkey_contents.setFrameShadow(QFrame.Raised)
+        self.page_faculty_FroomNkey_contents.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.page_faculty_FroomNkey_contents.setFrameShadow(QtWidgets.QFrame.Raised)
         self.page_faculty_FroomNkey_contents.setObjectName("page_faculty_FroomNkey_contents")
-        self.gridLayout_page_faculty_FroomNkey_contents = QGridLayout(self.page_faculty_FroomNkey_contents)
+        self.gridLayout_page_faculty_FroomNkey_contents = QtWidgets.QGridLayout(self.page_faculty_FroomNkey_contents)
         self.gridLayout_page_faculty_FroomNkey_contents.setContentsMargins(10, 10, 10, 10)
         self.gridLayout_page_faculty_FroomNkey_contents.setSpacing(10)
         self.gridLayout_page_faculty_FroomNkey_contents.setObjectName("gridLayout_page_faculty_FroomNkey_contents")
-        self.faculty_room1 = QFrame(self.page_faculty_FroomNkey_contents)
+        self.faculty_room1 = QtWidgets.QFrame(self.page_faculty_FroomNkey_contents)
         self.faculty_room1.setStyleSheet("QFrame {\n"
                                          "border: 1px solid #69cdff;\n"
                                          "border-radius: 6px;\n"
                                          "}\n"
                                          "")
-        self.faculty_room1.setFrameShape(QFrame.StyledPanel)
-        self.faculty_room1.setFrameShadow(QFrame.Raised)
+        self.faculty_room1.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.faculty_room1.setFrameShadow(QtWidgets.QFrame.Raised)
         self.faculty_room1.setObjectName("faculty_room1")
-        self.verticalLayout_faculty_room1 = QVBoxLayout(self.faculty_room1)
+        self.verticalLayout_faculty_room1 = QtWidgets.QVBoxLayout(self.faculty_room1)
         self.verticalLayout_faculty_room1.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_faculty_room1.setSpacing(0)
         self.verticalLayout_faculty_room1.setObjectName("verticalLayout_faculty_room1")
-        self.faculty_pushButton_room1 = QPushButton(self.faculty_room1)
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        self.faculty_pushButton_room1 = QtWidgets.QPushButton(self.faculty_room1)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.faculty_pushButton_room1.sizePolicy().hasHeightForWidth())
@@ -2372,7 +2463,7 @@ class Ui_MainWindow(object):
         self.faculty_pushButton_room1.setText("")
         self.faculty_pushButton_room1.setObjectName("faculty_pushButton_room1")
         self.verticalLayout_faculty_room1.addWidget(self.faculty_pushButton_room1)
-        self.faculty_label_room1 = QLabel(self.faculty_room1)
+        self.faculty_label_room1 = QtWidgets.QLabel(self.faculty_room1)
         self.faculty_label_room1.setStyleSheet("border: 0;\n"
                                                "margin-left: 4px;")
         self.faculty_label_room1.setObjectName("faculty_label_room1")
@@ -2380,21 +2471,21 @@ class Ui_MainWindow(object):
         self.verticalLayout_faculty_room1.setStretch(0, 7)
         self.verticalLayout_faculty_room1.setStretch(1, 1)
         self.gridLayout_page_faculty_FroomNkey_contents.addWidget(self.faculty_room1, 2, 1, 1, 1)
-        self.faculty_room2 = QFrame(self.page_faculty_FroomNkey_contents)
+        self.faculty_room2 = QtWidgets.QFrame(self.page_faculty_FroomNkey_contents)
         self.faculty_room2.setStyleSheet("QFrame {\n"
                                          "border: 1px solid #69cdff;\n"
                                          "border-radius: 6px;\n"
                                          "}\n"
                                          "")
-        self.faculty_room2.setFrameShape(QFrame.StyledPanel)
-        self.faculty_room2.setFrameShadow(QFrame.Raised)
+        self.faculty_room2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.faculty_room2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.faculty_room2.setObjectName("faculty_room2")
-        self.verticalLayout_faculty_room2 = QVBoxLayout(self.faculty_room2)
+        self.verticalLayout_faculty_room2 = QtWidgets.QVBoxLayout(self.faculty_room2)
         self.verticalLayout_faculty_room2.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_faculty_room2.setSpacing(0)
         self.verticalLayout_faculty_room2.setObjectName("verticalLayout_faculty_room2")
-        self.faculty_pushButton_room2 = QPushButton(self.faculty_room2)
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        self.faculty_pushButton_room2 = QtWidgets.QPushButton(self.faculty_room2)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.faculty_pushButton_room2.sizePolicy().hasHeightForWidth())
@@ -2402,7 +2493,7 @@ class Ui_MainWindow(object):
         self.faculty_pushButton_room2.setText("")
         self.faculty_pushButton_room2.setObjectName("faculty_pushButton_room2")
         self.verticalLayout_faculty_room2.addWidget(self.faculty_pushButton_room2)
-        self.faculty_label_room2 = QLabel(self.faculty_room2)
+        self.faculty_label_room2 = QtWidgets.QLabel(self.faculty_room2)
         self.faculty_label_room2.setStyleSheet("border: 0;\n"
                                                "margin-left: 4px;")
         self.faculty_label_room2.setObjectName("faculty_label_room2")
@@ -2410,21 +2501,21 @@ class Ui_MainWindow(object):
         self.verticalLayout_faculty_room2.setStretch(0, 7)
         self.verticalLayout_faculty_room2.setStretch(1, 1)
         self.gridLayout_page_faculty_FroomNkey_contents.addWidget(self.faculty_room2, 2, 2, 1, 1)
-        self.faculty_room3 = QFrame(self.page_faculty_FroomNkey_contents)
+        self.faculty_room3 = QtWidgets.QFrame(self.page_faculty_FroomNkey_contents)
         self.faculty_room3.setStyleSheet("QFrame {\n"
                                          "border: 1px solid #69cdff;\n"
                                          "border-radius: 6px;\n"
                                          "}\n"
                                          "")
-        self.faculty_room3.setFrameShape(QFrame.StyledPanel)
-        self.faculty_room3.setFrameShadow(QFrame.Raised)
+        self.faculty_room3.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.faculty_room3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.faculty_room3.setObjectName("faculty_room3")
-        self.verticalLayout_faculty_room3 = QVBoxLayout(self.faculty_room3)
+        self.verticalLayout_faculty_room3 = QtWidgets.QVBoxLayout(self.faculty_room3)
         self.verticalLayout_faculty_room3.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_faculty_room3.setSpacing(0)
         self.verticalLayout_faculty_room3.setObjectName("verticalLayout_faculty_room3")
-        self.faculty_pushButton_room3 = QPushButton(self.faculty_room3)
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        self.faculty_pushButton_room3 = QtWidgets.QPushButton(self.faculty_room3)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.faculty_pushButton_room3.sizePolicy().hasHeightForWidth())
@@ -2432,7 +2523,7 @@ class Ui_MainWindow(object):
         self.faculty_pushButton_room3.setText("")
         self.faculty_pushButton_room3.setObjectName("faculty_pushButton_room3")
         self.verticalLayout_faculty_room3.addWidget(self.faculty_pushButton_room3)
-        self.faculty_label_room3 = QLabel(self.faculty_room3)
+        self.faculty_label_room3 = QtWidgets.QLabel(self.faculty_room3)
         self.faculty_label_room3.setStyleSheet("border: 0;\n"
                                                "margin-left: 4px;")
         self.faculty_label_room3.setObjectName("faculty_label_room3")
@@ -2440,21 +2531,21 @@ class Ui_MainWindow(object):
         self.verticalLayout_faculty_room3.setStretch(0, 7)
         self.verticalLayout_faculty_room3.setStretch(1, 1)
         self.gridLayout_page_faculty_FroomNkey_contents.addWidget(self.faculty_room3, 2, 3, 1, 1)
-        self.faculty_room5 = QFrame(self.page_faculty_FroomNkey_contents)
+        self.faculty_room5 = QtWidgets.QFrame(self.page_faculty_FroomNkey_contents)
         self.faculty_room5.setStyleSheet("QFrame {\n"
                                          "border: 1px solid #69cdff;\n"
                                          "border-radius: 6px;\n"
                                          "}\n"
                                          "")
-        self.faculty_room5.setFrameShape(QFrame.StyledPanel)
-        self.faculty_room5.setFrameShadow(QFrame.Raised)
+        self.faculty_room5.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.faculty_room5.setFrameShadow(QtWidgets.QFrame.Raised)
         self.faculty_room5.setObjectName("faculty_room5")
-        self.verticalLayout_faculty_room5 = QVBoxLayout(self.faculty_room5)
+        self.verticalLayout_faculty_room5 = QtWidgets.QVBoxLayout(self.faculty_room5)
         self.verticalLayout_faculty_room5.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_faculty_room5.setSpacing(0)
         self.verticalLayout_faculty_room5.setObjectName("verticalLayout_faculty_room5")
-        self.faculty_pushButton_room5 = QPushButton(self.faculty_room5)
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        self.faculty_pushButton_room5 = QtWidgets.QPushButton(self.faculty_room5)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.faculty_pushButton_room5.sizePolicy().hasHeightForWidth())
@@ -2462,7 +2553,7 @@ class Ui_MainWindow(object):
         self.faculty_pushButton_room5.setText("")
         self.faculty_pushButton_room5.setObjectName("faculty_pushButton_room5")
         self.verticalLayout_faculty_room5.addWidget(self.faculty_pushButton_room5)
-        self.faculty_label_room5 = QLabel(self.faculty_room5)
+        self.faculty_label_room5 = QtWidgets.QLabel(self.faculty_room5)
         self.faculty_label_room5.setStyleSheet("border: 0;\n"
                                                "margin-left: 4px;")
         self.faculty_label_room5.setObjectName("faculty_label_room5")
@@ -2470,21 +2561,21 @@ class Ui_MainWindow(object):
         self.verticalLayout_faculty_room5.setStretch(0, 7)
         self.verticalLayout_faculty_room5.setStretch(1, 1)
         self.gridLayout_page_faculty_FroomNkey_contents.addWidget(self.faculty_room5, 4, 2, 1, 1)
-        self.faculty_room4 = QFrame(self.page_faculty_FroomNkey_contents)
+        self.faculty_room4 = QtWidgets.QFrame(self.page_faculty_FroomNkey_contents)
         self.faculty_room4.setStyleSheet("QFrame {\n"
                                          "border: 1px solid #69cdff;\n"
                                          "border-radius: 6px;\n"
                                          "}\n"
                                          "")
-        self.faculty_room4.setFrameShape(QFrame.StyledPanel)
-        self.faculty_room4.setFrameShadow(QFrame.Raised)
+        self.faculty_room4.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.faculty_room4.setFrameShadow(QtWidgets.QFrame.Raised)
         self.faculty_room4.setObjectName("faculty_room4")
-        self.verticalLayout_faculty_room4 = QVBoxLayout(self.faculty_room4)
+        self.verticalLayout_faculty_room4 = QtWidgets.QVBoxLayout(self.faculty_room4)
         self.verticalLayout_faculty_room4.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_faculty_room4.setSpacing(0)
         self.verticalLayout_faculty_room4.setObjectName("verticalLayout_faculty_room4")
-        self.faculty_pushButton_room4 = QPushButton(self.faculty_room4)
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        self.faculty_pushButton_room4 = QtWidgets.QPushButton(self.faculty_room4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.faculty_pushButton_room4.sizePolicy().hasHeightForWidth())
@@ -2492,7 +2583,7 @@ class Ui_MainWindow(object):
         self.faculty_pushButton_room4.setText("")
         self.faculty_pushButton_room4.setObjectName("faculty_pushButton_room4")
         self.verticalLayout_faculty_room4.addWidget(self.faculty_pushButton_room4)
-        self.faculty_label_room4 = QLabel(self.faculty_room4)
+        self.faculty_label_room4 = QtWidgets.QLabel(self.faculty_room4)
         self.faculty_label_room4.setStyleSheet("border: 0;\n"
                                                "margin-left: 4px;")
         self.faculty_label_room4.setObjectName("faculty_label_room4")
@@ -2500,21 +2591,21 @@ class Ui_MainWindow(object):
         self.verticalLayout_faculty_room4.setStretch(0, 7)
         self.verticalLayout_faculty_room4.setStretch(1, 1)
         self.gridLayout_page_faculty_FroomNkey_contents.addWidget(self.faculty_room4, 4, 1, 1, 1)
-        self.faculty_room6 = QFrame(self.page_faculty_FroomNkey_contents)
+        self.faculty_room6 = QtWidgets.QFrame(self.page_faculty_FroomNkey_contents)
         self.faculty_room6.setStyleSheet("QFrame {\n"
                                          "border: 1px solid #69cdff;\n"
                                          "border-radius: 6px;\n"
                                          "}\n"
                                          "")
-        self.faculty_room6.setFrameShape(QFrame.StyledPanel)
-        self.faculty_room6.setFrameShadow(QFrame.Raised)
+        self.faculty_room6.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.faculty_room6.setFrameShadow(QtWidgets.QFrame.Raised)
         self.faculty_room6.setObjectName("faculty_room6")
-        self.verticalLayout_faculty_room6 = QVBoxLayout(self.faculty_room6)
+        self.verticalLayout_faculty_room6 = QtWidgets.QVBoxLayout(self.faculty_room6)
         self.verticalLayout_faculty_room6.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_faculty_room6.setSpacing(0)
         self.verticalLayout_faculty_room6.setObjectName("verticalLayout_faculty_room6")
-        self.faculty_pushButton_room6 = QPushButton(self.faculty_room6)
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        self.faculty_pushButton_room6 = QtWidgets.QPushButton(self.faculty_room6)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.faculty_pushButton_room6.sizePolicy().hasHeightForWidth())
@@ -2522,7 +2613,7 @@ class Ui_MainWindow(object):
         self.faculty_pushButton_room6.setText("")
         self.faculty_pushButton_room6.setObjectName("faculty_pushButton_room6")
         self.verticalLayout_faculty_room6.addWidget(self.faculty_pushButton_room6)
-        self.faculty_label_room6 = QLabel(self.faculty_room6)
+        self.faculty_label_room6 = QtWidgets.QLabel(self.faculty_room6)
         self.faculty_label_room6.setStyleSheet("border: 0;\n"
                                                "margin-left: 4px;")
         self.faculty_label_room6.setObjectName("faculty_label_room6")
@@ -2534,84 +2625,85 @@ class Ui_MainWindow(object):
         self.verticalLayout_page_faculty_FroomNkey.setStretch(0, 20)
         self.verticalLayout_faculty_roomNkey_mainTab.addWidget(self.page_faculty_FroomNkey)
         self.tabWidget_faculty_roomNkey.addTab(self.faculty_roomNkey_mainTab, "")
-        self.tab_5 = QWidget()
-        self.tab_5.setObjectName("tab_5")
-        self.tabWidget_faculty_roomNkey.addTab(self.tab_5, "")
         self.verticalLayout_page_faculty_roomNkey.addWidget(self.tabWidget_faculty_roomNkey)
         self.page_stackedWidget_roomNkey.addWidget(self.page_faculty_roomNkey)
-        self.page_admin_roomNkey = QWidget()
+        ##  ROOM RESERVATION_PAGE - FACULTY | END
+
+        ##  ROOM RESERVATION_PAGE - ADMIN | START
+        self.page_admin_roomNkey = QtWidgets.QWidget()
         self.page_admin_roomNkey.setObjectName("page_admin_roomNkey")
-        self.verticalLayout_page_admin_roomNkey = QVBoxLayout(self.page_admin_roomNkey)
+        self.verticalLayout_page_admin_roomNkey = QtWidgets.QVBoxLayout(self.page_admin_roomNkey)
         self.verticalLayout_page_admin_roomNkey.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_page_admin_roomNkey.setSpacing(0)
         self.verticalLayout_page_admin_roomNkey.setObjectName("verticalLayout_page_admin_roomNkey")
-        self.page_admin_FroomNkey = QFrame(self.page_admin_roomNkey)
-        self.page_admin_FroomNkey.setFrameShape(QFrame.StyledPanel)
-        self.page_admin_FroomNkey.setFrameShadow(QFrame.Raised)
+        self.page_admin_FroomNkey = QtWidgets.QFrame(self.page_admin_roomNkey)
+        self.page_admin_FroomNkey.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.page_admin_FroomNkey.setFrameShadow(QtWidgets.QFrame.Raised)
         self.page_admin_FroomNkey.setObjectName("page_admin_FroomNkey")
-        self.horizontalLayout_page_admin_FroomNkey = QHBoxLayout(self.page_admin_FroomNkey)
+        self.horizontalLayout_page_admin_FroomNkey = QtWidgets.QHBoxLayout(self.page_admin_FroomNkey)
         self.horizontalLayout_page_admin_FroomNkey.setContentsMargins(12, 8, 12, 12)
         self.horizontalLayout_page_admin_FroomNkey.setSpacing(12)
         self.horizontalLayout_page_admin_FroomNkey.setObjectName("horizontalLayout_page_admin_FroomNkey")
-        self.page_admin_FroomNkey_ctrl = QFrame(self.page_admin_FroomNkey)
+        self.page_admin_FroomNkey_ctrl = QtWidgets.QFrame(self.page_admin_FroomNkey)
         self.page_admin_FroomNkey_ctrl.setStyleSheet("QFrame{\n"
                                                      "border: 1px solid #69cdff;\n"
                                                      "}")
-        self.page_admin_FroomNkey_ctrl.setFrameShape(QFrame.StyledPanel)
-        self.page_admin_FroomNkey_ctrl.setFrameShadow(QFrame.Raised)
+        self.page_admin_FroomNkey_ctrl.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.page_admin_FroomNkey_ctrl.setFrameShadow(QtWidgets.QFrame.Raised)
         self.page_admin_FroomNkey_ctrl.setObjectName("page_admin_FroomNkey_ctrl")
-        self.horizontalLayout_page_admin_FroomNkey_ctrl = QHBoxLayout(self.page_admin_FroomNkey_ctrl)
+        self.horizontalLayout_page_admin_FroomNkey_ctrl = QtWidgets.QHBoxLayout(self.page_admin_FroomNkey_ctrl)
         self.horizontalLayout_page_admin_FroomNkey_ctrl.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_page_admin_FroomNkey_ctrl.setSpacing(2)
         self.horizontalLayout_page_admin_FroomNkey_ctrl.setObjectName("horizontalLayout_page_admin_FroomNkey_ctrl")
-        self.FroomNkey_ctrl_overview = QFrame(self.page_admin_FroomNkey_ctrl)
+        self.FroomNkey_ctrl_overview = QtWidgets.QFrame(self.page_admin_FroomNkey_ctrl)
         self.FroomNkey_ctrl_overview.setStyleSheet("QFrame{\n"
                                                    "border: 0;\n"
                                                    "}")
-        self.FroomNkey_ctrl_overview.setFrameShape(QFrame.StyledPanel)
-        self.FroomNkey_ctrl_overview.setFrameShadow(QFrame.Raised)
+        self.FroomNkey_ctrl_overview.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.FroomNkey_ctrl_overview.setFrameShadow(QtWidgets.QFrame.Raised)
         self.FroomNkey_ctrl_overview.setObjectName("FroomNkey_ctrl_overview")
-        self.verticalLayout_FroomNkey_ctrl_overview = QVBoxLayout(self.FroomNkey_ctrl_overview)
+        self.verticalLayout_FroomNkey_ctrl_overview = QtWidgets.QVBoxLayout(self.FroomNkey_ctrl_overview)
         self.verticalLayout_FroomNkey_ctrl_overview.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_FroomNkey_ctrl_overview.setSpacing(0)
         self.verticalLayout_FroomNkey_ctrl_overview.setObjectName("verticalLayout_FroomNkey_ctrl_overview")
-        self.FroomNkey_ctrl_overview_label = QLabel(self.FroomNkey_ctrl_overview)
+        self.FroomNkey_ctrl_overview_label = QtWidgets.QLabel(self.FroomNkey_ctrl_overview)
         self.FroomNkey_ctrl_overview_label.setStyleSheet("QLabel{\n"
-                                                         "font-size: 14pt;\n"
+                                                         "font-size: 12pt;\n"
                                                          "color: black;\n"
                                                          "background-color: rgb(248, 248, 248);\n"
                                                          "border-bottom: 3px solid  #464866;\n"
                                                          "}")
         self.FroomNkey_ctrl_overview_label.setAlignment(
-            Qt.AlignBottom | Qt.AlignLeading | Qt.AlignLeft)
+            QtCore.Qt.AlignBottom | QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft)
         self.FroomNkey_ctrl_overview_label.setObjectName("FroomNkey_ctrl_overview_label")
         self.verticalLayout_FroomNkey_ctrl_overview.addWidget(self.FroomNkey_ctrl_overview_label)
-        self.FroomNkey_ctrl_overview_contents = QFrame(self.FroomNkey_ctrl_overview)
+        self.FroomNkey_ctrl_overview_contents = QtWidgets.QFrame(self.FroomNkey_ctrl_overview)
         self.FroomNkey_ctrl_overview_contents.setStyleSheet("QWidget{\n"
-                                                            "font-size: 13pt;\n"
+                                                            "font-size: 10pt;\n"
                                                             "background-color: rgb(248, 248, 248);\n"
+                                                            "color: black;\n"
                                                             "}")
-        self.FroomNkey_ctrl_overview_contents.setFrameShape(QFrame.StyledPanel)
-        self.FroomNkey_ctrl_overview_contents.setFrameShadow(QFrame.Raised)
+        self.FroomNkey_ctrl_overview_contents.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.FroomNkey_ctrl_overview_contents.setFrameShadow(QtWidgets.QFrame.Raised)
         self.FroomNkey_ctrl_overview_contents.setObjectName("FroomNkey_ctrl_overview_contents")
-        self.horizontalLayout_FroomNkey_ctrl_overview_contents = QHBoxLayout(
+        self.horizontalLayout_FroomNkey_ctrl_overview_contents = QtWidgets.QHBoxLayout(
             self.FroomNkey_ctrl_overview_contents)
         self.horizontalLayout_FroomNkey_ctrl_overview_contents.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_FroomNkey_ctrl_overview_contents.setObjectName(
             "horizontalLayout_FroomNkey_ctrl_overview_contents")
-        self.FroomNkey_ctrl_overview_Leftcontents = QFrame(self.FroomNkey_ctrl_overview_contents)
+        self.FroomNkey_ctrl_overview_Leftcontents = QtWidgets.QFrame(self.FroomNkey_ctrl_overview_contents)
         self.FroomNkey_ctrl_overview_Leftcontents.setStyleSheet("")
-        self.FroomNkey_ctrl_overview_Leftcontents.setFrameShape(QFrame.StyledPanel)
-        self.FroomNkey_ctrl_overview_Leftcontents.setFrameShadow(QFrame.Raised)
+        self.FroomNkey_ctrl_overview_Leftcontents.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.FroomNkey_ctrl_overview_Leftcontents.setFrameShadow(QtWidgets.QFrame.Raised)
         self.FroomNkey_ctrl_overview_Leftcontents.setObjectName("FroomNkey_ctrl_overview_Leftcontents")
-        self.verticalLayout_FroomNkey_ctrl_overview_Leftcontents = QVBoxLayout(
+        self.verticalLayout_FroomNkey_ctrl_overview_Leftcontents = QtWidgets.QVBoxLayout(
             self.FroomNkey_ctrl_overview_Leftcontents)
         self.verticalLayout_FroomNkey_ctrl_overview_Leftcontents.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_FroomNkey_ctrl_overview_Leftcontents.setSpacing(4)
         self.verticalLayout_FroomNkey_ctrl_overview_Leftcontents.setObjectName(
             "verticalLayout_FroomNkey_ctrl_overview_Leftcontents")
-        self.FroomNkey_ctrl_pushButton_time1 = QPushButton(self.FroomNkey_ctrl_overview_Leftcontents)
-        sizePolicy = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred)
+        self.FroomNkey_ctrl_pushButton_time1 = QtWidgets.QPushButton(self.FroomNkey_ctrl_overview_Leftcontents)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.FroomNkey_ctrl_pushButton_time1.sizePolicy().hasHeightForWidth())
@@ -2620,8 +2712,8 @@ class Ui_MainWindow(object):
         self.FroomNkey_ctrl_pushButton_time1.setFlat(True)
         self.FroomNkey_ctrl_pushButton_time1.setObjectName("FroomNkey_ctrl_pushButton_time1")
         self.verticalLayout_FroomNkey_ctrl_overview_Leftcontents.addWidget(self.FroomNkey_ctrl_pushButton_time1)
-        self.FroomNkey_ctrl_pushButton_time2 = QPushButton(self.FroomNkey_ctrl_overview_Leftcontents)
-        sizePolicy = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred)
+        self.FroomNkey_ctrl_pushButton_time2 = QtWidgets.QPushButton(self.FroomNkey_ctrl_overview_Leftcontents)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.FroomNkey_ctrl_pushButton_time2.sizePolicy().hasHeightForWidth())
@@ -2629,8 +2721,8 @@ class Ui_MainWindow(object):
         self.FroomNkey_ctrl_pushButton_time2.setFlat(True)
         self.FroomNkey_ctrl_pushButton_time2.setObjectName("FroomNkey_ctrl_pushButton_time2")
         self.verticalLayout_FroomNkey_ctrl_overview_Leftcontents.addWidget(self.FroomNkey_ctrl_pushButton_time2)
-        self.FroomNkey_ctrl_pushButton_time3 = QPushButton(self.FroomNkey_ctrl_overview_Leftcontents)
-        sizePolicy = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred)
+        self.FroomNkey_ctrl_pushButton_time3 = QtWidgets.QPushButton(self.FroomNkey_ctrl_overview_Leftcontents)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.FroomNkey_ctrl_pushButton_time3.sizePolicy().hasHeightForWidth())
@@ -2638,8 +2730,8 @@ class Ui_MainWindow(object):
         self.FroomNkey_ctrl_pushButton_time3.setFlat(True)
         self.FroomNkey_ctrl_pushButton_time3.setObjectName("FroomNkey_ctrl_pushButton_time3")
         self.verticalLayout_FroomNkey_ctrl_overview_Leftcontents.addWidget(self.FroomNkey_ctrl_pushButton_time3)
-        self.FroomNkey_ctrl_pushButton_time4 = QPushButton(self.FroomNkey_ctrl_overview_Leftcontents)
-        sizePolicy = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred)
+        self.FroomNkey_ctrl_pushButton_time4 = QtWidgets.QPushButton(self.FroomNkey_ctrl_overview_Leftcontents)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.FroomNkey_ctrl_pushButton_time4.sizePolicy().hasHeightForWidth())
@@ -2647,8 +2739,8 @@ class Ui_MainWindow(object):
         self.FroomNkey_ctrl_pushButton_time4.setFlat(True)
         self.FroomNkey_ctrl_pushButton_time4.setObjectName("FroomNkey_ctrl_pushButton_time4")
         self.verticalLayout_FroomNkey_ctrl_overview_Leftcontents.addWidget(self.FroomNkey_ctrl_pushButton_time4)
-        self.FroomNkey_ctrl_pushButton_time5 = QPushButton(self.FroomNkey_ctrl_overview_Leftcontents)
-        sizePolicy = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred)
+        self.FroomNkey_ctrl_pushButton_time5 = QtWidgets.QPushButton(self.FroomNkey_ctrl_overview_Leftcontents)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.FroomNkey_ctrl_pushButton_time5.sizePolicy().hasHeightForWidth())
@@ -2656,8 +2748,8 @@ class Ui_MainWindow(object):
         self.FroomNkey_ctrl_pushButton_time5.setFlat(True)
         self.FroomNkey_ctrl_pushButton_time5.setObjectName("FroomNkey_ctrl_pushButton_time5")
         self.verticalLayout_FroomNkey_ctrl_overview_Leftcontents.addWidget(self.FroomNkey_ctrl_pushButton_time5)
-        self.FroomNkey_ctrl_pushButton_time6 = QPushButton(self.FroomNkey_ctrl_overview_Leftcontents)
-        sizePolicy = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred)
+        self.FroomNkey_ctrl_pushButton_time6 = QtWidgets.QPushButton(self.FroomNkey_ctrl_overview_Leftcontents)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.FroomNkey_ctrl_pushButton_time6.sizePolicy().hasHeightForWidth())
@@ -2665,8 +2757,8 @@ class Ui_MainWindow(object):
         self.FroomNkey_ctrl_pushButton_time6.setFlat(True)
         self.FroomNkey_ctrl_pushButton_time6.setObjectName("FroomNkey_ctrl_pushButton_time6")
         self.verticalLayout_FroomNkey_ctrl_overview_Leftcontents.addWidget(self.FroomNkey_ctrl_pushButton_time6)
-        self.FroomNkey_ctrl_pushButton_time7 = QPushButton(self.FroomNkey_ctrl_overview_Leftcontents)
-        sizePolicy = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred)
+        self.FroomNkey_ctrl_pushButton_time7 = QtWidgets.QPushButton(self.FroomNkey_ctrl_overview_Leftcontents)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.FroomNkey_ctrl_pushButton_time7.sizePolicy().hasHeightForWidth())
@@ -2676,68 +2768,68 @@ class Ui_MainWindow(object):
         self.FroomNkey_ctrl_pushButton_time7.setObjectName("FroomNkey_ctrl_pushButton_time7")
         self.verticalLayout_FroomNkey_ctrl_overview_Leftcontents.addWidget(self.FroomNkey_ctrl_pushButton_time7)
         self.horizontalLayout_FroomNkey_ctrl_overview_contents.addWidget(self.FroomNkey_ctrl_overview_Leftcontents)
-        self.FroomNkey_ctrl_overview_Rightcontents = QFrame(self.FroomNkey_ctrl_overview_contents)
-        self.FroomNkey_ctrl_overview_Rightcontents.setFrameShape(QFrame.StyledPanel)
-        self.FroomNkey_ctrl_overview_Rightcontents.setFrameShadow(QFrame.Raised)
+        self.FroomNkey_ctrl_overview_Rightcontents = QtWidgets.QFrame(self.FroomNkey_ctrl_overview_contents)
+        self.FroomNkey_ctrl_overview_Rightcontents.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.FroomNkey_ctrl_overview_Rightcontents.setFrameShadow(QtWidgets.QFrame.Raised)
         self.FroomNkey_ctrl_overview_Rightcontents.setObjectName("FroomNkey_ctrl_overview_Rightcontents")
-        self.verticalLayout_FroomNkey_ctrl_overview_Rightcontents = QVBoxLayout(
+        self.verticalLayout_FroomNkey_ctrl_overview_Rightcontents = QtWidgets.QVBoxLayout(
             self.FroomNkey_ctrl_overview_Rightcontents)
         self.verticalLayout_FroomNkey_ctrl_overview_Rightcontents.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_FroomNkey_ctrl_overview_Rightcontents.setObjectName(
             "verticalLayout_FroomNkey_ctrl_overview_Rightcontents")
-        self.FroomNkey_ctrl_pushButton_timeSlot1 = QLabel(self.FroomNkey_ctrl_overview_Rightcontents)
-        self.FroomNkey_ctrl_pushButton_timeSlot1.setAlignment(Qt.AlignCenter)
+        self.FroomNkey_ctrl_pushButton_timeSlot1 = QtWidgets.QLabel(self.FroomNkey_ctrl_overview_Rightcontents)
+        self.FroomNkey_ctrl_pushButton_timeSlot1.setAlignment(QtCore.Qt.AlignCenter)
         self.FroomNkey_ctrl_pushButton_timeSlot1.setObjectName("FroomNkey_ctrl_pushButton_timeSlot1")
         self.verticalLayout_FroomNkey_ctrl_overview_Rightcontents.addWidget(self.FroomNkey_ctrl_pushButton_timeSlot1)
-        self.FroomNkey_ctrl_pushButton_timeSlot2 = QLabel(self.FroomNkey_ctrl_overview_Rightcontents)
-        self.FroomNkey_ctrl_pushButton_timeSlot2.setAlignment(Qt.AlignCenter)
+        self.FroomNkey_ctrl_pushButton_timeSlot2 = QtWidgets.QLabel(self.FroomNkey_ctrl_overview_Rightcontents)
+        self.FroomNkey_ctrl_pushButton_timeSlot2.setAlignment(QtCore.Qt.AlignCenter)
         self.FroomNkey_ctrl_pushButton_timeSlot2.setObjectName("FroomNkey_ctrl_pushButton_timeSlot2")
         self.verticalLayout_FroomNkey_ctrl_overview_Rightcontents.addWidget(self.FroomNkey_ctrl_pushButton_timeSlot2)
-        self.FroomNkey_ctrl_pushButton_timeSlot3 = QLabel(self.FroomNkey_ctrl_overview_Rightcontents)
-        self.FroomNkey_ctrl_pushButton_timeSlot3.setAlignment(Qt.AlignCenter)
+        self.FroomNkey_ctrl_pushButton_timeSlot3 = QtWidgets.QLabel(self.FroomNkey_ctrl_overview_Rightcontents)
+        self.FroomNkey_ctrl_pushButton_timeSlot3.setAlignment(QtCore.Qt.AlignCenter)
         self.FroomNkey_ctrl_pushButton_timeSlot3.setObjectName("FroomNkey_ctrl_pushButton_timeSlot3")
         self.verticalLayout_FroomNkey_ctrl_overview_Rightcontents.addWidget(self.FroomNkey_ctrl_pushButton_timeSlot3)
-        self.FroomNkey_ctrl_pushButton_timeSlot4 = QLabel(self.FroomNkey_ctrl_overview_Rightcontents)
-        self.FroomNkey_ctrl_pushButton_timeSlot4.setAlignment(Qt.AlignCenter)
+        self.FroomNkey_ctrl_pushButton_timeSlot4 = QtWidgets.QLabel(self.FroomNkey_ctrl_overview_Rightcontents)
+        self.FroomNkey_ctrl_pushButton_timeSlot4.setAlignment(QtCore.Qt.AlignCenter)
         self.FroomNkey_ctrl_pushButton_timeSlot4.setObjectName("FroomNkey_ctrl_pushButton_timeSlot4")
         self.verticalLayout_FroomNkey_ctrl_overview_Rightcontents.addWidget(self.FroomNkey_ctrl_pushButton_timeSlot4)
-        self.FroomNkey_ctrl_pushButton_timeSlot5 = QLabel(self.FroomNkey_ctrl_overview_Rightcontents)
-        self.FroomNkey_ctrl_pushButton_timeSlot5.setAlignment(Qt.AlignCenter)
+        self.FroomNkey_ctrl_pushButton_timeSlot5 = QtWidgets.QLabel(self.FroomNkey_ctrl_overview_Rightcontents)
+        self.FroomNkey_ctrl_pushButton_timeSlot5.setAlignment(QtCore.Qt.AlignCenter)
         self.FroomNkey_ctrl_pushButton_timeSlot5.setObjectName("FroomNkey_ctrl_pushButton_timeSlot5")
         self.verticalLayout_FroomNkey_ctrl_overview_Rightcontents.addWidget(self.FroomNkey_ctrl_pushButton_timeSlot5)
-        self.FroomNkey_ctrl_pushButton_timeSlot6 = QLabel(self.FroomNkey_ctrl_overview_Rightcontents)
-        self.FroomNkey_ctrl_pushButton_timeSlot6.setAlignment(Qt.AlignCenter)
+        self.FroomNkey_ctrl_pushButton_timeSlot6 = QtWidgets.QLabel(self.FroomNkey_ctrl_overview_Rightcontents)
+        self.FroomNkey_ctrl_pushButton_timeSlot6.setAlignment(QtCore.Qt.AlignCenter)
         self.FroomNkey_ctrl_pushButton_timeSlot6.setObjectName("FroomNkey_ctrl_pushButton_timeSlot6")
         self.verticalLayout_FroomNkey_ctrl_overview_Rightcontents.addWidget(self.FroomNkey_ctrl_pushButton_timeSlot6)
-        self.FroomNkey_ctrl_pushButton_timeSlot7 = QLabel(self.FroomNkey_ctrl_overview_Rightcontents)
-        self.FroomNkey_ctrl_pushButton_timeSlot7.setAlignment(Qt.AlignCenter)
+        self.FroomNkey_ctrl_pushButton_timeSlot7 = QtWidgets.QLabel(self.FroomNkey_ctrl_overview_Rightcontents)
+        self.FroomNkey_ctrl_pushButton_timeSlot7.setAlignment(QtCore.Qt.AlignCenter)
         self.FroomNkey_ctrl_pushButton_timeSlot7.setObjectName("FroomNkey_ctrl_pushButton_timeSlot7")
         self.verticalLayout_FroomNkey_ctrl_overview_Rightcontents.addWidget(self.FroomNkey_ctrl_pushButton_timeSlot7)
         self.horizontalLayout_FroomNkey_ctrl_overview_contents.addWidget(self.FroomNkey_ctrl_overview_Rightcontents)
         self.horizontalLayout_FroomNkey_ctrl_overview_contents.setStretch(0, 1)
         self.horizontalLayout_FroomNkey_ctrl_overview_contents.setStretch(1, 3)
         self.verticalLayout_FroomNkey_ctrl_overview.addWidget(self.FroomNkey_ctrl_overview_contents)
-        self.FroomNkey_ctrl_overview_accORdec = QFrame(self.FroomNkey_ctrl_overview)
-        self.FroomNkey_ctrl_overview_accORdec.setFrameShape(QFrame.StyledPanel)
-        self.FroomNkey_ctrl_overview_accORdec.setFrameShadow(QFrame.Raised)
+        self.FroomNkey_ctrl_overview_accORdec = QtWidgets.QFrame(self.FroomNkey_ctrl_overview)
+        self.FroomNkey_ctrl_overview_accORdec.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.FroomNkey_ctrl_overview_accORdec.setFrameShadow(QtWidgets.QFrame.Raised)
         self.FroomNkey_ctrl_overview_accORdec.setObjectName("FroomNkey_ctrl_overview_accORdec")
-        self.horizontalLayout_FroomNkey_ctrl_overview_accORdec = QHBoxLayout(
+        self.horizontalLayout_FroomNkey_ctrl_overview_accORdec = QtWidgets.QHBoxLayout(
             self.FroomNkey_ctrl_overview_accORdec)
         self.horizontalLayout_FroomNkey_ctrl_overview_accORdec.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_FroomNkey_ctrl_overview_accORdec.setObjectName(
             "horizontalLayout_FroomNkey_ctrl_overview_accORdec")
-        self.roomNkey_ctrl_Frequests = QFrame(self.FroomNkey_ctrl_overview_accORdec)
-        self.roomNkey_ctrl_Frequests.setFrameShape(QFrame.StyledPanel)
-        self.roomNkey_ctrl_Frequests.setFrameShadow(QFrame.Raised)
+        self.roomNkey_ctrl_Frequests = QtWidgets.QFrame(self.FroomNkey_ctrl_overview_accORdec)
+        self.roomNkey_ctrl_Frequests.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.roomNkey_ctrl_Frequests.setFrameShadow(QtWidgets.QFrame.Raised)
         self.roomNkey_ctrl_Frequests.setObjectName("roomNkey_ctrl_Frequests")
         self.horizontalLayout_FroomNkey_ctrl_overview_accORdec.addWidget(self.roomNkey_ctrl_Frequests)
-        self.roomNkey_ctrl_scrollArea_requests = QScrollArea(self.FroomNkey_ctrl_overview_accORdec)
+        self.roomNkey_ctrl_scrollArea_requests = QtWidgets.QScrollArea(self.FroomNkey_ctrl_overview_accORdec)
         self.roomNkey_ctrl_scrollArea_requests.setWidgetResizable(True)
         self.roomNkey_ctrl_scrollArea_requests.setObjectName("roomNkey_ctrl_scrollArea_requests")
-        self.roomNkey_ctrl_scrollArea_requests_contents = QWidget()
-        self.roomNkey_ctrl_scrollArea_requests_contents.setGeometry(QRect(0, 0, 437, 108))
+        self.roomNkey_ctrl_scrollArea_requests_contents = QtWidgets.QWidget()
+        self.roomNkey_ctrl_scrollArea_requests_contents.setGeometry(QtCore.QRect(0, 0, 437, 108))
         self.roomNkey_ctrl_scrollArea_requests_contents.setObjectName("roomNkey_ctrl_scrollArea_requests_contents")
-        self.verticalLayout_roomNkey_ctrl_scrollArea_requests_contents = QVBoxLayout(
+        self.verticalLayout_roomNkey_ctrl_scrollArea_requests_contents = QtWidgets.QVBoxLayout(
             self.roomNkey_ctrl_scrollArea_requests_contents)
         self.verticalLayout_roomNkey_ctrl_scrollArea_requests_contents.setContentsMargins(2, 2, 2, 2)
         self.verticalLayout_roomNkey_ctrl_scrollArea_requests_contents.setObjectName(
@@ -2751,7 +2843,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_FroomNkey_ctrl_overview.setStretch(1, 4)
         self.verticalLayout_FroomNkey_ctrl_overview.setStretch(2, 1)
         self.horizontalLayout_page_admin_FroomNkey_ctrl.addWidget(self.FroomNkey_ctrl_overview)
-        self.FroomNkey_ctrl_logs = QFrame(self.page_admin_FroomNkey_ctrl)
+        self.FroomNkey_ctrl_logs = QtWidgets.QFrame(self.page_admin_FroomNkey_ctrl)
         self.FroomNkey_ctrl_logs.setStyleSheet("QWidget{\n"
                                                "color: white;\n"
                                                "}\n"
@@ -2759,61 +2851,61 @@ class Ui_MainWindow(object):
                                                "QFrame{\n"
                                                "border:0;\n"
                                                "}")
-        self.FroomNkey_ctrl_logs.setFrameShape(QFrame.StyledPanel)
-        self.FroomNkey_ctrl_logs.setFrameShadow(QFrame.Raised)
+        self.FroomNkey_ctrl_logs.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.FroomNkey_ctrl_logs.setFrameShadow(QtWidgets.QFrame.Raised)
         self.FroomNkey_ctrl_logs.setObjectName("FroomNkey_ctrl_logs")
-        self.verticalLayout_FroomNkey_ctrl_logs = QVBoxLayout(self.FroomNkey_ctrl_logs)
+        self.verticalLayout_FroomNkey_ctrl_logs = QtWidgets.QVBoxLayout(self.FroomNkey_ctrl_logs)
         self.verticalLayout_FroomNkey_ctrl_logs.setContentsMargins(2, 2, 2, 10)
         self.verticalLayout_FroomNkey_ctrl_logs.setSpacing(10)
         self.verticalLayout_FroomNkey_ctrl_logs.setObjectName("verticalLayout_FroomNkey_ctrl_logs")
-        self.roomNkey_logsButton = QPushButton(self.FroomNkey_ctrl_logs)
+        self.roomNkey_logsButton = QtWidgets.QPushButton(self.FroomNkey_ctrl_logs)
         self.roomNkey_logsButton.setText("")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(":/20x20/icons/20x20/cil-notes.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
         self.roomNkey_logsButton.setIcon(icon1)
-        self.roomNkey_logsButton.setIconSize(QSize(18, 18))
+        self.roomNkey_logsButton.setIconSize(QtCore.QSize(18, 18))
         self.roomNkey_logsButton.setFlat(False)
         self.roomNkey_logsButton.setObjectName("roomNkey_logsButton")
         self.verticalLayout_FroomNkey_ctrl_logs.addWidget(self.roomNkey_logsButton)
-        self.roomNkey_accORdecButton = QPushButton(self.FroomNkey_ctrl_logs)
+        self.roomNkey_accORdecButton = QtWidgets.QPushButton(self.FroomNkey_ctrl_logs)
         self.roomNkey_accORdecButton.setText("")
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap(":/20x20/icons/20x20/cil-chevron-circle-left-alt.png"), QtGui.QIcon.Normal,
                         QtGui.QIcon.On)
         self.roomNkey_accORdecButton.setIcon(icon2)
-        self.roomNkey_accORdecButton.setIconSize(QSize(20, 20))
+        self.roomNkey_accORdecButton.setIconSize(QtCore.QSize(20, 20))
         self.roomNkey_accORdecButton.setObjectName("roomNkey_accORdecButton")
         self.verticalLayout_FroomNkey_ctrl_logs.addWidget(self.roomNkey_accORdecButton)
         self.horizontalLayout_page_admin_FroomNkey_ctrl.addWidget(self.FroomNkey_ctrl_logs, 0,
-                                                                  Qt.AlignRight | Qt.AlignBottom)
+                                                                  QtCore.Qt.AlignRight | QtCore.Qt.AlignBottom)
         self.horizontalLayout_page_admin_FroomNkey_ctrl.setStretch(0, 14)
         self.horizontalLayout_page_admin_FroomNkey_ctrl.setStretch(1, 1)
         self.horizontalLayout_page_admin_FroomNkey.addWidget(self.page_admin_FroomNkey_ctrl)
-        self.page_admin_FroomNkey_rooms = QFrame(self.page_admin_FroomNkey)
+        self.page_admin_FroomNkey_rooms = QtWidgets.QFrame(self.page_admin_FroomNkey)
         self.page_admin_FroomNkey_rooms.setStyleSheet("color: white;\n"
                                                       "font: 12pt;")
-        self.page_admin_FroomNkey_rooms.setFrameShape(QFrame.StyledPanel)
-        self.page_admin_FroomNkey_rooms.setFrameShadow(QFrame.Raised)
+        self.page_admin_FroomNkey_rooms.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.page_admin_FroomNkey_rooms.setFrameShadow(QtWidgets.QFrame.Raised)
         self.page_admin_FroomNkey_rooms.setObjectName("page_admin_FroomNkey_rooms")
-        self.gridLayout_page_admin_FroomNkey_rooms = QGridLayout(self.page_admin_FroomNkey_rooms)
+        self.gridLayout_page_admin_FroomNkey_rooms = QtWidgets.QGridLayout(self.page_admin_FroomNkey_rooms)
         self.gridLayout_page_admin_FroomNkey_rooms.setContentsMargins(0, 0, 0, 0)
         self.gridLayout_page_admin_FroomNkey_rooms.setSpacing(8)
         self.gridLayout_page_admin_FroomNkey_rooms.setObjectName("gridLayout_page_admin_FroomNkey_rooms")
-        self.admin_room1 = QFrame(self.page_admin_FroomNkey_rooms)
+        self.admin_room1 = QtWidgets.QFrame(self.page_admin_FroomNkey_rooms)
         self.admin_room1.setStyleSheet("QFrame {\n"
                                        "border: 1px solid #69cdff;\n"
                                        "border-radius: 6px;\n"
                                        "}\n"
                                        "")
-        self.admin_room1.setFrameShape(QFrame.StyledPanel)
-        self.admin_room1.setFrameShadow(QFrame.Raised)
+        self.admin_room1.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.admin_room1.setFrameShadow(QtWidgets.QFrame.Raised)
         self.admin_room1.setObjectName("admin_room1")
-        self.verticalLayout_admin_room1 = QVBoxLayout(self.admin_room1)
+        self.verticalLayout_admin_room1 = QtWidgets.QVBoxLayout(self.admin_room1)
         self.verticalLayout_admin_room1.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_admin_room1.setSpacing(0)
         self.verticalLayout_admin_room1.setObjectName("verticalLayout_admin_room1")
-        self.admin_pushButton_room1 = QPushButton(self.admin_room1)
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        self.admin_pushButton_room1 = QtWidgets.QPushButton(self.admin_room1)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.admin_pushButton_room1.sizePolicy().hasHeightForWidth())
@@ -2821,7 +2913,7 @@ class Ui_MainWindow(object):
         self.admin_pushButton_room1.setText("")
         self.admin_pushButton_room1.setObjectName("admin_pushButton_room1")
         self.verticalLayout_admin_room1.addWidget(self.admin_pushButton_room1)
-        self.admin_label_room1 = QLabel(self.admin_room1)
+        self.admin_label_room1 = QtWidgets.QLabel(self.admin_room1)
         self.admin_label_room1.setStyleSheet("border: 0;\n"
                                              "margin-left: 4px;")
         self.admin_label_room1.setObjectName("admin_label_room1")
@@ -2829,21 +2921,21 @@ class Ui_MainWindow(object):
         self.verticalLayout_admin_room1.setStretch(0, 5)
         self.verticalLayout_admin_room1.setStretch(1, 1)
         self.gridLayout_page_admin_FroomNkey_rooms.addWidget(self.admin_room1, 2, 1, 1, 1)
-        self.admin_room2 = QFrame(self.page_admin_FroomNkey_rooms)
+        self.admin_room2 = QtWidgets.QFrame(self.page_admin_FroomNkey_rooms)
         self.admin_room2.setStyleSheet("QFrame {\n"
                                        "border: 1px solid #69cdff;\n"
                                        "border-radius: 6px;\n"
                                        "}\n"
                                        "")
-        self.admin_room2.setFrameShape(QFrame.StyledPanel)
-        self.admin_room2.setFrameShadow(QFrame.Raised)
+        self.admin_room2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.admin_room2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.admin_room2.setObjectName("admin_room2")
-        self.verticalLayout_admin_room2 = QVBoxLayout(self.admin_room2)
+        self.verticalLayout_admin_room2 = QtWidgets.QVBoxLayout(self.admin_room2)
         self.verticalLayout_admin_room2.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_admin_room2.setSpacing(0)
         self.verticalLayout_admin_room2.setObjectName("verticalLayout_admin_room2")
-        self.admin_pushButton_room2 = QPushButton(self.admin_room2)
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        self.admin_pushButton_room2 = QtWidgets.QPushButton(self.admin_room2)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.admin_pushButton_room2.sizePolicy().hasHeightForWidth())
@@ -2851,7 +2943,7 @@ class Ui_MainWindow(object):
         self.admin_pushButton_room2.setText("")
         self.admin_pushButton_room2.setObjectName("admin_pushButton_room2")
         self.verticalLayout_admin_room2.addWidget(self.admin_pushButton_room2)
-        self.admin_label_room2 = QLabel(self.admin_room2)
+        self.admin_label_room2 = QtWidgets.QLabel(self.admin_room2)
         self.admin_label_room2.setStyleSheet("border:0;\n"
                                              "margin-left: 4px;")
         self.admin_label_room2.setObjectName("admin_label_room2")
@@ -2859,21 +2951,21 @@ class Ui_MainWindow(object):
         self.verticalLayout_admin_room2.setStretch(0, 5)
         self.verticalLayout_admin_room2.setStretch(1, 1)
         self.gridLayout_page_admin_FroomNkey_rooms.addWidget(self.admin_room2, 2, 2, 1, 1)
-        self.admin_room3 = QFrame(self.page_admin_FroomNkey_rooms)
+        self.admin_room3 = QtWidgets.QFrame(self.page_admin_FroomNkey_rooms)
         self.admin_room3.setStyleSheet("QFrame {\n"
                                        "border: 1px solid #69cdff;\n"
                                        "border-radius: 6px;\n"
                                        "}\n"
                                        "")
-        self.admin_room3.setFrameShape(QFrame.StyledPanel)
-        self.admin_room3.setFrameShadow(QFrame.Raised)
+        self.admin_room3.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.admin_room3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.admin_room3.setObjectName("admin_room3")
-        self.verticalLayout_admin_room3 = QVBoxLayout(self.admin_room3)
+        self.verticalLayout_admin_room3 = QtWidgets.QVBoxLayout(self.admin_room3)
         self.verticalLayout_admin_room3.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_admin_room3.setSpacing(0)
         self.verticalLayout_admin_room3.setObjectName("verticalLayout_admin_room3")
-        self.admin_pushButton_room3 = QPushButton(self.admin_room3)
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        self.admin_pushButton_room3 = QtWidgets.QPushButton(self.admin_room3)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.admin_pushButton_room3.sizePolicy().hasHeightForWidth())
@@ -2881,7 +2973,7 @@ class Ui_MainWindow(object):
         self.admin_pushButton_room3.setText("")
         self.admin_pushButton_room3.setObjectName("admin_pushButton_room3")
         self.verticalLayout_admin_room3.addWidget(self.admin_pushButton_room3)
-        self.admin_label_room3 = QLabel(self.admin_room3)
+        self.admin_label_room3 = QtWidgets.QLabel(self.admin_room3)
         self.admin_label_room3.setStyleSheet("border:0;\n"
                                              "margin-left: 4px;")
         self.admin_label_room3.setObjectName("admin_label_room3")
@@ -2889,21 +2981,21 @@ class Ui_MainWindow(object):
         self.verticalLayout_admin_room3.setStretch(0, 5)
         self.verticalLayout_admin_room3.setStretch(1, 1)
         self.gridLayout_page_admin_FroomNkey_rooms.addWidget(self.admin_room3, 3, 1, 1, 1)
-        self.admin_room4 = QFrame(self.page_admin_FroomNkey_rooms)
+        self.admin_room4 = QtWidgets.QFrame(self.page_admin_FroomNkey_rooms)
         self.admin_room4.setStyleSheet("QFrame {\n"
                                        "border: 1px solid #69cdff;\n"
                                        "border-radius: 6px;\n"
                                        "}\n"
                                        "")
-        self.admin_room4.setFrameShape(QFrame.StyledPanel)
-        self.admin_room4.setFrameShadow(QFrame.Raised)
+        self.admin_room4.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.admin_room4.setFrameShadow(QtWidgets.QFrame.Raised)
         self.admin_room4.setObjectName("admin_room4")
-        self.verticalLayout_admin_room4 = QVBoxLayout(self.admin_room4)
+        self.verticalLayout_admin_room4 = QtWidgets.QVBoxLayout(self.admin_room4)
         self.verticalLayout_admin_room4.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_admin_room4.setSpacing(0)
         self.verticalLayout_admin_room4.setObjectName("verticalLayout_admin_room4")
-        self.admin_pushButton_room4 = QPushButton(self.admin_room4)
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        self.admin_pushButton_room4 = QtWidgets.QPushButton(self.admin_room4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.admin_pushButton_room4.sizePolicy().hasHeightForWidth())
@@ -2911,7 +3003,7 @@ class Ui_MainWindow(object):
         self.admin_pushButton_room4.setText("")
         self.admin_pushButton_room4.setObjectName("admin_pushButton_room4")
         self.verticalLayout_admin_room4.addWidget(self.admin_pushButton_room4)
-        self.admin_label_room4 = QLabel(self.admin_room4)
+        self.admin_label_room4 = QtWidgets.QLabel(self.admin_room4)
         self.admin_label_room4.setStyleSheet("border:0;\n"
                                              "margin-left: 4px;")
         self.admin_label_room4.setObjectName("admin_label_room4")
@@ -2919,21 +3011,21 @@ class Ui_MainWindow(object):
         self.verticalLayout_admin_room4.setStretch(0, 5)
         self.verticalLayout_admin_room4.setStretch(1, 1)
         self.gridLayout_page_admin_FroomNkey_rooms.addWidget(self.admin_room4, 3, 2, 1, 1)
-        self.admin_room5 = QFrame(self.page_admin_FroomNkey_rooms)
+        self.admin_room5 = QtWidgets.QFrame(self.page_admin_FroomNkey_rooms)
         self.admin_room5.setStyleSheet("QFrame {\n"
                                        "border: 1px solid #69cdff;\n"
                                        "border-radius: 6px;\n"
                                        "}\n"
                                        "")
-        self.admin_room5.setFrameShape(QFrame.StyledPanel)
-        self.admin_room5.setFrameShadow(QFrame.Raised)
+        self.admin_room5.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.admin_room5.setFrameShadow(QtWidgets.QFrame.Raised)
         self.admin_room5.setObjectName("admin_room5")
-        self.verticalLayout_admin_room5 = QVBoxLayout(self.admin_room5)
+        self.verticalLayout_admin_room5 = QtWidgets.QVBoxLayout(self.admin_room5)
         self.verticalLayout_admin_room5.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_admin_room5.setSpacing(0)
         self.verticalLayout_admin_room5.setObjectName("verticalLayout_admin_room5")
-        self.admin_pushButton_room5 = QPushButton(self.admin_room5)
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        self.admin_pushButton_room5 = QtWidgets.QPushButton(self.admin_room5)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.admin_pushButton_room5.sizePolicy().hasHeightForWidth())
@@ -2941,7 +3033,7 @@ class Ui_MainWindow(object):
         self.admin_pushButton_room5.setText("")
         self.admin_pushButton_room5.setObjectName("admin_pushButton_room5")
         self.verticalLayout_admin_room5.addWidget(self.admin_pushButton_room5)
-        self.admin_label_room5 = QLabel(self.admin_room5)
+        self.admin_label_room5 = QtWidgets.QLabel(self.admin_room5)
         self.admin_label_room5.setStyleSheet("border:0;\n"
                                              "margin-left: 4px;")
         self.admin_label_room5.setObjectName("admin_label_room5")
@@ -2949,21 +3041,21 @@ class Ui_MainWindow(object):
         self.verticalLayout_admin_room5.setStretch(0, 5)
         self.verticalLayout_admin_room5.setStretch(1, 1)
         self.gridLayout_page_admin_FroomNkey_rooms.addWidget(self.admin_room5, 4, 1, 1, 1)
-        self.admin_room6 = QFrame(self.page_admin_FroomNkey_rooms)
+        self.admin_room6 = QtWidgets.QFrame(self.page_admin_FroomNkey_rooms)
         self.admin_room6.setStyleSheet("QFrame {\n"
                                        "border: 1px solid #69cdff;\n"
                                        "border-radius: 6px;\n"
                                        "}\n"
                                        "")
-        self.admin_room6.setFrameShape(QFrame.StyledPanel)
-        self.admin_room6.setFrameShadow(QFrame.Raised)
+        self.admin_room6.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.admin_room6.setFrameShadow(QtWidgets.QFrame.Raised)
         self.admin_room6.setObjectName("admin_room6")
-        self.verticalLayout_admin_room6 = QVBoxLayout(self.admin_room6)
+        self.verticalLayout_admin_room6 = QtWidgets.QVBoxLayout(self.admin_room6)
         self.verticalLayout_admin_room6.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_admin_room6.setSpacing(0)
         self.verticalLayout_admin_room6.setObjectName("verticalLayout_admin_room6")
-        self.admin_pushButton_room6 = QPushButton(self.admin_room6)
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        self.admin_pushButton_room6 = QtWidgets.QPushButton(self.admin_room6)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.admin_pushButton_room6.sizePolicy().hasHeightForWidth())
@@ -2971,7 +3063,7 @@ class Ui_MainWindow(object):
         self.admin_pushButton_room6.setText("")
         self.admin_pushButton_room6.setObjectName("admin_pushButton_room6")
         self.verticalLayout_admin_room6.addWidget(self.admin_pushButton_room6)
-        self.admin_label_room6 = QLabel(self.admin_room6)
+        self.admin_label_room6 = QtWidgets.QLabel(self.admin_room6)
         self.admin_label_room6.setStyleSheet("border:0;\n"
                                              "margin-left: 4px;")
         self.admin_label_room6.setObjectName("admin_label_room6")
@@ -2984,10 +3076,30 @@ class Ui_MainWindow(object):
         self.horizontalLayout_page_admin_FroomNkey.setStretch(1, 4)
         self.verticalLayout_page_admin_roomNkey.addWidget(self.page_admin_FroomNkey)
         self.page_stackedWidget_roomNkey.addWidget(self.page_admin_roomNkey)
-        self.verticalLayout_page_roomNkey.addWidget(self.page_stackedWidget_roomNkey)
-        self.stackedWidget.addWidget(self.page_roomNkey)
-## ROOM-RESERVATION_PAGE | END
+        ##  ROOM RESERVATION_PAGE - ADMIN | END
 
+        self.verticalLayout_page_roomNkey.addWidget(self.page_stackedWidget_roomNkey)
+        self.verticalLayout_page_roomNkey.addWidget(self.page_roomNkey_changeUserF, 0,
+                                                    QtCore.Qt.AlignRight | QtCore.Qt.AlignBottom)
+        self.verticalLayout_page_roomNkey.setStretch(20, 1)
+        self.stackedWidget.addWidget(self.page_roomNkey)
+
+        self.popMenu_roomNkey = QtWidgets.QMenu()
+        self.popMenu_roomNkey.setObjectName('popMenu_roomNkey')
+        self.studAction_roomNkey = QtWidgets.QAction("Student")
+        self.facAction_roomNkey = QtWidgets.QAction("Faculty")
+        self.admAction_roomNkey = QtWidgets.QAction("Admin")
+        self.popMenu_roomNkey.addAction(self.studAction_roomNkey)
+        self.popMenu_roomNkey.addAction(self.facAction_roomNkey)
+        self.popMenu_roomNkey.addAction(self.admAction_roomNkey)
+        self.studAction_roomNkey.triggered.connect(
+            lambda: self.page_stackedWidget_roomNkey.setCurrentWidget(self.page_student_roomNkey))
+        self.facAction_roomNkey.triggered.connect(
+            lambda: self.page_stackedWidget_roomNkey.setCurrentWidget(self.page_faculty_roomNkey))
+        self.admAction_roomNkey.triggered.connect(
+            lambda: self.page_stackedWidget_roomNkey.setCurrentWidget(self.page_admin_roomNkey))
+
+        self.page_roomNkey_changeUserButton.setMenu(self.popMenu_roomNkey)
 
         self.page_widgets = QWidget()
         self.page_widgets.setObjectName(u"page_widgets")
@@ -3007,8 +3119,8 @@ class Ui_MainWindow(object):
         self.frame_div_content_1.setMinimumSize(QSize(0, 110))
         self.frame_div_content_1.setMaximumSize(QSize(16777215, 110))
         self.frame_div_content_1.setStyleSheet(u"background-color: rgb(41, 45, 56);\n"
-"border-radius: 5px;\n"
-"")
+                                               "border-radius: 5px;\n"
+                                               "")
         self.frame_div_content_1.setFrameShape(QFrame.NoFrame)
         self.frame_div_content_1.setFrameShadow(QFrame.Raised)
         self.verticalLayout_7 = QVBoxLayout(self.frame_div_content_1)
@@ -3030,7 +3142,6 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.labelBoxBlenderInstalation)
 
-
         self.verticalLayout_7.addWidget(self.frame_title_wid_1)
 
         self.frame_content_wid_1 = QFrame(self.frame_div_content_1)
@@ -3046,17 +3157,17 @@ class Ui_MainWindow(object):
         self.lineEdit.setObjectName(u"lineEdit")
         self.lineEdit.setMinimumSize(QSize(0, 30))
         self.lineEdit.setStyleSheet(u"QLineEdit {\n"
-"	background-color: rgb(27, 29, 35);\n"
-"	border-radius: 5px;\n"
-"	border: 2px solid rgb(27, 29, 35);\n"
-"	padding-left: 10px;\n"
-"}\n"
-"QLineEdit:hover {\n"
-"	border: 2px solid rgb(64, 71, 88);\n"
-"}\n"
-"QLineEdit:focus {\n"
-"	border: 2px solid rgb(91, 101, 124);\n"
-"}")
+                                    "	background-color: rgb(27, 29, 35);\n"
+                                    "	border-radius: 5px;\n"
+                                    "	border: 2px solid rgb(27, 29, 35);\n"
+                                    "	padding-left: 10px;\n"
+                                    "}\n"
+                                    "QLineEdit:hover {\n"
+                                    "	border: 2px solid rgb(64, 71, 88);\n"
+                                    "}\n"
+                                    "QLineEdit:focus {\n"
+                                    "	border: 2px solid rgb(91, 101, 124);\n"
+                                    "}")
 
         self.gridLayout.addWidget(self.lineEdit, 0, 0, 1, 1)
 
@@ -3068,18 +3179,18 @@ class Ui_MainWindow(object):
         font8.setPointSize(9)
         self.pushButton.setFont(font8)
         self.pushButton.setStyleSheet(u"QPushButton {\n"
-"	border: 2px solid rgb(52, 59, 72);\n"
-"	border-radius: 5px;	\n"
-"	background-color: rgb(52, 59, 72);\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(57, 65, 80);\n"
-"	border: 2px solid rgb(61, 70, 86);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(35, 40, 49);\n"
-"	border: 2px solid rgb(43, 50, 61);\n"
-"}")
+                                      "	border: 2px solid rgb(52, 59, 72);\n"
+                                      "	border-radius: 5px;	\n"
+                                      "	background-color: rgb(52, 59, 72);\n"
+                                      "}\n"
+                                      "QPushButton:hover {\n"
+                                      "	background-color: rgb(57, 65, 80);\n"
+                                      "	border: 2px solid rgb(61, 70, 86);\n"
+                                      "}\n"
+                                      "QPushButton:pressed {	\n"
+                                      "	background-color: rgb(35, 40, 49);\n"
+                                      "	border: 2px solid rgb(43, 50, 61);\n"
+                                      "}")
         icon3 = QIcon()
         icon3.addFile(u":/16x16/icons/16x16/cil-folder-open.png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton.setIcon(icon3)
@@ -3090,19 +3201,15 @@ class Ui_MainWindow(object):
         self.labelVersion_3.setObjectName(u"labelVersion_3")
         self.labelVersion_3.setStyleSheet(u"color: rgb(98, 103, 111);")
         self.labelVersion_3.setLineWidth(1)
-        self.labelVersion_3.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.labelVersion_3.setAlignment(Qt.AlignLeading | Qt.AlignLeft | Qt.AlignVCenter)
 
         self.gridLayout.addWidget(self.labelVersion_3, 1, 0, 1, 2)
 
-
         self.horizontalLayout_9.addLayout(self.gridLayout)
-
 
         self.verticalLayout_7.addWidget(self.frame_content_wid_1)
 
-
         self.verticalLayout_15.addWidget(self.frame_div_content_1)
-
 
         self.verticalLayout_6.addWidget(self.frame)
 
@@ -3110,7 +3217,7 @@ class Ui_MainWindow(object):
         self.frame_2.setObjectName(u"frame_2")
         self.frame_2.setMinimumSize(QSize(0, 150))
         self.frame_2.setStyleSheet(u"background-color: rgb(39, 44, 54);\n"
-"border-radius: 5px;")
+                                   "border-radius: 5px;")
         self.frame_2.setFrameShape(QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QFrame.Raised)
         self.verticalLayout_11 = QVBoxLayout(self.frame_2)
@@ -3140,12 +3247,12 @@ class Ui_MainWindow(object):
         self.verticalScrollBar = QScrollBar(self.frame_2)
         self.verticalScrollBar.setObjectName(u"verticalScrollBar")
         self.verticalScrollBar.setStyleSheet(u" QScrollBar:vertical {\n"
-"	border: none;\n"
-"    background: rgb(52, 59, 72);\n"
-"    width: 14px;\n"
-"    margin: 21px 0 21px 0;\n"
-"	border-radius: 0px;\n"
-" }")
+                                             "	border: none;\n"
+                                             "    background: rgb(52, 59, 72);\n"
+                                             "    width: 14px;\n"
+                                             "    margin: 21px 0 21px 0;\n"
+                                             "	border-radius: 0px;\n"
+                                             " }")
         self.verticalScrollBar.setOrientation(Qt.Vertical)
 
         self.gridLayout_2.addWidget(self.verticalScrollBar, 0, 4, 3, 1)
@@ -3153,24 +3260,24 @@ class Ui_MainWindow(object):
         self.scrollArea = QScrollArea(self.frame_2)
         self.scrollArea.setObjectName(u"scrollArea")
         self.scrollArea.setStyleSheet(u"QScrollArea {\n"
-"	border: none;\n"
-"	border-radius: 0px;\n"
-"}\n"
-"QScrollBar:horizontal {\n"
-"    border: none;\n"
-"    background: rgb(52, 59, 72);\n"
-"    height: 14px;\n"
-"    margin: 0px 21px 0 21px;\n"
-"	border-radius: 0px;\n"
-"}\n"
-" QScrollBar:vertical {\n"
-"	border: none;\n"
-"    background: rgb(52, 59, 72);\n"
-"    width: 14px;\n"
-"    margin: 21px 0 21px 0;\n"
-"	border-radius: 0px;\n"
-" }\n"
-"")
+                                      "	border: none;\n"
+                                      "	border-radius: 0px;\n"
+                                      "}\n"
+                                      "QScrollBar:horizontal {\n"
+                                      "    border: none;\n"
+                                      "    background: rgb(52, 59, 72);\n"
+                                      "    height: 14px;\n"
+                                      "    margin: 0px 21px 0 21px;\n"
+                                      "	border-radius: 0px;\n"
+                                      "}\n"
+                                      " QScrollBar:vertical {\n"
+                                      "	border: none;\n"
+                                      "    background: rgb(52, 59, 72);\n"
+                                      "    width: 14px;\n"
+                                      "    margin: 21px 0 21px 0;\n"
+                                      "	border-radius: 0px;\n"
+                                      " }\n"
+                                      "")
         self.scrollArea.setFrameShape(QFrame.NoFrame)
         self.scrollArea.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
         self.scrollArea.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
@@ -3184,16 +3291,16 @@ class Ui_MainWindow(object):
         self.plainTextEdit.setObjectName(u"plainTextEdit")
         self.plainTextEdit.setMinimumSize(QSize(200, 200))
         self.plainTextEdit.setStyleSheet(u"QPlainTextEdit {\n"
-"	background-color: rgb(27, 29, 35);\n"
-"	border-radius: 5px;\n"
-"	padding: 10px;\n"
-"}\n"
-"QPlainTextEdit:hover {\n"
-"	border: 2px solid rgb(64, 71, 88);\n"
-"}\n"
-"QPlainTextEdit:focus {\n"
-"	border: 2px solid rgb(91, 101, 124);\n"
-"}")
+                                         "	background-color: rgb(27, 29, 35);\n"
+                                         "	border-radius: 5px;\n"
+                                         "	padding: 10px;\n"
+                                         "}\n"
+                                         "QPlainTextEdit:hover {\n"
+                                         "	border: 2px solid rgb(64, 71, 88);\n"
+                                         "}\n"
+                                         "QPlainTextEdit:focus {\n"
+                                         "	border: 2px solid rgb(91, 101, 124);\n"
+                                         "}")
 
         self.horizontalLayout_11.addWidget(self.plainTextEdit)
 
@@ -3209,21 +3316,21 @@ class Ui_MainWindow(object):
         self.comboBox.setFont(font8)
         self.comboBox.setAutoFillBackground(False)
         self.comboBox.setStyleSheet(u"QComboBox{\n"
-"	background-color: rgb(27, 29, 35);\n"
-"	border-radius: 5px;\n"
-"	border: 2px solid rgb(27, 29, 35);\n"
-"	padding: 5px;\n"
-"	padding-left: 10px;\n"
-"}\n"
-"QComboBox:hover{\n"
-"	border: 2px solid rgb(64, 71, 88);\n"
-"}\n"
-"QComboBox QAbstractItemView {\n"
-"	color: rgb(85, 170, 255);	\n"
-"	background-color: rgb(27, 29, 35);\n"
-"	padding: 10px;\n"
-"	selection-background-color: rgb(39, 44, 54);\n"
-"}")
+                                    "	background-color: rgb(27, 29, 35);\n"
+                                    "	border-radius: 5px;\n"
+                                    "	border: 2px solid rgb(27, 29, 35);\n"
+                                    "	padding: 5px;\n"
+                                    "	padding-left: 10px;\n"
+                                    "}\n"
+                                    "QComboBox:hover{\n"
+                                    "	border: 2px solid rgb(64, 71, 88);\n"
+                                    "}\n"
+                                    "QComboBox QAbstractItemView {\n"
+                                    "	color: rgb(85, 170, 255);	\n"
+                                    "	background-color: rgb(27, 29, 35);\n"
+                                    "	padding: 10px;\n"
+                                    "	selection-background-color: rgb(39, 44, 54);\n"
+                                    "}")
         self.comboBox.setIconSize(QSize(16, 16))
         self.comboBox.setFrame(True)
 
@@ -3237,13 +3344,13 @@ class Ui_MainWindow(object):
         sizePolicy5.setHeightForWidth(self.horizontalScrollBar.sizePolicy().hasHeightForWidth())
         self.horizontalScrollBar.setSizePolicy(sizePolicy5)
         self.horizontalScrollBar.setStyleSheet(u"QScrollBar:horizontal {\n"
-"    border: none;\n"
-"    background: rgb(52, 59, 72);\n"
-"    height: 14px;\n"
-"    margin: 0px 21px 0 21px;\n"
-"	border-radius: 0px;\n"
-"}\n"
-"")
+                                               "    border: none;\n"
+                                               "    background: rgb(52, 59, 72);\n"
+                                               "    height: 14px;\n"
+                                               "    margin: 0px 21px 0 21px;\n"
+                                               "	border-radius: 0px;\n"
+                                               "}\n"
+                                               "")
         self.horizontalScrollBar.setOrientation(Qt.Horizontal)
 
         self.gridLayout_2.addWidget(self.horizontalScrollBar, 1, 3, 1, 1)
@@ -3251,18 +3358,18 @@ class Ui_MainWindow(object):
         self.commandLinkButton = QCommandLinkButton(self.frame_2)
         self.commandLinkButton.setObjectName(u"commandLinkButton")
         self.commandLinkButton.setStyleSheet(u"QCommandLinkButton {	\n"
-"	color: rgb(85, 170, 255);\n"
-"	border-radius: 5px;\n"
-"	padding: 5px;\n"
-"}\n"
-"QCommandLinkButton:hover {	\n"
-"	color: rgb(210, 210, 210);\n"
-"	background-color: rgb(44, 49, 60);\n"
-"}\n"
-"QCommandLinkButton:pressed {	\n"
-"	color: rgb(210, 210, 210);\n"
-"	background-color: rgb(52, 58, 71);\n"
-"}")
+                                             "	color: rgb(85, 170, 255);\n"
+                                             "	border-radius: 5px;\n"
+                                             "	padding: 5px;\n"
+                                             "}\n"
+                                             "QCommandLinkButton:hover {	\n"
+                                             "	color: rgb(210, 210, 210);\n"
+                                             "	background-color: rgb(44, 49, 60);\n"
+                                             "}\n"
+                                             "QCommandLinkButton:pressed {	\n"
+                                             "	color: rgb(210, 210, 210);\n"
+                                             "	background-color: rgb(52, 58, 71);\n"
+                                             "}")
         icon4 = QIcon()
         icon4.addFile(u":/16x16/icons/16x16/cil-link.png", QSize(), QIcon.Normal, QIcon.Off)
         self.commandLinkButton.setIcon(icon4)
@@ -3276,9 +3383,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.horizontalSlider, 2, 0, 1, 2)
 
-
         self.verticalLayout_11.addLayout(self.gridLayout_2)
-
 
         self.verticalLayout_6.addWidget(self.frame_2)
 
@@ -3359,9 +3464,9 @@ class Ui_MainWindow(object):
         palette1.setBrush(QPalette.Active, QPalette.Window, brush15)
         brush16 = QBrush(QColor(210, 210, 210, 128))
         brush16.setStyle(Qt.NoBrush)
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        # if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette1.setBrush(QPalette.Active, QPalette.PlaceholderText, brush16)
-#endif
+        # endif
         palette1.setBrush(QPalette.Inactive, QPalette.WindowText, brush6)
         palette1.setBrush(QPalette.Inactive, QPalette.Button, brush15)
         palette1.setBrush(QPalette.Inactive, QPalette.Text, brush6)
@@ -3370,9 +3475,9 @@ class Ui_MainWindow(object):
         palette1.setBrush(QPalette.Inactive, QPalette.Window, brush15)
         brush17 = QBrush(QColor(210, 210, 210, 128))
         brush17.setStyle(Qt.NoBrush)
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        # if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette1.setBrush(QPalette.Inactive, QPalette.PlaceholderText, brush17)
-#endif
+        # endif
         palette1.setBrush(QPalette.Disabled, QPalette.WindowText, brush6)
         palette1.setBrush(QPalette.Disabled, QPalette.Button, brush15)
         palette1.setBrush(QPalette.Disabled, QPalette.Text, brush6)
@@ -3381,65 +3486,65 @@ class Ui_MainWindow(object):
         palette1.setBrush(QPalette.Disabled, QPalette.Window, brush15)
         brush18 = QBrush(QColor(210, 210, 210, 128))
         brush18.setStyle(Qt.NoBrush)
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        # if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
         palette1.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush18)
-#endif
+        # endif
         self.tableWidget.setPalette(palette1)
         self.tableWidget.setStyleSheet(u"QTableWidget {	\n"
-"	background-color: rgb(39, 44, 54);\n"
-"	padding: 10px;\n"
-"	border-radius: 5px;\n"
-"	gridline-color: rgb(44, 49, 60);\n"
-"	border-bottom: 1px solid rgb(44, 49, 60);\n"
-"}\n"
-"QTableWidget::item{\n"
-"	border-color: rgb(44, 49, 60);\n"
-"	padding-left: 5px;\n"
-"	padding-right: 5px;\n"
-"	gridline-color: rgb(44, 49, 60);\n"
-"}\n"
-"QTableWidget::item:selected{\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}\n"
-"QScrollBar:horizontal {\n"
-"    border: none;\n"
-"    background: rgb(52, 59, 72);\n"
-"    height: 14px;\n"
-"    margin: 0px 21px 0 21px;\n"
-"	border-radius: 0px;\n"
-"}\n"
-" QScrollBar:vertical {\n"
-"	border: none;\n"
-"    background: rgb(52, 59, 72);\n"
-"    width: 14px;\n"
-"    margin: 21px 0 21px 0;\n"
-"	border-radius: 0px;\n"
-" }\n"
-"QHeaderView::section{\n"
-"	Background-color: rgb(39, 44, 54);\n"
-"	max-width: 30px;\n"
-"	border: 1px solid rgb(44, 49, 60);\n"
-"	border-style: none;\n"
-"    border-bottom: 1px solid rgb(44, 49, 60);\n"
-"    border-right: 1px solid rgb(44, 49, 60);\n"
-"}\n"
-""
-                        "QTableWidget::horizontalHeader {	\n"
-"	background-color: rgb(81, 255, 0);\n"
-"}\n"
-"QHeaderView::section:horizontal\n"
-"{\n"
-"    border: 1px solid rgb(32, 34, 42);\n"
-"	background-color: rgb(27, 29, 35);\n"
-"	padding: 3px;\n"
-"	border-top-left-radius: 7px;\n"
-"    border-top-right-radius: 7px;\n"
-"}\n"
-"QHeaderView::section:vertical\n"
-"{\n"
-"    border: 1px solid rgb(44, 49, 60);\n"
-"}\n"
-"")
+                                       "	background-color: rgb(39, 44, 54);\n"
+                                       "	padding: 10px;\n"
+                                       "	border-radius: 5px;\n"
+                                       "	gridline-color: rgb(44, 49, 60);\n"
+                                       "	border-bottom: 1px solid rgb(44, 49, 60);\n"
+                                       "}\n"
+                                       "QTableWidget::item{\n"
+                                       "	border-color: rgb(44, 49, 60);\n"
+                                       "	padding-left: 5px;\n"
+                                       "	padding-right: 5px;\n"
+                                       "	gridline-color: rgb(44, 49, 60);\n"
+                                       "}\n"
+                                       "QTableWidget::item:selected{\n"
+                                       "	background-color: rgb(85, 170, 255);\n"
+                                       "}\n"
+                                       "QScrollBar:horizontal {\n"
+                                       "    border: none;\n"
+                                       "    background: rgb(52, 59, 72);\n"
+                                       "    height: 14px;\n"
+                                       "    margin: 0px 21px 0 21px;\n"
+                                       "	border-radius: 0px;\n"
+                                       "}\n"
+                                       " QScrollBar:vertical {\n"
+                                       "	border: none;\n"
+                                       "    background: rgb(52, 59, 72);\n"
+                                       "    width: 14px;\n"
+                                       "    margin: 21px 0 21px 0;\n"
+                                       "	border-radius: 0px;\n"
+                                       " }\n"
+                                       "QHeaderView::section{\n"
+                                       "	Background-color: rgb(39, 44, 54);\n"
+                                       "	max-width: 30px;\n"
+                                       "	border: 1px solid rgb(44, 49, 60);\n"
+                                       "	border-style: none;\n"
+                                       "    border-bottom: 1px solid rgb(44, 49, 60);\n"
+                                       "    border-right: 1px solid rgb(44, 49, 60);\n"
+                                       "}\n"
+                                       ""
+                                       "QTableWidget::horizontalHeader {	\n"
+                                       "	background-color: rgb(81, 255, 0);\n"
+                                       "}\n"
+                                       "QHeaderView::section:horizontal\n"
+                                       "{\n"
+                                       "    border: 1px solid rgb(32, 34, 42);\n"
+                                       "	background-color: rgb(27, 29, 35);\n"
+                                       "	padding: 3px;\n"
+                                       "	border-top-left-radius: 7px;\n"
+                                       "    border-top-right-radius: 7px;\n"
+                                       "}\n"
+                                       "QHeaderView::section:vertical\n"
+                                       "{\n"
+                                       "    border: 1px solid rgb(44, 49, 60);\n"
+                                       "}\n"
+                                       "")
         self.tableWidget.setFrameShape(QFrame.NoFrame)
         self.tableWidget.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
         self.tableWidget.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
@@ -3460,14 +3565,10 @@ class Ui_MainWindow(object):
         self.tableWidget.verticalHeader().setStretchLastSection(True)
 
         self.horizontalLayout_12.addWidget(self.tableWidget)
-
-
         self.verticalLayout_6.addWidget(self.frame_3)
-
         self.stackedWidget.addWidget(self.page_widgets)
         self.verticalLayout_9.addWidget(self.stackedWidget)
         self.verticalLayout_4.addWidget(self.frame_content)
-
 
         self.frame_grip = QFrame(self.frame_content_right)
         self.frame_grip.setObjectName(u"frame_grip")
@@ -3500,10 +3601,9 @@ class Ui_MainWindow(object):
         self.label_version.setMaximumSize(QSize(100, 16777215))
         self.label_version.setFont(font2)
         self.label_version.setStyleSheet(u"color: rgb(98, 103, 111);")
-        self.label_version.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.label_version.setAlignment(Qt.AlignRight | Qt.AlignTrailing | Qt.AlignVCenter)
 
         self.horizontalLayout_7.addWidget(self.label_version)
-
 
         self.horizontalLayout_6.addWidget(self.frame_label_bottom)
 
@@ -3511,24 +3611,20 @@ class Ui_MainWindow(object):
         self.frame_size_grip.setObjectName(u"frame_size_grip")
         self.frame_size_grip.setMaximumSize(QSize(20, 20))
         self.frame_size_grip.setStyleSheet(u"QSizeGrip {\n"
-"	background-image: url(:/16x16/icons/16x16/cil-size-grip.png);\n"
-"	background-position: center;\n"
-"	background-repeat: no-reperat;\n"
-"}")
+                                           "	background-image: url(:/16x16/icons/16x16/cil-size-grip.png);\n"
+                                           "	background-position: center;\n"
+                                           "	background-repeat: no-reperat;\n"
+                                           "}")
         self.frame_size_grip.setFrameShape(QFrame.NoFrame)
         self.frame_size_grip.setFrameShadow(QFrame.Raised)
 
         self.horizontalLayout_6.addWidget(self.frame_size_grip)
 
-
         self.verticalLayout_4.addWidget(self.frame_grip)
-
 
         self.horizontalLayout_2.addWidget(self.frame_content_right)
 
-
         self.verticalLayout.addWidget(self.frame_center)
-
 
         self.horizontalLayout.addWidget(self.frame_main)
 
@@ -3549,38 +3645,40 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.stackedWidget.setCurrentIndex(1)
-
-
         QMetaObject.connectSlotsByName(MainWindow)
-    # setupUi
+        # setupUi
 
     def retranslateUi(self, MainWindow):
-        _translate = QCoreApplication.translate
+        _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.btn_toggle_menu.setText("")
         self.label_title_bar_top.setText(QCoreApplication.translate("MainWindow", u"Main Window - Base", None))
-#if QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
         self.btn_minimize.setToolTip(QCoreApplication.translate("MainWindow", u"Minimize", None))
-#endif // QT_CONFIG(tooltip)
+        # endif // QT_CONFIG(tooltip)
         self.btn_minimize.setText("")
-#if QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
         self.btn_maximize_restore.setToolTip(QCoreApplication.translate("MainWindow", u"Maximize", None))
-#endif // QT_CONFIG(tooltip)
+        # endif // QT_CONFIG(tooltip)
         self.btn_maximize_restore.setText("")
-#if QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
         self.btn_close.setToolTip(QCoreApplication.translate("MainWindow", u"Close", None))
-#endif // QT_CONFIG(tooltip)
+        # endif // QT_CONFIG(tooltip)
         self.btn_close.setText("")
-        self.label_top_info_1.setText(QCoreApplication.translate("MainWindow", u"C:\\Program Files\\Blender Foundation\\Blender 2.82", None))
+        self.label_top_info_1.setText(
+            QCoreApplication.translate("MainWindow", u"C:\\Program Files\\Blender Foundation\\Blender 2.82", None))
         self.label_top_info_2.setText(QCoreApplication.translate("MainWindow", u"| HOME", None))
         self.label_user_icon.setText(QCoreApplication.translate("MainWindow", u"WM", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"HOME", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"Stuff here layouted in card style probs(?)", None))
+        self.label.setText(
+            QCoreApplication.translate("MainWindow", u"Stuff here layouted in card style probs(?)", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Page Index 0", None))
         self.labelBoxBlenderInstalation.setText(QCoreApplication.translate("MainWindow", u"BLENDER INSTALLATION", None))
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Your Password", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Open Blender", None))
-        self.labelVersion_3.setText(QCoreApplication.translate("MainWindow", u"Ex: C:Program FilesBlender FoundationBlender 2.82 blender.exe", None))
+        self.labelVersion_3.setText(
+            QCoreApplication.translate("MainWindow", u"Ex: C:Program FilesBlender FoundationBlender 2.82 blender.exe",
+                                       None))
         self.checkBox.setText(QCoreApplication.translate("MainWindow", u"CheckBox", None))
         self.radioButton.setText(QCoreApplication.translate("MainWindow", u"RadioButton", None))
         self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"Test 1", None))
@@ -3642,7 +3740,8 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"Line", None));
         self.tableWidget.setSortingEnabled(__sortingEnabled)
 
-        self.label_credits.setText(QCoreApplication.translate("MainWindow", u"Registered by: Wanderson M. Pimenta", None))
+        self.label_credits.setText(
+            QCoreApplication.translate("MainWindow", u"Registered by: Wanderson M. Pimenta", None))
         self.label_version.setText(QCoreApplication.translate("MainWindow", u"v1.0.0", None))
 
         self.image_faculty_studSide.setText(_translate("MainWindow", "Image here"))
@@ -3651,18 +3750,19 @@ class Ui_MainWindow(object):
         self.listofappnt_label.setText(_translate("MainWindow", "List of Appointments"))
         self.tabWidget_student_appnt.setTabText(self.tabWidget_student_appnt.indexOf(self.student_appnt_main),
                                                 _translate("MainWindow", " Appointments "))
-        self.student_appnt_Fhistofappnts_Ltop.setText(_translate("MainWindow", "History of Appointments"))
+        self.student_appnt_Fhistofappnts_Ltop.setText(
+            _translate("MainWindow", "History of Appointments (tableview form)"))
         self.tabWidget_student_appnt.setTabText(self.tabWidget_student_appnt.indexOf(self.student_appnt_histofappnts),
                                                 _translate("MainWindow", " History "))
         self.fac_avl_label.setText(_translate("MainWindow", "Availability"))
         self.day_avl_l1.setText(_translate("MainWindow", "Day/s Available"))
         self.time_avl_l1.setText(_translate("MainWindow", "Time/s Available"))
-        self.queue_label.setText(_translate("MainWindow",
-                                            "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Queue is Empty.</span></p></body></html>"))
+        self.label.setText(_translate("MainWindow",
+                                      "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Queue is Empty.</span></p></body></html>"))
         self.fac_FcontentRight_bot_Ltop.setText(_translate("MainWindow", "Logs"))
         self.tabWidget_faculty_appnt.setTabText(self.tabWidget_faculty_appnt.indexOf(self.fac_appnt_main),
                                                 _translate("MainWindow", " Appointments "))
-        self.fac_Fhistofappnts_Ltop.setText(_translate("MainWindow", "History of Appointments"))
+        self.fac_Fhistofappnts_Ltop.setText(_translate("MainWindow", "History of Appointments (tableview form)"))
         self.tabWidget_faculty_appnt.setTabText(self.tabWidget_faculty_appnt.indexOf(self.fac_appnt_histofappnts),
                                                 _translate("MainWindow", " History "))
         self.student_ss_LavlTasks.setText(_translate("MainWindow", "Available Tasks"))
@@ -3686,7 +3786,6 @@ class Ui_MainWindow(object):
         self.tabWidget_student_roomNkey.setTabText(
             self.tabWidget_student_roomNkey.indexOf(self.student_roomNkey_mainTab),
             _translate("MainWindow", " Room Reservation "))
-
         self.faculty_label_room1.setText(_translate("MainWindow", "Room 1"))
         self.faculty_label_room2.setText(_translate("MainWindow", "Room 2"))
         self.faculty_label_room3.setText(_translate("MainWindow", "Room 3"))
@@ -3717,5 +3816,8 @@ class Ui_MainWindow(object):
         self.admin_label_room4.setText(_translate("MainWindow", "Room 4"))
         self.admin_label_room5.setText(_translate("MainWindow", "Room 5"))
         self.admin_label_room6.setText(_translate("MainWindow", "Room 6"))
-import files_rc
-    # retranslateUi
+        self.page_appointments_changeUserButton.setText(_translate("MainWindow", "Change User UI"))
+        self.page_special_services_changeUserButton.setText(_translate("MainWindow", "Change User UI"))
+        self.page_roomNkey_changeUserButton.setText(_translate("MainWindow", "Change User UI"))
+
+        # retranslateUi

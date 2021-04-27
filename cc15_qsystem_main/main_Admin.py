@@ -21,7 +21,6 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
 from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
 from PyQt5.QtWidgets import *
-from animated_toggle import AnimatedToggle
 from ui_main_Admin import Ui_MainWindow
 from functions_UI_Admin import *
 #from functions_App_Admin import *
@@ -47,12 +46,12 @@ class MainWindow(QMainWindow):
         ########################################################################
 
         ## REMOVE ==> STANDARD TITLE BAR
-        UIFunctions.removeTitleBar(True)
+        Admin_UIFunctions.removeTitleBar(True)
 
         ## SET ==> WINDOW TITLE
         self.setWindowTitle('Main Window - Python Base')
-        UIFunctions.labelTitle(self, 'Admin Main Window - Python Base')
-        UIFunctions.labelDescription(self, 'Set text')
+        Admin_UIFunctions.labelTitle(self, 'Admin Main Window - Python Base')
+        Admin_UIFunctions.labelDescription(self, 'Set text')
 
         ## WINDOW SIZE ==> DEFAULT SIZE
         startSize = QSize(1440, 810)
@@ -63,38 +62,32 @@ class MainWindow(QMainWindow):
         ########################################################################
 
         ## ==> TOGGLE MENU SIZE
-        self.ui.btn_toggle_menu.clicked.connect(lambda: UIFunctions.toggleMenu(self, 240, True))
+        self.ui.btn_toggle_menu.clicked.connect(lambda: Admin_UIFunctions.toggleMenu(self, 240, True))
 
         ## ==> ADD CUSTOM MENUS
         self.ui.stackedWidget.setMinimumWidth(20)
-        UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/20x20/icons/20x20/cil-home.png)", True)
-        #UIFunctions.addNewMenu(self, "Add User", "btn_new_user", "url(:/16x16/icons/16x16/cil-user-follow.png)", True)
-        UIFunctions.addNewMenu(self, "APPOINTMENTS", "btn_appointments", "url(:/20x20/icons/20x20/cil-people.png)", True)
-        UIFunctions.addNewMenu(self, "TASKS", "btn_special_services", "url(:/20x20/icons/20x20/cil-task.png)", True)
-        UIFunctions.addNewMenu(self, "ROOM RESERVATION", "btn_roomNkey", "url(:/20x20/icons/20x20/cil-tag.png)", True)
-        UIFunctions.addNewMenu(self, "CUSTOM WIDGETS", "btn_widgets", "url(:/20x20/icons/20x20/cil-equalizer.png)", False)
+        Admin_UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/20x20/icons/20x20/cil-home.png)", True)
+        #Admin_UIFunctions.addNewMenu(self, "Add User", "btn_new_user", "url(:/16x16/icons/16x16/cil-user-follow.png)", True)
+        Admin_UIFunctions.addNewMenu(self, "APPOINTMENTS", "btn_appointments", "url(:/20x20/icons/20x20/cil-people.png)", True)
+        Admin_UIFunctions.addNewMenu(self, "TASKS", "btn_special_services", "url(:/20x20/icons/20x20/cil-task.png)", True)
+        Admin_UIFunctions.addNewMenu(self, "ROOM RESERVATION", "btn_roomNkey", "url(:/20x20/icons/20x20/cil-tag.png)", True)
+        Admin_UIFunctions.addNewMenu(self, "CUSTOM WIDGETS", "btn_widgets", "url(:/20x20/icons/20x20/cil-equalizer.png)", False)
 
         # START MENU => SELECTION
-        UIFunctions.selectStandardMenu(self, "btn_home")
+        Admin_UIFunctions.selectStandardMenu(self, "btn_home")
 
         ## ==> START PAGE
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
 
         ## USER ICON ==> SHOW HIDE
-        UIFunctions.userIcon(self, "WM", "", True)
-
-        self.avlToggle = AnimatedToggle()
-        self.avlToggle.setFixedSize(self.avlToggle.sizeHint())
-        self.ui.fac_avl_addsched.addWidget(self.avlToggle)
-        self.avlToggle.setChecked()
-        self.avlToggle.stateChanged.connect(self.avltoggleState)
+        Admin_UIFunctions.userIcon(self, "WM", "", True)
         
         ## ==> MOVE WINDOW / MAXIMIZE / RESTORE
         ########################################################################
         def moveWindow(event):
             # IF MAXIMIZED CHANGE TO NORMAL
-            if UIFunctions.returnStatus() == 1:
-                UIFunctions.maximize_restore(self)
+            if Admin_UIFunctions.returnStatus() == 1:
+                Admin_UIFunctions.maximize_restore(self)
 
             # MOVE WINDOW
             if event.buttons() == Qt.LeftButton:
@@ -107,7 +100,7 @@ class MainWindow(QMainWindow):
 
         ## ==> LOAD DEFINITIONS
         ########################################################################
-        UIFunctions.uiDefinitions(self)
+        Admin_UIFunctions.uiDefinitions(self)
 
         ########################################################################
         ## END - WINDOW ATTRIBUTES
@@ -142,30 +135,30 @@ class MainWindow(QMainWindow):
         # PAGE HOME
         if btnWidget.objectName() == "btn_home":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
-            UIFunctions.resetStyle(self, "btn_home")
-            UIFunctions.labelPage(self, "Home")
-            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
+            Admin_UIFunctions.resetStyle(self, "btn_home")
+            Admin_UIFunctions.labelPage(self, "Home")
+            btnWidget.setStyleSheet(Admin_UIFunctions.selectMenu(btnWidget.styleSheet()))
 
         # PAGE APPOINTMENTS
         if btnWidget.objectName() == "btn_appointments":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_appointments)
-            UIFunctions.resetStyle(self, "btn_appointments")
-            UIFunctions.labelPage(self, "Appointments")
-            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
+            Admin_UIFunctions.resetStyle(self, "btn_appointments")
+            Admin_UIFunctions.labelPage(self, "Appointments")
+            btnWidget.setStyleSheet(Admin_UIFunctions.selectMenu(btnWidget.styleSheet()))
 
         # PAGE SPECIAL SERVICES
         if btnWidget.objectName() == "btn_special_services":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_special_services)
-            UIFunctions.resetStyle(self, "btn_special_services")
-            UIFunctions.labelPage(self, "Special Services")
-            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
+            Admin_UIFunctions.resetStyle(self, "btn_special_services")
+            Admin_UIFunctions.labelPage(self, "Special Services")
+            btnWidget.setStyleSheet(Admin_UIFunctions.selectMenu(btnWidget.styleSheet()))
 
         # PAGE ROOM RESERVATION
         if btnWidget.objectName() == "btn_roomNkey":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_roomNkey)
-            UIFunctions.resetStyle(self, "btn_roomNkey")
-            UIFunctions.labelPage(self, "Room Reservation")
-            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
+            Admin_UIFunctions.resetStyle(self, "btn_roomNkey")
+            Admin_UIFunctions.labelPage(self, "Room Reservation")
+            btnWidget.setStyleSheet(Admin_UIFunctions.selectMenu(btnWidget.styleSheet()))
 
 
         """
@@ -175,9 +168,9 @@ class MainWindow(QMainWindow):
         # PAGE WIDGETS
         if btnWidget.objectName() == "btn_widgets":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_widgets)
-            UIFunctions.resetStyle(self, "btn_widgets")
-            UIFunctions.labelPage(self, "Custom Widgets")
-            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
+            Admin_UIFunctions.resetStyle(self, "btn_widgets")
+            Admin_UIFunctions.labelPage(self, "Custom Widgets")
+            btnWidget.setStyleSheet(Admin_UIFunctions.selectMenu(btnWidget.styleSheet()))
     ## ==> END ##
  
     ########################################################################
@@ -217,16 +210,6 @@ class MainWindow(QMainWindow):
     def resizeFunction(self):
         print('Height: ' + str(self.height()) + ' | Width: ' + str(self.width()))
 
-    def avltoggleState(self):
-        if self.avlToggle.isChecked():
-            self.ui.comboBox_day_avl.setEnabled(False)
-            self.ui.comboBox_time_avl.setEnabled(False)
-            self.ui.comboBox_colorTheme.setEnabled(False)
-            
-        else:
-            self.ui.comboBox_day_avl.setEnabled(True)
-            self.ui.comboBox_time_avl.setEnabled(True)
-            self.ui.comboBox_colorTheme.setEnabled(True)
     ########################################################################
     ## END ==> APP EVENTS
     ############################## ---/--/--- ##############################

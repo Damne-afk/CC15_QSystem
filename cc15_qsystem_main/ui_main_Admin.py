@@ -22,7 +22,6 @@ from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
     QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
     QRadialGradient)
 from PyQt5.QtWidgets import *
-
 import files_rc
 
 class Ui_MainWindow(object):
@@ -1385,15 +1384,15 @@ class Ui_MainWindow(object):
         self.verticalLayout_fac_FcontentLeft_bot.setContentsMargins(8, 8, 8, 8)
         self.verticalLayout_fac_FcontentLeft_bot.setSpacing(0)
         self.verticalLayout_fac_FcontentLeft_bot.setObjectName("verticalLayout_fac_FcontentLeft_bot")
-        self.label = QtWidgets.QLabel(self.fac_FcontentLeft_bot)
-        self.label.setStyleSheet("QLabel{\n"
+        self.queue_label = QtWidgets.QLabel(self.fac_FcontentLeft_bot)
+        self.queue_label.setStyleSheet("QLabel{\n"
         "border: 0;\n"
         "}")
-        self.label.setObjectName("label")
-        self.verticalLayout_fac_FcontentLeft_bot.addWidget(self.label)
+        self.queue_label.setObjectName("queue_label")
+        self.verticalLayout_fac_FcontentLeft_bot.addWidget(self.queue_label)
         self.verticalLayout_fac_appnt_main_FcontentLeft.addWidget(self.fac_FcontentLeft_bot)
-        self.verticalLayout_fac_appnt_main_FcontentLeft.setStretch(0, 5)
-        self.verticalLayout_fac_appnt_main_FcontentLeft.setStretch(1, 4)
+        self.verticalLayout_fac_appnt_main_FcontentLeft.setStretch(0, 4)
+        self.verticalLayout_fac_appnt_main_FcontentLeft.setStretch(1, 6)
         self.horizontalLayout_fac_appnt_main_Fcontent.addWidget(self.fac_appnt_main_FcontentLeft)
         self.fac_appnt_main_FcontentRight = QtWidgets.QFrame(self.fac_appnt_main_Fcontent)
         self.fac_appnt_main_FcontentRight.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -1422,23 +1421,23 @@ class Ui_MainWindow(object):
         "\n"
         "QCalendarWidget QToolButton {\n"
         "    height: 30px;\n"
-        "    width: 85px;\n"
+        "    width: 55px;\n"
         "    color: black;\n"
-        "    font-size: 12pt;\n"
+        "    font-size: 15pt;\n"
         "    icon-size: 30px, 30px;\n"
         "}\n"
         "\n"
         "QCalendarWidget QMenu {\n"
-        "    width: 130px;\n"
+        "    width: 95px;\n"
         "    left: 3px;\n"
         "    color: black;\n"
-        "    font-size: 12pt;\n"
+        "    font-size: 13pt;\n"
         "    background-color: rgb(219, 219, 219);\n"
         "}\n"
         "\n"
         "QCalendarWidget QSpinBox { \n"
-        "    width: 80px; \n"
-        "    font-size:12pt; \n"
+        "    width: 70px; \n"
+        "    font-size:13pt; \n"
         "    color: black; \n"
         "    background-color: transparent; \n"
         "    selection-background-color: rgb(219, 219, 219);\n"
@@ -1467,7 +1466,7 @@ class Ui_MainWindow(object):
         "/* normal days */\n"
         "QCalendarWidget QAbstractItemView:enabled \n"
         "{\n"
-        "    font-size:12pt;  \n"
+        "    font-size:15pt;  \n"
         "    color: black;  \n"
         "    selection-background-color: rgba(242, 242, 242, 40); \n"
         "    selection-color: rgb(0, 255, 0); \n"
@@ -1492,7 +1491,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_fac_FcontentRight_bot.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_fac_FcontentRight_bot.setObjectName("verticalLayout_fac_FcontentRight_bot")
         self.fac_FcontentRight_bot_Ltop = QtWidgets.QLabel(self.fac_FcontentRight_bot)
-        self.fac_FcontentRight_bot_Ltop.setStyleSheet("font-size:12pt;\n"
+        self.fac_FcontentRight_bot_Ltop.setStyleSheet("font-size: 15pt;\n"
         "color: rgb(255, 255, 255);\n"
         "border: 0;\n"
         "margin-left: 4px;")
@@ -1549,7 +1548,7 @@ class Ui_MainWindow(object):
         self.fac_Fhistofappnts_Ltop = QtWidgets.QLabel(self.fac_appnt_Fhistofappnts_Ftop)
         self.fac_Fhistofappnts_Ltop.setStyleSheet("QWidget{\n"
         "margin-left: 4px;\n"
-        "font-size:12pt;\n"
+        "font-size: 15pt;\n"
         "}")
         self.fac_Fhistofappnts_Ltop.setIndent(-1)
         self.fac_Fhistofappnts_Ltop.setObjectName("fac_Fhistofappnts_Ltop")
@@ -1598,8 +1597,6 @@ class Ui_MainWindow(object):
         self.facAction_appointments.triggered.connect(lambda: self.stackedWidget_appointments.setCurrentWidget(self.page_faculty_appnt)) 
 
         self.page_appointments_changeUserButton.setMenu(self.popMenu_appointments)
-
-
 
         self.page_special_services = QWidget()
         self.page_special_services.setObjectName(u"page_special_services")
@@ -2065,6 +2062,7 @@ class Ui_MainWindow(object):
         self.page_roomNkey_changeUserButton.setObjectName(u'page_roomNkey_changeUserButton')
 
         self.horizontalLayout_page_roomNkey_changeUserF.addWidget(self.page_roomNkey_changeUserButton)
+        
 ##  ROOM RESERVATION_PAGE - STUDENT | START
         self.page_student_roomNkey = QtWidgets.QWidget()
         self.page_student_roomNkey.setObjectName("page_student_roomNkey")
@@ -2603,7 +2601,7 @@ class Ui_MainWindow(object):
 ##  ROOM RESERVATION_PAGE - FACULTY | END
 
 
-##  ROOM RESERVATION_PAGE - ADMIN | END
+##  ROOM RESERVATION_PAGE - ADMIN | START
         self.page_admin_roomNkey = QtWidgets.QWidget()
         self.page_admin_roomNkey.setObjectName("page_admin_roomNkey")
         self.verticalLayout_page_admin_roomNkey = QtWidgets.QVBoxLayout(self.page_admin_roomNkey)

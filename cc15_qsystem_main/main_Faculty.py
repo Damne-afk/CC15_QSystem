@@ -40,40 +40,40 @@ class MainWindow(QMainWindow):
         ########################################################################
 
         ## REMOVE ==> STANDARD TITLE BAR
-        UIFunctions.removeTitleBar(True)
+        Faculty_UIFunctions.removeTitleBar(True)
         ## ==> END ##
 
         ## SET ==> WINDOW TITLE
         self.setWindowTitle('Main Window - Python Base')
-        UIFunctions.labelTitle(self, 'Faculty Main Window - Python Base')
-        UIFunctions.labelDescription(self, 'Set text')
+        Faculty_UIFunctions.labelTitle(self, 'Faculty Main Window - Python Base')
+        Faculty_UIFunctions.labelDescription(self, 'Set text')
         ## ==> END ##
 
         ## WINDOW SIZE ==> DEFAULT SIZE
         startSize = QSize(1440, 810)
         self.resize(startSize)
         self.setMinimumSize(1080, 608)
-        #UIFunctions.enableMaximumSize(self, 500, 720)
+        #Faculty_UIFunctions.enableMaximumSize(self, 500, 720)
         ## ==> END ##
 
         ## ==> CREATE MENUS
         ########################################################################
 
         ## ==> TOGGLE MENU SIZE
-        self.ui.btn_toggle_menu.clicked.connect(lambda: UIFunctions.toggleMenu(self, 220, True))
+        self.ui.btn_toggle_menu.clicked.connect(lambda: Faculty_UIFunctions.toggleMenu(self, 220, True))
         ## ==> END ##
 
         ## ==> ADD CUSTOM MENUS
         self.ui.stackedWidget.setMinimumWidth(20)
-        UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
-        #UIFunctions.addNewMenu(self, "Add User", "btn_new_user", "url(:/16x16/icons/16x16/cil-user-follow.png)", True)
-        UIFunctions.addNewMenu(self, "APPOINTMENTS", "btn_appointments", "url(:/16x16/icons/16x16/cil-calendar-check.png)", True)
-        UIFunctions.addNewMenu(self, "SPECIAL SERVICES", "btn_special_services", "url(:/16x16/icons/16x16/cil-coffee.png)", True)
-        UIFunctions.addNewMenu(self, "CUSTOM WIDGETS", "btn_widgets", "url(:/16x16/icons/16x16/cil-equalizer.png)", False)
+        Faculty_UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
+        #Faculty_UIFunctions.addNewMenu(self, "Add User", "btn_new_user", "url(:/16x16/icons/16x16/cil-user-follow.png)", True)
+        Faculty_UIFunctions.addNewMenu(self, "APPOINTMENTS", "btn_appointments", "url(:/16x16/icons/16x16/cil-calendar-check.png)", True)
+        Faculty_UIFunctions.addNewMenu(self, "SPECIAL SERVICES", "btn_special_services", "url(:/16x16/icons/16x16/cil-coffee.png)", True)
+        Faculty_UIFunctions.addNewMenu(self, "CUSTOM WIDGETS", "btn_widgets", "url(:/16x16/icons/16x16/cil-equalizer.png)", False)
         ## ==> END ##
 
         # START MENU => SELECTION
-        UIFunctions.selectStandardMenu(self, "btn_home")
+        Faculty_UIFunctions.selectStandardMenu(self, "btn_home")
         ## ==> END ##
 
         ## ==> START PAGE
@@ -81,7 +81,7 @@ class MainWindow(QMainWindow):
         ## ==> END ##
 
         ## USER ICON ==> SHOW HIDE
-        UIFunctions.userIcon(self, "WM", "", True)
+        Faculty_UIFunctions.userIcon(self, "WM", "", True)
         ## ==> END ##
 
 
@@ -89,8 +89,8 @@ class MainWindow(QMainWindow):
         ########################################################################
         def moveWindow(event):
             # IF MAXIMIZED CHANGE TO NORMAL
-            if UIFunctions.returnStatus() == 1:
-                UIFunctions.maximize_restore(self)
+            if Faculty_UIFunctions.returnStatus() == 1:
+                Faculty_UIFunctions.maximize_restore(self)
 
             # MOVE WINDOW
             if event.buttons() == Qt.LeftButton:
@@ -104,7 +104,7 @@ class MainWindow(QMainWindow):
 
         ## ==> LOAD DEFINITIONS
         ########################################################################
-        UIFunctions.uiDefinitions(self)
+        Faculty_UIFunctions.uiDefinitions(self)
         ## ==> END ##
 
         ########################################################################
@@ -152,23 +152,23 @@ class MainWindow(QMainWindow):
         # PAGE HOME
         if btnWidget.objectName() == "btn_home":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
-            UIFunctions.resetStyle(self, "btn_home")
-            UIFunctions.labelPage(self, "Home")
-            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
+            Faculty_UIFunctions.resetStyle(self, "btn_home")
+            Faculty_UIFunctions.labelPage(self, "Home")
+            btnWidget.setStyleSheet(Faculty_UIFunctions.selectMenu(btnWidget.styleSheet()))
 
         # PAGE APPOINTMENTS
         if btnWidget.objectName() == "btn_appointments":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_appointments)
-            UIFunctions.resetStyle(self, "btn_appointments")
-            UIFunctions.labelPage(self, "Appointments")
-            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
+            Faculty_UIFunctions.resetStyle(self, "btn_appointments")
+            Faculty_UIFunctions.labelPage(self, "Appointments")
+            btnWidget.setStyleSheet(Faculty_UIFunctions.selectMenu(btnWidget.styleSheet()))
 
         # PAGE SPECIAL SERVICES
         if btnWidget.objectName() == "btn_special_services":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_special_services)
-            UIFunctions.resetStyle(self, "btn_special_services")
-            UIFunctions.labelPage(self, "Special Services")
-            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
+            Faculty_UIFunctions.resetStyle(self, "btn_special_services")
+            Faculty_UIFunctions.labelPage(self, "Special Services")
+            btnWidget.setStyleSheet(Faculty_UIFunctions.selectMenu(btnWidget.styleSheet()))
 
         """
         ADDITIONAL PAGES HERE
@@ -177,9 +177,9 @@ class MainWindow(QMainWindow):
         # PAGE WIDGETS
         if btnWidget.objectName() == "btn_widgets":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_widgets)
-            UIFunctions.resetStyle(self, "btn_widgets")
-            UIFunctions.labelPage(self, "Custom Widgets")
-            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
+            Faculty_UIFunctions.resetStyle(self, "btn_widgets")
+            Faculty_UIFunctions.labelPage(self, "Custom Widgets")
+            btnWidget.setStyleSheet(Faculty_UIFunctions.selectMenu(btnWidget.styleSheet()))
 
     ## ==> END ##
 

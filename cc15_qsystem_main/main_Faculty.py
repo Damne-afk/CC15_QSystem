@@ -162,6 +162,10 @@ class MainWindow(QMainWindow):
         self.ui.comboBox_day_avl.addItems(avlDaysList)
         self.ui.comboBox_time_avl.addItems(avlTimesList)
         self.ui.comboBox_colorTheme.addItems(avlColorTList)
+
+        self.ui.comboBox_day_avl.activated.connect(lambda: AppFunctions.setDayAvlText(self,self.ui.comboBox_day_avl.currentText()))
+        self.ui.comboBox_time_avl.activated.connect(lambda: AppFunctions.setTimeAvlText(self,self.ui.comboBox_time_avl.currentText()))
+        self.ui.comboBox_colorTheme.activated.connect(lambda: AppFunctions.setColorT(self,self.ui.comboBox_colorTheme.currentText()))
     ########################################################################
     ## MENUS ==> DYNAMIC MENUS FUNCTIONS
     ########################################################################

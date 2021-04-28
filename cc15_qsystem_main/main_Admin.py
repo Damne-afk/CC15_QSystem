@@ -21,7 +21,8 @@ from PyQt5.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime
 from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
 from PyQt5.QtWidgets import *
 
-from adminAppModules import *
+from appModules_Admin import *
+from animated_toggle import AnimatedToggle
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -29,6 +30,7 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.popMenuInits()
+        self.addSchedToggle()
         ## PRINT ==> SYSTEM
         print('System: ' + platform.system())
         print('Version: ' + platform.release())
@@ -142,7 +144,7 @@ class MainWindow(QMainWindow):
         self.show()
         ## ==> END ##
 
-    ## TEMPORARY SOLUTION TO ADMIN NAVIGATION
+    ## SOME INIT CODES
     def popMenuInits(self):
         self.ui.page_appointments_changeUserF = QFrame(self.ui.page_appointments)
         self.ui.page_appointments_changeUserF.setObjectName(u"page_appointments_changeUserF")
@@ -247,6 +249,13 @@ class MainWindow(QMainWindow):
         self.ui.page_special_services_changeUserButton.setText(QCoreApplication.translate("MainWindow", "Change User UI"))
         self.ui.page_roomNkey_changeUserButton.setText(QCoreApplication.translate("MainWindow", "Change User UI"))
     
+
+    def addSchedToggle(self):
+        self.toggle = AnimatedToggle()
+        self.toggle.setFixedSize(self.toggle.sizeHint())
+        self.ui.horizontalLayout_fac_avl_addsched.addWidget(self.toggle)
+
+
     ########################################################################
     ## MENUS ==> DYNAMIC MENUS FUNCTIONS
     ########################################################################
@@ -278,7 +287,7 @@ class MainWindow(QMainWindow):
         if btnWidget.objectName() == "btn_roomNkey":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_roomNkey)
             UIFunctions.resetStyle(self, "btn_roomNkey")
-            UIFunctions.labelPage(self, "Special Services")
+            UIFunctions.labelPage(self, "Room Reservation")
             btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
         """
         ADDITIONAL PAGES HERE

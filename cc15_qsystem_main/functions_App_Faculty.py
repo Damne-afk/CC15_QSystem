@@ -17,5 +17,6 @@
 ## ==> GUI FILE
 from main_Faculty import *
 
-class Functions(MainWindow):
-    pass
+class AppFunctions(MainWindow):
+    def printAvl(self):
+        pass

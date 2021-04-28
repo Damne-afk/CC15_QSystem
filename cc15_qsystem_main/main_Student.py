@@ -21,9 +21,7 @@ from PyQt5.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime
 from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
 from PyQt5.QtWidgets import *
 
-from ui_main_Student import Ui_MainWindow
-from functions_UI_Student import *
-#from functions_App_Admin import *
+from appModules_Student import *
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -68,8 +66,9 @@ class MainWindow(QMainWindow):
         UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
         #UIFunctions.addNewMenu(self, "Add User", "btn_new_user", "url(:/16x16/icons/16x16/cil-user-follow.png)", True)
         UIFunctions.addNewMenu(self, "APPOINTMENTS", "btn_appointments", "url(:/16x16/icons/16x16/cil-calendar-check.png)", True)
-        UIFunctions.addNewMenu(self, "SPECIAL SERVICES", "btn_special_services", "url(:/16x16/icons/16x16/cil-coffee.png)", True)
-        UIFunctions.addNewMenu(self, "CUSTOM WIDGETS", "btn_widgets", "url(:/16x16/icons/16x16/cil-equalizer.png)", False)
+        UIFunctions.addNewMenu(self, "SPECIAL SERVICES", "btn_special_services", "url(:/16x16/icons/16x16/cil-clipboard.png)", True)
+        UIFunctions.addNewMenu(self, "ROOM RESERVATION", "btn_roomNkey",
+                                     "url(:/16x16/icons/16x16/cil-door.png)", True)
         ## ==> END ##
 
         # START MENU => SELECTION
@@ -121,15 +120,6 @@ class MainWindow(QMainWindow):
         ## ==> USER CODES BELLOW                                              ##
         ########################################################################
 
-
-
-        ## ==> QTableWidget RARAMETERS
-        ########################################################################
-        self.ui.tableWidget.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
-        ## ==> END ##
-
-
-
         ########################################################################
         #                                                                      #
         ## END --------------- WIDGETS FUNCTIONS/PARAMETERS ----------------- ##
@@ -168,6 +158,12 @@ class MainWindow(QMainWindow):
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_special_services)
             UIFunctions.resetStyle(self, "btn_special_services")
             UIFunctions.labelPage(self, "Special Services")
+            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
+
+        if btnWidget.objectName() == "btn_roomNkey":
+            self.ui.stackedWidget.setCurrentWidget(self.ui.page_roomNkey)
+            UIFunctions.resetStyle(self, "btn_roomNkey")
+            UIFunctions.labelPage(self, "Room Reservation")
             btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
 
         """

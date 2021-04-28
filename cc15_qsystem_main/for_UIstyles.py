@@ -25,8 +25,8 @@ class Style():
         background-position: left center;
         background-repeat: no-repeat;
         border: none;
-        border-left: 28px solid rgb(37, 39, 77);
-        background-color: rgb(37, 39, 77);
+        border-left: 28px solid rgb(32,34,67);
+        background-color: rgb(32,34,67);
         text-align: left;
         padding-left: 45px;
     }
@@ -35,14 +35,14 @@ class Style():
         background-position: left center;
         background-repeat: no-repeat;
         border: none;
-        border-left: 28px solid rgb(37, 39, 77);
-        background-color: rgb(37, 39, 77);
+        border-left: 28px solid #7a7ecb;
+        background-color: #7a7ecb;
         text-align: left;
         padding-left: 45px;
     }
     QPushButton:hover {
-        background-color: rgb(48, 51, 102);
-        border-left: 28px solid rgb(48, 51, 102);
+        background-color: #7a7ecb;
+        border-left: 28px solid #7a7ecb;
     }
     QPushButton:pressed {
         background-color: rgb(85, 170, 255);

@@ -21,15 +21,16 @@ from PyQt5.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime
 from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
 from PyQt5.QtWidgets import *
 
-from for_Appmodules import *
-#from functions_App_Admin import *
+from appModules_Faculty import *
+from animated_toggle import AnimatedToggle
 
 class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-
+        self.addSchedToggle()
+        self.fillComboboxes()
         ## PRINT ==> SYSTEM
         print('System: ' + platform.system())
         print('Version: ' + platform.release())
@@ -67,8 +68,9 @@ class MainWindow(QMainWindow):
         UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
         #UIFunctions.addNewMenu(self, "Add User", "btn_new_user", "url(:/16x16/icons/16x16/cil-user-follow.png)", True)
         UIFunctions.addNewMenu(self, "APPOINTMENTS", "btn_appointments", "url(:/16x16/icons/16x16/cil-calendar-check.png)", True)
-        UIFunctions.addNewMenu(self, "SPECIAL SERVICES", "btn_special_services", "url(:/16x16/icons/16x16/cil-coffee.png)", True)
-        UIFunctions.addNewMenu(self, "CUSTOM WIDGETS", "btn_widgets", "url(:/16x16/icons/16x16/cil-equalizer.png)", False)
+        UIFunctions.addNewMenu(self, "SPECIAL SERVICES", "btn_special_services", "url(:/16x16/icons/16x16/cil-clipboard.png)", True)
+        UIFunctions.addNewMenu(self, "ROOM RESERVATION", "btn_roomNkey",
+                                     "url(:/16x16/icons/16x16/cil-door.png)", True)
         ## ==> END ##
 
         # START MENU => SELECTION
@@ -121,14 +123,6 @@ class MainWindow(QMainWindow):
         ########################################################################
 
 
-
-        ## ==> QTableWidget RARAMETERS
-        ########################################################################
-        self.ui.tableWidget.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
-        ## ==> END ##
-
-
-
         ########################################################################
         #                                                                      #
         ## END --------------- WIDGETS FUNCTIONS/PARAMETERS ----------------- ##
@@ -141,6 +135,33 @@ class MainWindow(QMainWindow):
         self.show()
         ## ==> END ##
 
+    def addSchedToggle(self):
+        self.toggle = AnimatedToggle()
+        self.toggle.setFixedSize(self.toggle.sizeHint())
+        self.toggle.stateChanged.connect(self.toggleAvl)
+        self.ui.horizontalLayout_fac_avl_addsched.addWidget(self.toggle)
+
+    # put this in app module
+    def toggleAvl(self):
+        if self.toggle.isChecked():
+            self.ui.comboBox_day_avl.setEnabled(False)
+            self.ui.comboBox_time_avl.setEnabled(False)
+            self.ui.comboBox_colorTheme.setEnabled(False)
+            
+        else:
+            self.ui.comboBox_day_avl.setEnabled(True)
+            self.ui.comboBox_time_avl.setEnabled(True)
+            self.ui.comboBox_colorTheme.setEnabled(True)
+
+
+    def fillComboboxes(self):
+        avlDaysList = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+        avlTimesList = ["7:30-9:00","9:00-10:30","10:30-12:00","12:00-1:30","1:30-3:00","3:00-4:30","4:30-6:00"]
+        avlColorTList = ["Red","Blue","Yellow"]
+
+        self.ui.comboBox_day_avl.addItems(avlDaysList)
+        self.ui.comboBox_time_avl.addItems(avlTimesList)
+        self.ui.comboBox_colorTheme.addItems(avlColorTList)
     ########################################################################
     ## MENUS ==> DYNAMIC MENUS FUNCTIONS
     ########################################################################
@@ -167,6 +188,12 @@ class MainWindow(QMainWindow):
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_special_services)
             UIFunctions.resetStyle(self, "btn_special_services")
             UIFunctions.labelPage(self, "Special Services")
+            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
+
+        if btnWidget.objectName() == "btn_roomNkey":
+            self.ui.stackedWidget.setCurrentWidget(self.ui.page_roomNkey)
+            UIFunctions.resetStyle(self, "btn_roomNkey")
+            UIFunctions.labelPage(self, "Room Reservation")
             btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
 
         """
